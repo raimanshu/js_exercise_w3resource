@@ -1,0 +1,9 @@
+Today is : <p id="day"></p>.
+Current time is : 10 PM : 30 : 38 <p id="time"></p>
+
+<script>
+    var date = new Date();
+    var day = ['Monday', 'Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+    document.getElementById('day').innerText = day[date.getDay() - 1] ;
+    document.getElementById('time').innerText = date.toLocaleTimeString() ;
+</script>
