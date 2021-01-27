@@ -1,0 +1,11 @@
+<h3>4. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7. </h3>
+
+<p>Sides of the triangle are 5, 6 and 7 as a, b and c.</p>
+
+<p>Area of the triangle = </p><span id="area"></span>
+
+<script>
+    var area = 0;
+    var s = (5+6+7)/2;
+    document.getElementById('area').innerText = Math.sqrt(s * (s-5) * (s-6) * (s-7));
+</script>

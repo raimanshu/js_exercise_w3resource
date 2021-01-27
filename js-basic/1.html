@@ -1,9 +1,24 @@
-Today is : <p id="day"></p>.
-Current time is : 10 PM : 30 : 38 <p id="time"></p>
+<h3>1. Write a JavaScript program to display the current day and time in the following format.</h3>
+
+
+Today is : <span id="day"></span>.
+<br>
+Current time is : <span id="time"></span>
 
 <script>
     var date = new Date();
     var day = ['Monday', 'Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
     document.getElementById('day').innerText = day[date.getDay() - 1] ;
-    document.getElementById('time').innerText = date.toLocaleTimeString() ;
+    let hours = date.getHours();
+    // if(hours > 12){
+    //     hours = date.getHours() -12;
+    //     hours = hours + ' PM'
+    // } else {
+    //     hours = hours + ' AM'
+    // }
+
+    // or, we can use ternary operators 
+    hours  = hours > 12 ? hours-12 + ' PM' : hours + ' PM';
+
+    document.getElementById('time').innerText = hours + ' : ' + date.getMinutes() + ' : ' + date.getSeconds()  ;
 </script>
