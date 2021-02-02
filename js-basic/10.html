@@ -1,0 +1,23 @@
+<div style="border: 1px solid gray;">
+    <label>1st Number :</label>
+    <input id="one">
+    <label>2nd Number :</label>
+    <input id="two">
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+    <p>The Result is :</p>
+    <label id="result"></label>
+</div>
+
+<script>
+    var firstNumber = document.getElementById('one');
+    var secondNumber = document.getElementById('two');
+    var result = document.getElementById('result');
+    function multiply() {
+        document.getElementById('result').innerText = firstNumber.value * secondNumber.value;
+    }
+
+    function divide() {
+        document.getElementById('result').innerText = firstNumber.value / secondNumber.value;
+    }
+</script>

@@ -1,0 +1,10 @@
+<label>Difference : </label><span id="result"></span>
+
+<script>
+    var value = prompt('Enter a number');
+    if(value < 13){
+        document.getElementById('result').innerText = 13 - value;
+    } else {
+        document.getElementById('result').innerText = 2 * (value - 13);
+    }
+</script>

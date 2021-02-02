@@ -1,0 +1,11 @@
+<label>Result : </label><span id="result"></span>
+
+<script>
+    var value1 = parseInt(prompt('Enter the first value'));
+    var value2 = parseInt(prompt('Enter the second value'));
+    if(value1 == value2){
+        document.getElementById('result').innerText = 3 * (value2 + value1);
+    } else {
+        document.getElementById('result').innerText = value1 + value2;
+    }
+</script>

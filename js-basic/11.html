@@ -1,0 +1,25 @@
+Easy
+
+
+<input id="c1">
+<button onclick="toF()"> Convert to F</button>
+<label id="f1"></label><span> F</span>
+
+<br>
+
+<input id="f2">
+<button onclick="toC()"> Convert to F</button>
+<label id="c2"></label><span> C</span>
+
+<script>
+    var cin = document.getElementById('c1');
+    var fin = document.getElementById('f2');
+
+    // c/5 = (f-32)/9
+    function toF() {
+       document.getElementById('f1').innerText = ((cin.value/5)*9) + 32;
+    }
+    function toC() {
+        document.getElementById('c2').innerText = ((fin.value-32)/9)*5;
+    }
+</script>
