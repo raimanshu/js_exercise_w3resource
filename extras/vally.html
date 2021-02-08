@@ -1,0 +1,27 @@
+<input placeholder="Enter string" id="str" />
+
+<button onclick="calc()">Caculate Valley</button>
+
+<script>
+    var valley = 0;
+    var count = 0;
+    function calc() {
+        // var str = 'uuuudddd';
+        var str = document.getElementById('str').value.trim();
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] == 'u') {
+                count++;
+            } else {
+                count--;
+            }
+            if ((count == 0) && (str[i] == 'u')) {
+                valley++;
+            }
+        }
+        valley = 0;
+        count = 0;
+        alert(valley);
+
+    }
+
+</script>
