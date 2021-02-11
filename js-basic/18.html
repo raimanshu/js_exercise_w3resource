@@ -1,0 +1,13 @@
+<input placeholder="Enter first number" id="fNum" >
+<input placeholder="Enter second number" id="sNum" >
+<button onclick="calc()">Result : </button> <span id="result"></span>
+
+<script>
+    function calc() {
+        let fNum = document.getElementById('fNum').value.trim();
+        let sNum = document.getElementById('sNum').value.trim();
+        if (fNum == 50 || sNum == 50 || (parseInt(fNum) + parseInt(sNum) == 50)) {
+            document.getElementById('result').innerText = 'True';
+        }
+    }
+</script>

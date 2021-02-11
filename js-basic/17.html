@@ -1,0 +1,17 @@
+<input placeholder="Enter a number" id="fNum" >
+
+<label>Result : </label><span id="result"></span>
+
+<button onclick="calc()">Calculate</button>
+<script>
+
+    function calc() {
+        let fNum = document.getElementById('fNum').value.trim();
+        let diff = Math.abs(Math.abs(fNum) - 19);
+        if(fNum > 19) {
+            document.getElementById('result').innerText = 3 * diff;
+        } else {
+            document.getElementById('result').innerText = diff;
+        }
+    }
+</script>
