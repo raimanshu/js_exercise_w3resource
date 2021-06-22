@@ -1,0 +1,22 @@
+<h3>Write a JavaScript program to check from two given integers, whether one is positive and another one is negative.
+</h3>
+
+<input type="text" id="first_num" placeholder="Enter first number" /> <br>
+<input type="text" id="second_num" placeholder="Enter second number" /> <br>
+<button onclick="checkNum()">Result</button>
+
+<script>
+    function checkNum() {
+        var fNum = parseInt(document.getElementById("first_num").value);
+        var sNum = parseInt(document.getElementById("second_num").value);
+        // switch (fNum, sNum) {
+        //     case (fNum < 0 && sNum < 0): alert('Both numbers are negative.'); break;
+        //     case (fNum > 0 && sNum < 0): alert('First number is positive but second number is negative.'); break;
+        //     case (fNum < 0 && sNum > 0): alert('First number is negative but second number is positive.'); break;
+        //     case (fNum > 0 && sNum > 0): alert('Both numbers are positive.'); break;
+        // }
+        if(fNum > 0 && sNum < 0){
+            alert('First number is positive but second number is negative.');
+        }
+    }
+</script>
