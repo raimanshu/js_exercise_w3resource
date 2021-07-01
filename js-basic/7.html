@@ -1,12 +1,19 @@
-working on this........
+<h5>Points to remember</h5>
+- remember Date input format <br>
 
 
+<h3> Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.</h3>
 
+<br><br><br>
+<p id="list"></p>
 
 <script>
+    var yearList = [];
     for(let i = 2014; i < 2051; i++){
-        if(new Date(1/1/i).getDay() == 0){
+        if(new Date(`${i}-01-01`).getDay() == 0){
             console.log(i + 'has a Sunday.');
+            yearList.push(i);
         } 
     }
+    document.getElementById('list').innerText = yearList;
 </script>

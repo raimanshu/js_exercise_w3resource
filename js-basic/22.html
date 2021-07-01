@@ -1,15 +1,36 @@
-<h3>Write a JavaScript program to remove a character at the specified position of a given string and return the new string. </h3>
+<h5>Points to remember</h5>
+- read the code carefully<br>
 
-Given string -  <p id="given_string">I am a good programmer</p> 
+<h3>Write a JavaScript program to remove a character at the specified position of a given string and return the new
+    string. </h3>
 
-Working on this.............
+Given string - <p id="given_string">I am a good programmer</p>
+
+
 
 <p id="result"></p>
 
 <script>
-    // var index = prompt("Enter the position at which you want to remove a character.");
-    // var str = document.getElementById("given_string").innerText;
-    // if(index != ""){
-    //     document.getElementById("result").innerHTML =  str.substring(0, index) + str.substring(index+1, str.length);
+    // var arr = ('I am a good programmer').split('');
+    // var charPosition = prompt('Enter the position at which you want to remove a character.');
+    // for (var i = 0; i < arr.length; i++) {
+
+    //     if (i === parseInt(charPosition)) {
+    //         arr.splice(i, 1);
+    //         i--;
+    //     }
     // }
+    // console.log(arr);
+
+
+    // website solution 
+    function remove_character(str, char_pos) {
+        part1 = str.substring(0, char_pos);
+        part2 = str.substring(char_pos + 1, str.length);
+        return (part1 + part2);
+    }
+
+    console.log(remove_character("Python", 0));
+    console.log(remove_character("Python", 3));
+    console.log(remove_character("Python", 5));
 </script>

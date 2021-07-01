@@ -1,3 +1,9 @@
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+
+<h3>Write a JavaScript program to calculate days left until next Christmas. </h3>
+
 <p>Days Left : </p><label id="days"></label>
 
 <script>
@@ -7,7 +13,7 @@
         christmsdate = date.getTime();
     }
     let oneDay = 1000*60*60*24;
-    document.getElementById('days').innerText = (date.getTime() - christmsdate)/oneDay ;
+    // document.getElementById('days').innerText = (date.getTime() - christmsdate)/oneDay ;
 
     today = new Date();
     const cmas = new Date(today.getFullYear(), 11, 25);
@@ -16,4 +22,14 @@
     }
     const one_day = 1000 * 60 * 60 * 24;
     console.log(`${Math.ceil((cmas.getTime() - today.getTime()) / (one_day))} days left until Christmas!`);
+    document.getElementById('days').innerText = `${Math.ceil((cmas.getTime() - today.getTime()) / (one_day))} days left until Christmas!` ;
+
+    // today = new Date();
+    // var cmas = new Date(today.getFullYear(), 11, 25);
+    // if (today.getMonth() == 11 && today.getDate() > 25) {
+    //     cmas.setFullYear(cmas.getFullYear() + 1);
+    // }
+    // var one_day = 1000 * 60 * 60 * 24;
+    // console.log(Math.ceil((cmas.getTime() - today.getTime()) / (one_day)) +
+    //     " days left until Christmas!");
 </script>

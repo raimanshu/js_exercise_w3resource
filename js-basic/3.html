@@ -1,4 +1,4 @@
-    <h3>3. Write a JavaScript program to get the current date. mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy</h3>
+<h3>3. Write a JavaScript program to get the current date. mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy</h3>
 
 <p>Current Date 1 :</p> <span id="p1"></span>
 <p>Current Date 2 :</p> <span id="p2"></span>
@@ -8,8 +8,8 @@
 
 <script>
     var date = new Date();
-    document.getElementById('p1').innerText = ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ( '0' + date.getDate()).slice(-2) + '-' + date.getFullYear() ; 
-    document.getElementById('p2').innerText = ('0' + (date.getMonth() + 1)).slice(-2) + '/' + ( '0' + date.getDate()).slice(-2) + '/' + date.getFullYear() ; 
-    document.getElementById('p3').innerText = ( '0' + date.getDate()).slice(-2) + '-' +  ('0' + (date.getMonth() + 1)).slice(-2)  + '-' + date.getFullYear() ; 
-    document.getElementById('p4').innerText = ( '0' + date.getDate()).slice(-2) + '/' +  ('0' + (date.getMonth() + 1)).slice(-2)  + '/' + date.getFullYear() ; 
+    document.getElementById('p1').innerText = ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2) + '-' + date.getFullYear();
+    document.getElementById('p2').innerText = ('0' + (date.getMonth() + 1)).slice(-2) + '/' + ('0' + date.getDate()).slice(-2) + '/' + date.getFullYear();
+    document.getElementById('p3').innerText = ('0' + date.getDate()).slice(-2) + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + date.getFullYear();
+    document.getElementById('p4').innerText = ('0' + date.getDate()).slice(-2) + '/' + ('0' + (date.getMonth() + 1)).slice(-2) + '/' + date.getFullYear();
 </script>

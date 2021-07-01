@@ -1,3 +1,8 @@
+<h5>Points to remember</h5>
+- <br>
+
+<h3>Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50. </h3>
+
 <input placeholder="Enter first number" id="fNum" >
 <input placeholder="Enter second number" id="sNum" >
 <button onclick="calc()">Result : </button> <span id="result"></span>
@@ -8,6 +13,8 @@
         let sNum = document.getElementById('sNum').value.trim();
         if (fNum == 50 || sNum == 50 || (parseInt(fNum) + parseInt(sNum) == 50)) {
             document.getElementById('result').innerText = 'True';
+        } else {
+            document.getElementById('result').innerText = 'False';
         }
     }
 </script>
