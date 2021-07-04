@@ -1,0 +1,49 @@
+<h5>Points to remember</h5>
+There are at least 6 (!) ways to clone an array:
+loop
+slice
+Array.from()
+concat
+spread operator (FASTEST) (ONLY FOR PRIMITIVES, for others we have to do deep clonning)
+map A.map(function(e){return e;});
+<br>
+
+<h3>Write a JavaScript function to clone an array.</h3>
+
+
+<br><br><br><br>
+
+<p id="result"></p>
+
+
+
+
+<script>
+    // Method 2 
+    var clonnedArr = [];
+    function checkArray(value) {
+        clonnedArr = [...value];
+        return clonnedArr;
+    }
+
+    console.log(checkArray('w3resource'));
+    console.log(checkArray([1, 2, 4, 0]));
+
+    // Method 1 
+    // var clonnedArr = [];
+    // function checkArray(value) {
+    //    Object.assign(clonnedArr,value);
+    //    return clonnedArr;
+    // }
+
+    // console.log(checkArray('w3resource'));
+    // console.log(checkArray([1, 2, 4, 0]));
+
+
+    // Solution
+    // var array_Clone = function (arra1) {
+    //     return arra1.slice(0);
+    // };
+    // console.log(array_Clone([1, 2, 4, 0]));
+    // console.log(array_Clone([1, 2, [4, 0]]));
+</script>

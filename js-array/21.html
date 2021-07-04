@@ -1,0 +1,48 @@
+<h5>Points to remember</h5>
+
+
+<br>
+
+<h3>Write a JavaScript program to flatten a nested (any depth) array. If you pass shallow, the array will only be
+    flattened a single level. Go to the editor
+    Sample Data :
+    console.log(flatten([1, [2], [3, [[4]]],[5,6]]));
+    [1, 2, 3, 4, 5, 6]
+    console.log(flatten([1, [2], [3, [[4]]],[5,6]], true));
+    [1, 2, 3, [[4]], 5, 6]</h3>
+
+
+<br><br><br><br>
+
+<p id="result"></p>
+
+
+
+
+<script>
+
+
+
+
+
+    // Solution
+    // var flatten = function (a, shallow, r) {
+    //     if (!r) { r = [] }
+
+    //     if (shallow) {
+    //         return r.concat.apply(r, a);
+    //     }
+
+    //     for (var i = 0; i < a.length; i++) {
+    //         if (a[i].constructor == Array) {
+    //             flatten(a[i], shallow, r);
+    //         } else {
+    //             r.push(a[i]);
+    //         }
+    //     }
+    //     return r;
+    // }
+
+    // console.log(flatten([1, [2], [3, [[4]]], [5, 6]]));
+
+</script>

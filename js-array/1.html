@@ -1,0 +1,45 @@
+<h5>Points to remember</h5>
+<p>
+    - Both answers are correct <br>
+    - Object.prototype.toString.call([1,2,3]) <br>
+    - It can be used to invoke (call) a method with an owner object as an argument (parameter). <br>
+    https://www.w3schools.com/js/js_function_call.asp
+</p>
+
+
+<h3>Write a JavaScript function to check whether an `input` is an array or not.
+    Test Data : <br>
+    console.log(is_array('w3resource')); <br>
+    console.log(is_array([1, 2, 4, 0])); <br>
+    false <br>
+    true <br>
+</h3>
+
+
+<br><br><br><br>
+
+<p id="result"></p>
+
+
+
+
+<script>
+    function checkArray(value) {
+        if (Array.isArray(value)) { //Built-in function to check Array internally it check "[object Array]"
+            return true;
+        } else return false;
+    }
+
+    console.log(checkArray('w3resource'));
+    console.log(checkArray([1, 2, 4, 0]));
+
+
+    // Solution
+    // var is_array = function (input) {
+    //     if (toString.call(input) === "[object Array]")
+    //         return true;
+    //     return false;
+    // };
+    // console.log(is_array('w3resource'));
+    // console.log(is_array([1, 2, 4, 0]));
+</script>

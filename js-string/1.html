@@ -1,6 +1,36 @@
+<h5>Points to remember</h5>
+<p>
+
+</p>
+
+
+<h3>Write a JavaScript function to check whether an `input` is a string or not. Go to the editor
+    Test Data :
+    console.log(is_string('w3resource'));
+    true
+    console.log(is_string([1, 2, 4, 0]));
+    false
+</h3>
+
 <label>Result : </label><span id="result"></span>
+
+
+
+
 
 <script>
     var value = prompt('Enter a value');
     document.getElementById('result').innerText = typeof value;
+
+
+    // Solution
+    // is_string = function (input) {
+    //     if (Object.prototype.toString.call(input) === '[object String]')
+    //         return true;
+    //     else
+    //         return false;
+    // };
+    // console.log(is_string('w3resource'));
+    // console.log(is_string([1, 2, 4, 0]));
+
 </script>
