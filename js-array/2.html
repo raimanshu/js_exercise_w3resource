@@ -19,17 +19,33 @@ map A.map(function(e){return e;});
 
 
 <script>
-    // Method 2 
+
+    // Method 4 : Using loop 
+    // Method 3 : Using map()
+ 
+
+    // Method 3 : Using Array.from(arr)
     var clonnedArr = [];
     function checkArray(value) {
-        clonnedArr = [...value];
+        clonnedArr = Array.from(value);
         return clonnedArr;
     }
 
     console.log(checkArray('w3resource'));
     console.log(checkArray([1, 2, 4, 0]));
 
-    // Method 1 
+
+    // Method 2 : Spread operator
+    // var clonnedArr = [];
+    // function checkArray(value) {
+    //     clonnedArr = [...value];
+    //     return clonnedArr;
+    // }
+
+    // console.log(checkArray('w3resource'));
+    // console.log(checkArray([1, 2, 4, 0]));
+
+    // Method 1 : Object.assign()
     // var clonnedArr = [];
     // function checkArray(value) {
     //    Object.assign(clonnedArr,value);
