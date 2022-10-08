@@ -1,1 +1,23 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to compute the sum of cubes of all integer from 1 to a given integer.
+</h3>
+
+<script>
+function sum_Of_Cubes(n) {
+  var sumn = 0;
+
+  for (var i = 1; i <= n; i++) {
+    sumn += Math.pow(i, 3);
+  }
+  return sumn;
+}
+
+console.log(sum_Of_Cubes(3));
+console.log(sum_Of_Cubes(4));
+
+    
+</script>

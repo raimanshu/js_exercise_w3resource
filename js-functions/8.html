@@ -1,1 +1,42 @@
 
+Write a JavaScript function that accepts a number as a parameter and check the number is prime or not.
+Note : A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and
+itself.
+
+<script>
+
+	// Method 2 
+	function test_prime(n) {
+
+		if (n === 1) {
+			console.log(false);
+		}
+		else if (n === 2) {
+			console.log(true);
+		} else {
+			for (var x = 2; x < n; x++) {
+				if (n % x === 0) {
+					console.log(false);
+				}
+			}
+			console.log(true);
+		}
+
+		// Method 3 
+		if (n == 2)
+			console.log(true)
+		if ((n >= 2) && (n % 2 != 0) && (n % n == 0))
+			console.log(true)
+		else console.log(false)
+
+		// Method 4
+		let prime = false
+		if (n === 1) prime = false
+		else if (n === 2 || n % 2 > 0) prime = true
+		console.log(prime)
+	}
+
+	test_prime(37);
+
+
+</script>

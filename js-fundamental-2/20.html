@@ -1,1 +1,16 @@
 
+Write a JavaScript program to create a function that invokes fn with partials prepended to the arguments it receives.
+
+
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);
+	const greet = (greeting, name) => greeting + ' ' + name + '!';
+	const greetHello = partial(greet, 'Hello');
+	console.log(greetHello('John'));
+
+
+</script>

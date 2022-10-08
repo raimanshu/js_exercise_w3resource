@@ -1,1 +1,23 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to reverse the elements of a given array of integers length 3. 
+</h3>
+
+<script>
+    function reverseArr(...arr){
+        // Method 1
+        console.log([arr[2], arr[1], arr[0]]);
+
+        // Method 2
+        console.log(arr.reverse());
+
+        // Method 3 
+        console.log(arr.map((element, idx, arr) => arr[(arr.length - 1) - idx]));
+    }
+
+    reverseArr(1,2,3);
+    
+</script>

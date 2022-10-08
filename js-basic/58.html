@@ -1,1 +1,20 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to create a new string of 4 copies of the last 3 characters of a given original string. The length of the given string must be 3 and above.
+</h3>
+
+<script>
+
+    function createCopies(str,copies){
+        if (str.length >= 3) {
+            console.log(str.slice(-3).repeat(copies));
+        }
+    }
+
+    createCopies("Unmbrella",5);
+    createCopies("tacko",10);
+    createCopies("py",10);
+</script>

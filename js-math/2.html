@@ -1,1 +1,21 @@
 
+Write a JavaScript function to convert a binary number to a decimal number.
+Test Data :
+console.log(bin_to_dec('110011'));
+console.log(bin_to_dec('100'));
+51
+4
+<script>
+
+
+	function bin_to_dec(value) {
+		// Method 1 
+		console.log(parseInt(value, 2));
+		// Method 2 
+		console.log(parseInt((bstr + '')
+			.replace(/[^01]/gi, ''), 2));
+	}
+	bin_to_dec('110011');
+	bin_to_dec('100');
+
+</script>

@@ -1,1 +1,87 @@
 
+Write a JavaScript function that checks whether a passed string is palindrome or not?
+A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.
+<script>
+
+
+	function check_Palindrome(str_entry) {
+
+		// Method 1 
+		// let rStr = str_entry.toLowerCase().split(" ").reverse().join("");
+		// str_entry == str_entry.toLowerCase().split(" ").reverse().join("");
+		// str_entry == rStr ? console.log("Entry is a palindrome.") : console.log("Entry is not palindrome.");
+
+
+		// Method 2 
+		// Change the string into lower case and remove  all non-alphanumeric characters
+		var cstr = str_entry.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '');
+		var ccount = 0;
+		// Check whether the string is empty or not
+		if (cstr === "") {
+			console.log("Nothing found!");
+			// return false;
+		}
+		// Check if the length of the string is even or odd 
+		if ((cstr.length) % 2 === 0) {
+			ccount = (cstr.length) / 2;
+		} else {
+			// If the length of the string is 1 then it becomes a palindrome
+			if (cstr.length === 1) {
+				console.log("Entry is a palindrome.");
+				// return true;
+			} else {
+				// If the length of the string is odd ignore middle character
+				ccount = (cstr.length - 1) / 2;
+			}
+		}
+		// Loop through to check the first character to the last character and then move next
+		for (var x = 0; x < ccount; x++) {
+			// Compare characters and drop them if they do not match 
+			if (cstr[x] != cstr.slice(-1 - x)[0]) {
+				console.log("Entry is not palindrome.");
+				// return false;
+			}
+		}
+		console.log("Entry is a palindrome.");
+		// return true;
+
+
+		// Method 3 
+		str_entry = str_entry.replace(' ', '');
+		console.log( str_entry === str_entry.split('').reverse().join(''));
+
+
+
+		// Method 4
+		let temp1 = String(str_entry).toLowerCase().split(' ').join('');
+		let temp2 = temp1.split('').reverse().join('');
+
+		console.log(temp1 == temp2 ? true : false);
+
+		// Method 5
+		const tempStr = str_entry.replace(/\s+/g, "").toLowerCase();
+		console.log(tempStr === [...tempStr].reverse().join(""));
+
+		// Method 6
+		console.log(str_entry = (typeof str_entry === "string") ? str_entry.toString().split("").reverse("").join("") : "Not a palindrome");
+
+
+		// Method 7
+		if (typeof str_entry !== "string") return
+
+		const compare = Array.from(str_entry.toString()).reverse().join("");
+		console.log( str_entry === compare ? `${str_entry} is a palindrome` : `${str_entry} is not a palindrome`);
+
+		// Method 8 
+		if (typeof str_entry === "string")
+			console.log(str_entry.toLowerCase() === str_entry.toLowerCase().split("").reverse().join(""));
+		else {
+			console.log( "Please enter a string.");
+		}
+	}
+	check_Palindrome('madam');
+	check_Palindrome('nurses run');
+	check_Palindrome('fox');
+
+
+</script>

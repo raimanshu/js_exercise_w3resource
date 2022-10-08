@@ -1,1 +1,18 @@
 
+Write a JavaScript function to validate whether a given value is number or not.
+
+<script>
+
+	// Method 2 
+	function is_number(value) {
+		return !isNaN(value) && toString.call(value) === '[object Number]';
+	}
+
+	console.log(is_number(NaN));
+
+	console.log(is_number(42.32));
+
+	console.log(is_number(72));
+
+
+</script>

@@ -1,1 +1,14 @@
 
+Write a JavaScript program that will return true if the provided predicate function returns true for at least one
+element in a collection, false otherwise.
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const any = (arr, fn = Boolean) => arr.some(fn);
+	console.log(any([0, 1, 2, 0], x => x >= 2));
+	console.log(any([0, 0, 1, 0]));
+
+
+</script>

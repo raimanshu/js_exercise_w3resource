@@ -1,1 +1,24 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to extract the first half of a string of even length.
+</h3>
+
+<script>
+    function evenLengthHalf(str) {
+        // Method 1 
+        console.log(str.slice(0, str.length / 2));
+
+        // Method 2
+        if (str.length % 2 == 0) {
+            console.log(str.slice(0, str.length / 2));
+        }
+        console.log(str);
+    }
+
+    evenLengthHalf("python");
+    evenLengthHalf("Javascript");
+    evenLengthHalf("php");
+</script>

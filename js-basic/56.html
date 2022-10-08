@@ -1,1 +1,36 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to divide two positive numbers and return a string with properly formatted commas.
+</h3>
+
+
+<script>
+
+    function convertNumbers(...numbers) {
+        // Method 1 
+        number = numbers[0] / numbers[1];
+        console.log(number.toString().split("").join(","));
+
+        // Method 2 
+        console.log((numbers[0] / numbers[1]).toLocaleString());
+
+        // Method 3 
+        var div = Math.round(numbers[0] / numbers[1]).toString(),
+            result_array = div.split("");
+
+        if (div >= 1000) {
+            for (var i = div.length - 3; i > 0; i -= 3) {
+                result_array.splice(i, 0, ",");
+            }
+            result_array;
+        }
+        console.log(result_array);
+    }
+
+    convertNumbers(53363, 33);
+    convertNumbers(987654345676543, 23);
+
+</script>

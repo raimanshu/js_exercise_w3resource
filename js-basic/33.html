@@ -1,1 +1,24 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check whether two numbers are in range 40..60 or in the range 70..100 inclusive
+</h3>
+
+
+<script>
+    function checkRange(...numbers){
+
+
+        (numbers[0] >= 40  && numbers[0] <= 60) && (numbers[1] >= 40  && numbers[1] <= 60)  ? console.log(numbers + "lie in the range of 40..60") : (numbers[0] >= 70  && numbers[0] <= 100) && (numbers[1] >= 70  && numbers[1] <= 100) ? console.log(numbers + "lie in the range of 70..100") : console.log("Both numbers belongs to different range.");
+
+    }
+
+    checkRange(44,55);
+    checkRange(77,99);
+    checkRange(45,95);
+    checkRange(33,105);
+
+
+</script>

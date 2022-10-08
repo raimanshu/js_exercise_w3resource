@@ -1,16 +1,16 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
+<h5>Points to remember</h5>
+- read the code carefully<br>
 
+<h3>
+    Write a JavaScript program to cast the provided value as an array if it's not one.</h3>
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const castArray = val => (Array.isArray(val) ? val : [val]);
+    console.log(castArray('w3r'));
+    console.log(castArray([100]));
 
 
 </script>

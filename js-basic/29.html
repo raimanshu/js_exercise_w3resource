@@ -1,1 +1,32 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check whether three given integer values are in the range 50..99 (inclusive). Return
+    true if one or more of them are in the said range.
+</h3>
+
+
+<script>
+
+    function checkRange(numbers) {
+        let testArr = [];
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] >= 50 && numbers[i] <= 99) {
+                testArr.push(numbers[i]);
+            }
+        }
+        testArr.length == 0 ? console.log("True") : console.log("List contain number(s) which are not within range.")
+    }
+
+    function verifyRange(a, b, c) {
+        return (a >= 50 && a <= 99) || (b >= 50 && b <= 99) || (c >= 50 && c <= 99);
+    }
+
+    checkRange([66, 77, 88]);
+    checkRange([26, 86, 101]);
+
+   console.log(verifyRange(66, 77, 88));
+   console.log(verifyRange(26, 86, 101));
+</script>

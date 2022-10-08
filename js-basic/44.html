@@ -1,1 +1,25 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check from three given integers that whether a number is greater than or equal to 20 and less than one of the others.
+</h3>
+
+
+
+
+<script>
+    function checkNumbers(...numbers) {
+        if (a >= 20) {
+            if (a < b || a < c) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    checkNumbers(23, 45, 10);
+    checkNumbers(23, 23, 10);
+    checkNumbers(21, 66, 75);
+</script>

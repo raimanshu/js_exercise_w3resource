@@ -1,1 +1,23 @@
 
+Write a JavaScript function to find the highest value in an array.
+Test Data :
+console.log(max([12,34,56,1]));
+console.log(max([-12,-34,0,-56,-1]));
+56
+0
+
+<script>
+
+	function max(arr) {
+		// Method 1 
+		console.log(Math.max(...arr));
+
+		// Method 2 
+		if (toString.call(input) !== "[object Array]")
+			console.log(false);
+		console.log(Math.max.apply(null, arr));
+	}
+	max([12, 34, 56, 1]);
+	max([-12, -34, 0, -56, -1]);
+
+</script>

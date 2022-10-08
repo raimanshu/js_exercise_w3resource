@@ -1,1 +1,20 @@
 
+<h5>Points to remember</h5>
+- understand the question clearly<br>
+
+<h3>Write a JavaScript program to convert the length of a given string in bytes.</h3>
+
+<label>Variable name value :</label>
+<label id="show"></label>
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const byte_Size = str => new Blob([str]).size;
+	console.log(byte_Size('123456'));
+	console.log(byte_Size('Hello World'));
+	console.log(byte_Size('Ã¢'));
+
+
+</script>

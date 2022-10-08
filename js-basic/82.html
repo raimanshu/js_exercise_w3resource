@@ -1,1 +1,23 @@
 
+<h3>
+    Write a JavaScript to add two positive integers without carry.
+</h3>
+
+<script>
+    function addNum(num1, num2) {
+        // Method 1
+        let result = 0;
+        let x = 1;
+        while (num1 > 0 && num2 > 0) {
+            result += x * ((num1 + num2) % 10);
+            num1 = Math.floor(num1 / 10);
+            num2 = Math.floor(num2 / 10);
+            x *= 10;
+        }
+        console.log(result);
+
+    }
+
+    addNum(935, 456);
+    
+</script>

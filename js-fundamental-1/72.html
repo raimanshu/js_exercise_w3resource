@@ -1,1 +1,20 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to detect whether the website is being opened in a mobile device or a desktop/laptop.
+</h3>
+
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const detectDeviceType = () =>
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+            ? 'Mobile'
+            : 'Desktop';
+    console.log(detectDeviceType()); // "Mobile" or "Desktop"
+
+
+</script>

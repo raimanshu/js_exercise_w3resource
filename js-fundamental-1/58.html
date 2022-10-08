@@ -1,1 +1,18 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to split values into two groups according to a predicate function, which specifies which
+    group an element in the input collection belongs to.</h3>
+
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const bifurcateBy = (arr, fn) =>
+        arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []]);
+    console.log(bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b'));
+
+
+</script>

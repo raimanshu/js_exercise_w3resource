@@ -1,16 +1,16 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
+<h5>Points to remember</h5>
+- read the code carefully<br>
 
+<h3>
+    Write a JavaScript program to create an object from the given key-value pairs.</h3>
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const object_From_Pairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
+    console.log(object_From_Pairs([['a', 1], ['b', 2]]));
+    console.log(object_From_Pairs([[1, 10], [2, 20], [3, 30]]));
 
 
 </script>

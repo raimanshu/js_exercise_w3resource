@@ -1,1 +1,21 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check two given non-negative integers that whether one of the number (not both) is multiple of 7 or 11.
+</h3>
+
+
+<script>
+
+    function checkNumbers(...numbers){
+
+        (numbers[0]%7 == 0 && numbers[0]%11 == 0) || (numbers[1]%7 == 0 && numbers[1]%11 == 0) ? console.log("One of the numbers are multiple of 7 or 11") : console.log("None of the umbers are multiple of 7 or 11");
+    }
+
+    checkNumbers(21,33);
+    checkNumbers(22, 22);
+    checkNumbers(4, 55);
+
+</script>

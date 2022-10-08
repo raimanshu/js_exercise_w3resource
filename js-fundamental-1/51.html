@@ -1,16 +1,21 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
+<h5>Points to remember</h5>
+- read the code carefully<br>
 
+<h3>
+    Write a JavaScript program to get an object containing the parameters of the current URL.</h3>
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const get_URL_Parameters = url =>
+        (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
+            (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
+            {}
+        );
+    console.log(get_URL_Parameters('http://url.com/page?name=Adam&surname=Smith'));
+    console.log(get_URL_Parameters('google.com'));
+    console.log(get_URL_Parameters('https://www.w3resource.com'));
 
 
 </script>

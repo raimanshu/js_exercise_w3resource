@@ -1,1 +1,13 @@
 
+Write a JavaScript program to clamp a number within the inclusive range specified by the given boundary values a and b
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
+	console.log(clampNumber(2, 3, 5));
+	console.log(clampNumber(1, -1, -5));
+
+
+</script>

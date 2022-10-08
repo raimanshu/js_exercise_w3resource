@@ -1,16 +1,11 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
-
+Write a JavaScript program to get a string of the form HH:MM:SS from a Date object.
 
 <script>
 
 	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+	//#Source https://bit.ly/2neWfJ2 
+	const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
+	console.log(getColonTimeFromDate(new Date()));
 
 
 </script>

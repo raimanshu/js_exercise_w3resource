@@ -1,1 +1,28 @@
 
+<h5>Points to remember</h5>
+- remember the logic of Math to get number between 1 to 10<br>
+
+<h3>Write a JavaScript program to filter out the specified values from a specified array. Return the original array
+	without the filtered values</h3>
+
+<p>Enter the number between 1 to 10</p>
+<input id="number" onclick="checkNumber(event)">
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const pull = (arr, ...args) => {
+		let argState = Array.isArray(args[0]) ? args[0] : args;
+		let pulled = arr.filter((v, i) => !argState.includes(v));
+		arr.length = 0;
+		pulled.forEach(v => arr.push(v));
+		return pulled;
+	};
+	let arra1 = ['a', 'b', 'c', 'a', 'b', 'c'];
+	console.log(pull(arra1, 'a', 'c'));
+	let arra2 = ['a', 'b', 'c', 'a', 'b', 'c'];
+	console.log(pull(arra2, 'b'));
+
+
+</script>

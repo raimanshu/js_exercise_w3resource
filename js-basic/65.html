@@ -1,1 +1,39 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to test whether a string end with "Script". The string length must be greater or equal to
+    6.
+</h3>
+
+<script>
+
+    function endsWithScript(str) {
+        if (str.length >= 6) {
+
+            // Method 1 
+            // let result = str.endsWith("Script") ? console.log(true) : console.log(false);
+            // return;
+
+            // Method 2 
+            let result = str.slice(-6) == "Script" ? console.log(true) : console.log(false);
+            return;
+        }
+        console.log("Given string length has length less than 6");
+
+        // Method 3 
+        // if (str.substring(str.length - 6, str.length) == 'Script') {
+        //     console.log(true);
+        // }
+        // else {
+        //     console.log(false);
+        // }
+
+    }
+
+    endsWithScript("JavaScript");
+    endsWithScript("TypeScript");
+    endsWithScript("Java");
+    endsWithScript("Learning"); 
+</script>

@@ -1,1 +1,18 @@
 
+Write a JavaScript program that takes a function as an argument, then makes the first argument the last.
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const flip = fn => (first, ...rest) => fn(...rest, first);
+	let a = { name: 'John Smith' };
+	let b = {};
+	const mergeFrom = flip(Object.assign);
+	let mergePerson = mergeFrom.bind(null, a);
+	mergePerson(b); // == b
+	b = {};
+	console.log(Object.assign(b, a)); // == b
+
+
+</script>

@@ -1,1 +1,18 @@
 
+<h3>
+    Write a JavaScript program to create a new string with the results of calling a provided function on every character
+    in the calling string.</h3>
+
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const mapString = (str, fn) =>
+        str
+            .split('')
+            .map((c, i) => fn(c, i, str))
+            .join('');
+
+    console.log(mapString('Javascript exercises', c => c.toUpperCase()));
+
+</script>

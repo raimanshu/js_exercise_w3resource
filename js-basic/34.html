@@ -1,1 +1,21 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to find the larger number from the two given positive integers, the two numbers are in the range 40..60 inclusive. 
+</h3>
+
+<script>
+    function checkNumbers(...numbers){
+        // Method 1
+        Math.sign(numbers[0] - numbers[1]) == 1 ? console.log(numbers[0] + " is closesest") : console.log(numbers[1] + " is closeset");
+
+        // Method 2 
+        60 - numbers[0] < 60 - numbers[1] ? console.log(numbers[0] + " is closesest") : console.log(numbers[1] + " is closesest"); 
+
+    }
+
+    checkNumbers(55, 44);
+    checkNumbers(45,59);
+</script>

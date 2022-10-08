@@ -1,1 +1,12 @@
 
+Write a JavaScript program to convert a NodeList to an array.
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const nodeListToArray = nodeList => Array.prototype.slice.call(nodeList);
+	console.log(nodeListToArray(document.childNodes));
+
+
+</script>

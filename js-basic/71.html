@@ -1,16 +1,18 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
+<h5>Points to remember</h5>
+- read the code carefully<br>
 
+<h3>
+    Write a JavaScript program to check whether 1 appears in first or last position of a given array of integers. The array length must be greater or equal to 1.
+</h3>
 
 <script>
+    function checkArr(...arr){
+        if(arr.length >= 1 && (arr[0] == 1 || arr[arr.length - 1] == 1)){
+            console.log("Given array contains 1");
+        }
+    }
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
-
-
+    checkArr(1,2,3,1);
+    checkArr(3,2);
+    
 </script>

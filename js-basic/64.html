@@ -1,1 +1,35 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to concatenate two strings and return the result. If the length of the strings are not
+    same then remove the characters from the longer string.
+</h3>
+
+<script>
+    function newStr(str1, str2) {
+        // Method 1 
+        if (str1.length == str2.length) {
+            console.log(str1 + str2);
+            return;
+        } else if (str1.length > str2.length) {
+            console.log(str1.slice(-str2.length) + str2);
+            return;
+        } else if (str1.length < str2.length) {
+            console.log(str1 + str2.slice(-str1.length));
+            return;
+        }
+
+        // Method 2 
+        const m = Math.min(str1.length, str2.length);
+        console.log(str1.substring(str1.length - m) + str2.substring(str2.length - m));
+    }
+
+    newStr("new", "cat");
+    newStr("Java", "script")
+    newStr("Python", "JS");
+    newStr("ab", "cdef");
+
+
+</script>

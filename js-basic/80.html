@@ -1,1 +1,17 @@
 
+<h3>
+    Write a JavaScript program to swap the first and last elements of a given array of integers. The array length should be at least 1.
+</h3>
+
+<script>
+    function swapElements(...arr){
+        // Method 1 
+        let lastElement = arr[arr.length -1];
+        arr[arr.length - 1] = arr[0];
+        arr[0] = lastElement;
+        console.log(arr);
+    }
+
+    swapElements(1,2,3,4);
+    
+</script>

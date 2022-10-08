@@ -1,1 +1,31 @@
 
+Write a JavaScript function which accepts an argument and returns the type.
+Note : There are six possible values that typeof returns: object, boolean, function, number, string, and undefined.
+
+<script>
+
+
+	function detect_data_type(value) {
+
+		// Method 1 
+		console.log(typeof value);
+
+		// Method 2 
+		var dtypes = [Function, RegExp, Number, String, Boolean, Object], x, len;
+
+		if (typeof value === "object" || typeof value === "function") {
+			for (x = 0, len = dtypes.length; x < len; x++) {
+				if (value instanceof dtypes[x]) {
+					return dtypes[x];
+				}
+			}
+		}
+
+		console.log(typeof value);
+	}
+	detect_data_type(12);
+	detect_data_type('w3resource');
+	detect_data_type(false);
+
+
+</script>

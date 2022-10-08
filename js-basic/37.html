@@ -1,1 +1,23 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to create new string with first 3 characters are in lower case from a given string. If the string length is less than 3 convert all the characters in upper case. 
+</h3>
+
+
+<script>
+
+    function createString(str){
+        if(str.length < 3){
+            console.log(str.toUpperCase());
+        } else {
+            console.log(str.slice(0,3).toLowerCase() + str.slice(3));
+        }
+    }
+
+    createString("Python");
+    createString("PYTHON");
+    createString("Py");
+</script>

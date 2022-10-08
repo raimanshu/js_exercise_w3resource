@@ -1,1 +1,19 @@
 
+<h3>
+    Write a JavaScript program to Iterate over a callback n times.
+</h3>
+
+<script>
+
+    // Method 2
+    //#Source https://bit.ly/2neWfJ2 
+    const times = (n, fn, context = undefined) => {
+        let i = 0;
+        while (fn.call(context, i) !== false && ++i < n) { }
+    };
+    var output = '';
+    times(5, i => (output += i));
+    console.log(output); // 01234
+
+
+</script>

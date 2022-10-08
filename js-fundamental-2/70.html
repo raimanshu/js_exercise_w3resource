@@ -1,1 +1,14 @@
 
+Write a JavaScript program to get the native type of a value. Returns lowercased constructor name of value, "undefined"
+or "null" if value is undefined or null.
+
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const getType = v =>
+        v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
+    console.log(getType(new Set([1, 2, 3])));
+
+
+</script>

@@ -1,16 +1,22 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
-
+Write a JavaScript program to mutate the original array to filter out the values specified. Returns the removed
+elements.
 
 <script>
 
 	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+	//#Source https://bit.ly/2neWfJ2 
+	const pullAtValue = (arr, pullArr) => {
+		let removed = [],
+			pushToRemove = arr.forEach((v, i) => (pullArr.includes(v) ? removed.push(v) : v)),
+			mutateTo = arr.filter((v, i) => !pullArr.includes(v));
+		arr.length = 0;
+		mutateTo.forEach(v => arr.push(v));
+		return removed;
+	};
+	let myArray = ['a', 'b', 'c', 'd'];
+	let pulled = pullAtValue(myArray, ['b', 'd']);
+	console.log('Original data', myArray);
+	console.log('Pulled data', pulled);
 
 
 </script>

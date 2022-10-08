@@ -1,1 +1,33 @@
 
+<h3>
+    Write a JavaScript to find the longest string from a given array of strings.
+</h3>
+
+<script>
+    function checkStr(...strArr) {
+
+        // Method 2 
+        let max = strArr[0].length;
+        strArr.map(v => max = Math.max(max, v.length));
+        result = strArr.filter(v => v.length == max);
+        console.log(result);
+
+        // Method 3 
+        console.log(
+            strArr.reduce((init, curr) => (init.length < curr.length ? curr : init))
+        );
+
+        // Method 4 
+        console.log(strArr.sort(function (a, b) { return b.length - a.length })[0]);
+
+
+        // Method 5 
+        const getLongestStr = (strArr) => {
+            const word = strArr.filter((value) => value.length > 4)
+            console.log(word[0])
+        }
+    }
+
+    checkStr("Javascript", "python", "php");
+
+</script>

@@ -1,1 +1,27 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to move last three character to the start of a given string. The string length must be greater or equal to three.
+</h3>
+
+<script>
+
+    function concatenateStr(str){
+        if(str.length >= 3){
+            // Method 1
+            console.log(str.slice(-3) + str.slice(0, str.length-3));
+            return;
+            // Method 2 
+            console.log(str.slice(-3) + str.slice(0, -3));
+            return;
+        }
+        console.log("Given string has length less than 3 characters.");
+    }
+
+
+    concatenateStr("python");
+    concatenateStr("php");
+    concatenateStr("p");
+</script>

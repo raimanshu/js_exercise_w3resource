@@ -1,1 +1,20 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to get a random integer in the specified range.
+</h3>
+
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(randomIntegerInRange(0, 5));
+    console.log(randomIntegerInRange(2, 5));
+    console.log(randomIntegerInRange(5, -5));
+    console.log(randomIntegerInRange(-2, -7));
+
+
+</script>

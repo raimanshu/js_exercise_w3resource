@@ -1,1 +1,11 @@
 
+Write a JavaScript program to decode a string of data which has been encoded using base-64 encoding.
+<script>
+
+  // Method 2 
+  //#Source https://bit.ly/2neWfJ2 
+  const atob = str => new Buffer(str, 'base64').toString('binary');
+  console.log(atob('Zm9vYmFy'));
+
+
+</script>

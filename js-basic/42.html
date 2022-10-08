@@ -1,1 +1,23 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check whether three given numbers are increasing in strict mode or in soft mode.
+    Note: Strict mode -> 10, 15, 31 : Soft mode -> 24, 22, 31 or 22, 22, 31
+</h3>
+
+
+    <script>
+
+        function checkOrder(...numbers){
+
+            (numbers[0] < numbers[1]) && (numbers[1] < numbers[2]) ? console.log("Strict mode") : numbers[0] < numbers[2] ? console.log("Soft mode") : console.log("Do not lie in any order."); 
+        }
+
+        checkOrder(50,21,15);
+        checkOrder(24,22,31);
+        checkOrder(10,15,31);
+
+
+    </script>

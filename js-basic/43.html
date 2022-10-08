@@ -1,1 +1,26 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit.
+</h3>
+
+<script>
+
+    function checkNumbers(...numbers){
+        if((numbers[0].toString().slice(-1) == numbers[1].toString().slice(-1)) && (numbers[1].toString().slice(-1) == numbers[2].toString().slice(-1))){
+            console.log("True");
+        } else if((numbers[0].toString().slice(-1) == numbers[1].toString().slice(-1)) || (numbers[1].toString().slice(-1) == numbers[2].toString().slice(-1)) || (numbers[2].toString().slice(-1) == numbers[0].toString().slice(-1))){
+            console.log("True");
+        } else {
+            console.log("False");
+        }
+    }
+
+
+    checkNumbers(10,20,30);
+    checkNumbers(3,26,66);
+    checkNumbers(1,2,3);
+
+</script>

@@ -1,1 +1,19 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check whether the first and last elements are equal of a given array of integers length 3.
+</h3>
+
+<script>
+    function compareNum(...arr){
+        if(arr.length >= 1 && (arr[0] == arr[arr.length -1])){
+            console.log("Given array first and last digits are same");
+        }
+    }
+
+    compareNum(1,2,3,1);
+    compareNum(1,2,3,4);
+    
+</script>

@@ -1,1 +1,24 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to create a new string from a given string taking the last 3 characters and added at both the front and back. The string length must be 3 or more.
+    </h3>
+    <script>
+
+        function createString(str){
+            if(str.length >= 3){
+                newStr = str.slice(-3) + str + str.slice(-3);
+                console.log(newStr);
+            } else {
+                console.log("Given string has less than 3 letters.");
+            }
+
+        }
+
+
+        createString("Javascript");
+        createString("python");
+        createString("jg");
+    </script>

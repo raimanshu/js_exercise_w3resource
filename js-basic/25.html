@@ -1,1 +1,28 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>Write a JavaScript program to check whether a given positive number is a multiple of 3 or a multiple of 7. </h3>
+
+<script>
+    function checkMultiple(number) {
+       
+        // Method 1 : Using if else statement
+        // if (number % 3 == 0) {
+        //     console.log("Multiple of 3.");
+        // } else if (number % 7 == 0) {
+        //     console.log("Multiple of 7.");
+        // } else {
+        //     console.log("Neither multiple of 3 nor multiple of 7.");
+        // }
+
+        // Method 2 : Using ternary operator 
+        number % 3 == 0 ? console.log("Multiple of 3.") : number % 7 == 0 ? console.log("Multiple of 7.") : console.log("Neither multiple of 3 nor multiple of 7.")
+    }
+
+
+    checkMultiple(2);
+    checkMultiple(49);
+    checkMultiple(5);
+    checkMultiple(27);
+</script>

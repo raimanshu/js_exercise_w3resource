@@ -1,1 +1,21 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a program to check whether a specified character exists within the 2nd to 4th position in a given string.
+</h3>
+
+
+<script>
+    function checkPosition(str, char){
+
+        // Method 1 
+        str.slice(1,4).includes(char) ? console.log("True") : console.log("False");
+
+    }
+
+
+    checkPosition("python", "t");
+    checkPosition("python","n");
+</script>

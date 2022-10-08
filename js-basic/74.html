@@ -1,1 +1,29 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to find the larger value between the first or last and set all the other elements with that value. Display the new array.
+</h3>
+
+<script>
+    function displayArr(...arr){
+        // Method 1 
+        arr[0] > arr[arr.length - 1] ? setElements(arr[0], arr.length) : setElements(arr[arr.length - 1], arr.length);
+
+        // Method 2 
+        let maxVal = Math.max(arr[0], arr[arr.length - 1]);
+        setElements(maxVal, arr.length);
+    }
+
+    function setElements(val, arrLen){
+        arr = [];
+        for (let i = 0; i < arrLen; i++) {
+            arr[i] = val;
+        }
+        console.log(arr);
+    }
+
+    displayArr(1,2,3);
+    
+</script>

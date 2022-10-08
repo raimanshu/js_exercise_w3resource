@@ -1,1 +1,30 @@
 
+Write a JavaScript function to format a number up to specified decimal places.
+Test Data :
+console.log(decimals(2.100212, 2));
+console.log(decimals(2.100212, 3));
+console.log(decimals(2100, 2));
+"2.10"
+"2.100"
+"2100.00"
+
+
+<script>
+
+	function decimals(value, limiter) {
+		// Method 1 
+		console.log(value.toFixed(limiter));
+
+		// Method 2 
+		if ((typeof value !== 'number') || (typeof limiter !== 'number'))
+			console.log(false);
+		value = parseFloat(value) || 0;
+		console.log(value.toFixed(limiter));
+	}
+
+	decimals(2.100212, 2);
+	decimals(2.100212, 3);
+	decimals(2100, 2);
+
+
+</script>

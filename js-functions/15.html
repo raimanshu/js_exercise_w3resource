@@ -1,1 +1,23 @@
 
+Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from
+the user and display the result.
+
+<script>
+
+
+	function exp(b, n) {
+		// Method 1 
+		console.log(b**n);
+			// Method 2 
+		var ans = 1;
+		for (var i = 1; i <= n; i++) {
+			ans = b * ans;
+		}
+		console.log(ans);
+		// Method 3 
+		console.log(Math.pow(b, n));
+	}
+	exp(2, 3);
+
+
+</script>

@@ -1,1 +1,14 @@
 
+<h3>
+    Write a JavaScript program to convert a given string into an array of words.
+</h3>
+
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
+    console.log(words('I love javaScript!!'));
+    console.log(words('python, java, php'));
+
+</script>

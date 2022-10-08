@@ -1,1 +1,24 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or difference is 8. 
+</h3>
+
+<script>
+
+    function checkNumbers(...numbers){
+        if(numbers[0] == 8 || numbers[1] == 8 || (numbers[0] + numbers[1] == 8) || (Math.abs(numbers[0] - numbers[1]) == 8)){
+            console.log("True");
+        } else {
+            console.log("False");
+        }
+    }
+
+    checkNumbers(9,8);
+    checkNumbers(9,8);
+    checkNumbers(4,4);
+    checkNumbers(12,6);
+</script>
+

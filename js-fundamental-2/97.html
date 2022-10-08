@@ -1,1 +1,12 @@
 
+Write a JavaScript program that Assigns default values for all properties in an object that are undefined.
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
+	console.log(defaults({ a: 1 }, { b: 2 }, { b: 6 }, { a: 3 }));
+
+
+</script>

@@ -1,1 +1,31 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to create a new string using the first and last n characters from a given sting. The
+    string length must be greater or equal to n.
+</h3>
+
+<script>
+
+    function createNewStr(str, n) {
+        // Method 1 
+        if (str.length >= n) {
+            console.log(str.slice(0, n) + str.slice(-n));
+        } else {
+            console.log("Given string length must be greater than orequal to the given number.");
+        }
+
+        // Method 2
+        first_part = str.substring(0, n);
+        last_part = str.substring(str.length - n);
+        console.log(first_part + last_part);
+    }
+
+    createNewStr("python", 2);
+    createNewStr("php", 4);
+
+
+
+</script>

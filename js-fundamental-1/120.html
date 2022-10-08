@@ -1,16 +1,22 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
-
+<h3>
+    Write a JavaScript program to convert a string to snake case.
+</h3>
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2
+    const toSnakeCase = str =>
+        str &&
+        str
+            .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+            .map(x => x.toLowerCase())
+            .join('_');
 
+    console.log(toSnakeCase('camelCase'));
+    console.log(toSnakeCase('some text'));
+    console.log(toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens'));
+    console.log(toSnakeCase('AllThe-small Things'));
+    console.log(toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'));
 
 </script>

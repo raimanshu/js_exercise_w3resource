@@ -1,1 +1,14 @@
 
+<h3>
+	Write a JavaScript program to pick the key-value pairs corresponding to the given keys from an object.
+</h3>
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const pick = (obj, arr) =>
+		arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
+	console.log(pick({ a: 1, b: '2', c: 3 }, ['a', 'c']));
+
+</script>

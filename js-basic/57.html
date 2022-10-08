@@ -1,1 +1,27 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to create a new string of specified copies (positive number) of a given string.
+</h3>
+
+<script>
+    function createCopies(str, copies) {
+        
+        // Method 1
+        let str1 = ''; 
+        for (let i = 0; i < copies; i++) {
+            str1 = str1 + str;
+        }
+        console.log(str1);
+
+        // Method 2 
+        copies > 0 ? console.log(str.repeat(copies)) : null;
+
+    }
+
+    createCopies("aabbcc",5);
+    createCopies("tacko",10);
+
+</script>

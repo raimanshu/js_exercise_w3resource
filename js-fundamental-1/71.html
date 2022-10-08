@@ -1,16 +1,24 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
+<h5>Points to remember</h5>
+- read the code carefully<br>
 
+<h3>
+    Write a JavaScript program to create a deep clone of an object.
+</h3>
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const deepClone = obj => {
+        let clone = Object.assign({}, obj);
+        Object.keys(clone).forEach(
+            key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
+        );
+        return Array.isArray(obj) ? (clone.length = obj.length) && Array.from(clone) : clone;
+    };
+    const a = { foo: 'bar', obj: { a: 1, b: 2 } };
+    const b = deepClone(a); // a !== b, a.obj !== b.obj
+    console.log(b)
 
 
 </script>

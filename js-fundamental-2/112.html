@@ -1,1 +1,13 @@
 
+Write a JavaScript program to create a base-64 encoded ASCII string from a String object in which each character in the
+string is treated as a byte of binary data.
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const btoa = str => new Buffer(str, 'binary').toString('base64');
+	console.log(btoa('foobar'));
+
+
+</script>

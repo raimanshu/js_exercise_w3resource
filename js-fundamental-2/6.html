@@ -1,1 +1,15 @@
 
+Write a JavaScript program to apply a function against an accumulator and each element in the array (from left to
+right), returning an array of successively reduced values.
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const reduceSuccessive = (arr, fn, acc) =>
+		arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
+
+	console.log(reduceSuccessive([1, 2, 3, 4, 5, 6], (acc, val) => acc + val, 0));
+
+
+</script>

@@ -1,1 +1,20 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to run a given array of promises in series.</h3>
+
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
+    const delay = d => new Promise(r => setTimeout(r, d));
+
+    // Executes each promise sequentially, taking a total of 3 seconds to complete
+
+    runPromisesInSeries([() => delay(1000), () => delay(2000)]);
+
+
+</script>

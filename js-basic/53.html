@@ -1,1 +1,19 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check whether the characters a and b are separated by exactly 3 places anywhere (at least once) in a given string.
+</h3>
+
+
+<script>
+
+    function checkString(str){
+        console.log((/a...b/).test(str) || (/b...a/).test(str));
+    };
+
+    checkString("Chainsbreak");
+    checkString("pane borrowed");
+    checkString("abCheck");
+</script>

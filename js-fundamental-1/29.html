@@ -1,1 +1,21 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to find all elements in a given array except for the first one. Return the whole array if
+    the array's length is 1.</h3>
+
+
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const to_Safe_Integer = num =>
+        Math.round(Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER));
+    console.log(to_Safe_Integer('5.2'));
+    console.log(to_Safe_Integer('5.52'));
+    console.log(to_Safe_Integer(Infinity));
+
+
+</script>

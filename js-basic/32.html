@@ -1,1 +1,23 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to find a value which is nearest to 100 from two different given integer values.
+</h3>
+
+<script>
+    function checkCloseTo100(...numbers){
+        // Method 1 
+        Math.abs(100 - numbers[0]) > Math.abs(100 - numbers[1]) ? console.log(numbers[1]) : console.log(numbers[0])
+        
+        // Method 2 : Website answer
+        // Math.abs(n1 - 100) > Math.abs(n2 - 100) ? n2 : n1
+    
+    
+    }
+
+
+    checkCloseTo100(22,77);
+    checkCloseTo100(-5,105);
+</script>

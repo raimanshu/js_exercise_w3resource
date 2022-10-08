@@ -1,1 +1,16 @@
 
+Write a JavaScript program to create a function that invokes fn with partials appended to the arguments it receives.
+
+
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);
+	const greet = (greeting, name) => greeting + ' ' + name + '!';
+	const greetJohn = partialRight(greet, 'John');
+	console.log(greetJohn('Hello'));
+
+
+</script>

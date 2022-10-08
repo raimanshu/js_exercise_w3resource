@@ -1,1 +1,26 @@
 
+Write a JavaScript function to check whether a given value is html or not.
+
+
+<script>
+
+	// Method 2 
+	function is_html(str) {
+		regexp = /<([a-z]+) *[^/]*?>/;
+
+		if (regexp.test(str)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	console.log(is_html(''));
+
+	console.log(is_html(''));
+
+	console.log(is_html('.selector'));
+
+
+</script>

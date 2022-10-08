@@ -1,1 +1,25 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check two given integer values and return true if one of the number is 15 or if their sum or difference is 15. 
+</h3>
+
+
+,<script>
+
+    function checkNumbers(...numbers){
+        if(numbers[0] == 15 || numbers[1] == 15 || numbers[0] + numbers[1] == 15 || Math.abs(numbers[0] - numbers[1]) == 15){
+            console.log("True");
+        } else{
+            console.log("False");
+        }
+        
+    }
+
+    checkNumbers(15, 30);
+    checkNumbers(7,8);
+    checkNumbers(9,9);
+
+</script>

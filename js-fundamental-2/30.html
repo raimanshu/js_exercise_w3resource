@@ -1,1 +1,18 @@
 
+Write a JavaScript program to create a new object from the specified object, where all the keys are in lowercase.
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const lowercaseKeys = obj =>
+		Object.keys(obj).reduce((acc, key) => {
+			acc[key.toLowerCase()] = obj[key];
+			return acc;
+		}, {});
+	const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
+	const myObjLower = lowercaseKeys(myObj);
+	console.log(myObjLower);
+
+
+</script>

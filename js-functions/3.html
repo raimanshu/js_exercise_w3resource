@@ -1,1 +1,50 @@
 
+Write a JavaScript function that generates all combinations of a string.
+Example string : 'dog'
+Expected Output : d,do,dog,o,og,g
+
+
+<script>
+
+	// Method 2 
+	//Write a JavaScript function that generates all combinations of a string.
+	function substrings(str1) {
+		var array1 = [];
+		for (var x = 0, y = 1; x < str1.length; x++, y++) {
+			array1[x] = str1.substring(x, y);
+		}
+		var combi = [];
+		var temp = "";
+		var slent = Math.pow(2, array1.length);
+
+		for (var i = 0; i < slent; i++) {
+			temp = "";
+			for (var j = 0; j < array1.length; j++) {
+				if ((i & Math.pow(2, j))) {
+					temp += array1[j];
+				}
+			}
+			if (temp !== "") {
+				combi.push(temp);
+			}
+		}
+		console.log(combi.join("\n"));
+
+
+		// Method 3 
+		var ar = [];
+
+		for (var i = 0; i < str1.length; i++) {
+			for (var j = i; j < str1.length; j++) {
+				ar.push(str1.substring(i, j + 1));
+			}
+		}
+
+		console.log( ar.join(","));
+
+	}
+
+	substrings("dog");
+
+
+</script>

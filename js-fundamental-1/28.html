@@ -1,1 +1,21 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to measure the time taken by a function to execute.
+</h3>
+
+<script>
+
+    // Method 2 
+    const time_taken = callback => {
+        const result = callback();
+        return result;
+    };
+    console.log("Time taken: " + time_taken(() => Math.pow(2, 10)) + " ms");
+    console.log("Time taken: " + time_taken(() => Math.sqrt(225)) + " ms");
+    console.log("Time taken: " + time_taken(() => Math.sqrt((5 * 5) + (6 * 6))) + " ms");
+
+
+</script>

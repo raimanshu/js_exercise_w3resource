@@ -1,1 +1,56 @@
 
+Write a JavaScript function to convert a decimal number to binary, hexadecimal or octal number.
+Test Data :
+console.log(dec_to_bho(120,'B'));
+console.log(dec_to_bho(120,'H'));
+console.log(dec_to_bho(120,'O'));
+"1111000"
+"78"
+"170"
+
+
+<script>
+
+
+	function dec_to_bho(value, type) {
+		// Method 1 
+
+		// switch (true) {
+		// 	case 'B':
+		// 	console.log(parseInt(value,));
+		// 		break;
+		// 		case 'H':
+		// 		console.log("Other type");
+		// 		break;
+		// 		case 'O':
+		// 		console.log("Other type");
+		// 		break;
+
+		// 	default: console.log("Other type");
+		// 		break;
+		// }
+
+		// Method 2 
+		if (value < 0) {
+			value = 0xFFFFFFFF + value + 1;
+		}
+		switch (type) {
+			case 'B':
+				console.log(parseInt(value, 10).toString(2));
+				break;
+			case 'H':
+				console.log(parseInt(value, 10).toString(16));
+				break;
+			case 'O':
+				console.log(parseInt(value, 10).toString(8));
+				break;
+			default:
+				console.log("Wrong input.........");
+		}
+	}
+
+	dec_to_bho(120, 'B');
+	dec_to_bho(120, 'H');
+	dec_to_bho(120, 'O');
+
+</script>

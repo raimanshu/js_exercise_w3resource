@@ -1,1 +1,31 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to count the number of vowels in a given string.
+</h3>
+
+
+<script>
+
+    function countVowels(str) {
+        // Method 1
+        str1 = str.split("");
+        count = 0;
+        for (let i = 0; i < str1.length; i++) {
+            if((/a|e|i|o|u/i).test(str1[i])){
+                count++;
+            }
+        }
+        console.log(count);
+
+        // Method 2 : 
+        str2 = str.replace(/[^aeiou]/g, "").length;
+        console.log(str2);
+    };
+
+    countVowels("umbrella");
+    countVowels("Umbrella");
+    countVowels("rrr is the best movie");
+</script>

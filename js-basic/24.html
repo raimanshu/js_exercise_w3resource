@@ -1,1 +1,20 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>Write a JavaScript program to create a new string from a given string with the first character of the given string added at the front and back. </h3>
+
+
+    <script>
+        function createString(str){
+
+            let newStr = str.slice(0,1) + str + str.slice(0,1);
+            console.log(newStr);
+
+
+        }
+
+
+        createString("python");
+        createString("Javasccript");
+    </script>

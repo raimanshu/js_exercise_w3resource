@@ -1,1 +1,29 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to reverse a given string.
+</h3>
+
+<script>
+
+    function reverseStringFn(str){
+
+        // Method 1 
+        // str = str.split("");
+        let arr = [];
+        for (let i = str.length; i >= 0; i--) {
+            arr.push(str[i]);
+        };
+        arr = arr.join("");
+        console.log(arr);
+
+        // Method 2
+        reversedStr = str.split("").reverse().join("");
+        console.log(reversedStr);
+    };
+
+    reverseStringFn("String");
+    reverseStringFn("python");
+</script>

@@ -1,1 +1,16 @@
 
+Write a JavaScript program to determine if the current runtime environment is a browser so that front-end modules can
+run on the server (Node) without throwing errors.
+
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+
+	console.log(isBrowser()); // true (browser)
+	console.log(isBrowser()); // false (Node)
+
+
+</script>

@@ -1,0 +1,22 @@
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to compute the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
+</h3>
+
+<script>
+    function calculateSum(...numbers){
+        // Method 1
+        sum = numbers[0] + numbers[1];
+        if((sum>=50) && (sum<=80)){
+            console.log(65);
+        } else {
+            console.log(80);
+        }
+    }
+
+    calculateSum(40,20);
+    calculateSum(40,50);
+</script>
+

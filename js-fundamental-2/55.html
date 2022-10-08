@@ -1,1 +1,20 @@
 
+Write a JavaScript program to check if the provided argument is array-like (i.e. is iterable).
+
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const isArrayLike = val => {
+        try {
+            return [...val], true;
+        } catch (e) {
+            return false;
+        }
+    };
+    console.log(isArrayLike(document.querySelectorAll('.className'))); // true
+    console.log(isArrayLike('abc')); // true
+    console.log(isArrayLike(null)); // false
+
+
+</script>

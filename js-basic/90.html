@@ -1,1 +1,18 @@
 
+<h3>
+    Write a JavaScript program to find the kth greatest element of a given array of integers
+</h3>
+
+<script>
+
+
+    function greatestNum(arr, k) {
+        let sortedArr = arr.sort(function (a, b) { return b - a; });
+        console.log(sortedArr[k - 1]);
+
+    }
+
+    greatestNum([1, 2, 6, 4, 5], 3);
+    greatestNum([-10, -25, -47, -36, 0], 1);
+
+</script>

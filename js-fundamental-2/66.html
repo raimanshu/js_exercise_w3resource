@@ -1,1 +1,13 @@
 
+Write a JavaScript program to get all indices of val in an array. If val never occurs, returns [].
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
+
+    console.log(indexOfAll([1, 2, 3, 1, 2, 3], 1));
+    console.log(indexOfAll([1, 2, 3], 4));
+
+
+</script>

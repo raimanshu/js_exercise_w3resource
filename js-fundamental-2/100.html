@@ -1,1 +1,22 @@
 
+Write a JavaScript program to create an element from a string (without appending it to the document).
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const createElement = str => {
+		const el = document.createElement('div');
+		el.innerHTML = str;
+		return el.firstElementChild;
+	};
+
+	const el = createElement(
+		`<div class="container">
+    <p>Hello!</p>
+  </div>`
+	);
+	console.log(el.className); // 'container'
+
+
+</script>

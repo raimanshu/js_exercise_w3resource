@@ -1,1 +1,23 @@
 
+Write a JavaScript function to convert radians to degrees.
+Test Data :
+console.log(radians_to_degrees(0.7853981633974483));
+45
+
+<script>
+
+	// Method 2 
+	function radians_to_degrees(radians) {
+		var pi = Math.PI;
+		return radians * (180 / pi);
+	}
+
+	console.log(radians_to_degrees(0.7853981633974483));
+
+	// Method 3
+	const radians_to_degrees = rad => (rad * 180.0) / Math.PI;
+	console.log(radians_to_degrees(Math.PI / 2));
+	console.log(radians_to_degrees(0.7853981633974483));
+
+
+</script>

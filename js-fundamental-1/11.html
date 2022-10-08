@@ -1,16 +1,30 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
+<h5>Points to remember</h5>
+- <br>
 
+<h3>
+    Write a JavaScript program to generate a random hexadecimal color code.
+</h3>
+
+<input id="c1">
+<button onclick="toF()"> Convert to F</button>
+<label id="f1"></label><span> F</span>
+
+<br>
+
+<input id="f2">
+<button onclick="toC()"> Convert to F</button>
+<label id="c2"></label><span> C</span>
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const random_hex_color_code = () => {
+        let n = (Math.random() * 0xfffff * 1000000).toString(16);
+        return '#' + n.slice(0, 6);
+    };
+
+    console.log(random_hex_color_code())
 
 
 </script>

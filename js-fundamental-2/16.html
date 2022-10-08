@@ -1,1 +1,21 @@
 
+Write a JavaScript program to perform left-to-right function composition for asynchronous functions.
+
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));
+	const sum = pipeAsyncFunctions(
+		x => x + 1,
+		x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),
+		x => x + 3,
+		async x => (await x) + 4
+	);
+	(async () => {
+		console.log(await sum(5)); // 15 (after one second)
+	})();
+
+
+</script>

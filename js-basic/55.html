@@ -1,1 +1,37 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to check whether a given string contains equal number of p's and t's.
+</h3>
+
+<script>
+    function countOccurence(str) {
+        // Method1 
+        countP = 0;
+        countT = 0;
+        str1 = str.split("");
+        for (let i = 0; i < str1.length; i++) {
+            if(str1[i] == 'p' || str1[i] == 'P'){
+                countP++;
+            } else if(str1[i] == 't' || str1[i] == 'T'){
+                countT++;
+            }
+        }
+        if(countP == countT){
+            console.log("Same number of p's and t's");
+        } else {
+            console.log("donot have same number of p's and t's");
+        }
+        
+
+        // Method 2
+        countP1 = str.replace(/[^p]/g, "");
+        countT1 = str.replace(/[^t]/g, "");
+        countP1.length == countT1.length ? console.log("Same number of p's and t's") : console.log("donot have same number of p's and t's");
+    }
+
+    countOccurence("patatpss");
+    countOccurence("paatps");
+</script>

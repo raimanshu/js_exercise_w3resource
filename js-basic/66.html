@@ -1,1 +1,31 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to display the city name if the string begins with "Los" or "New" otherwise return blank.
+</h3>
+
+<script>
+
+    function cityName(str) {
+        // Method 1 
+        str.startsWith("New") || str.startsWith("Los") ? console.log(str) : console.log('');
+
+        // Method 1 
+        // str.slice(0,3) == "New" || str.slice(0,3) == "Los" ? console.log(str) : console.log('');
+
+        // Method 3 
+        // if (str.length >= 3 && ((str.substring(0, 3) == 'Los')
+        //     || (str.substring(0, 3) == 'New'))) {
+        //     console.log(str);
+        // }
+        // console.log('');
+
+    }
+
+    cityName("New York");
+    cityName("Los Angeles");
+    cityName("India");
+
+</script>

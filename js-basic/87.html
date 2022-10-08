@@ -1,1 +1,23 @@
 
+<h3>
+    Write a JavaScript program to check whether two arrays of integers of same length are similar or not. The arrays
+    will be similar if one array can be obtained from another array by swapping at most one pair of elements.
+</h3>
+
+<script>
+    function checkArray(x, y) {
+        if (x.length == y.length) {
+            let val = false
+            for (var i = 0; i < x.length; i++) {
+                val = x[i] == y[i]
+            }
+            console.log(val);
+        }
+        console.log(false);
+    }
+
+    // checkArray([10, 20, 30], [10, 20, 30])
+    checkArray([10, 20, 30], [30, 10, 20])
+    // checkArray([10, 20, 30, 40], [10, 30, 20, 40])
+
+</script>

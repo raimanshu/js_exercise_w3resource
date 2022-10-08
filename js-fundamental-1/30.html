@@ -1,1 +1,19 @@
 
+<h5>Points to remember</h5>
+- read the code carefully<br>
+
+<h3>
+    Write a JavaScript program to filter out the element(s) of a given array, that have one of the specified values.
+</h3>
+
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const without = (arr, ...args) => arr.filter(v => !args.includes(v));
+
+    console.log(without([2, 1, 2, 3], 1, 2));
+    console.log(without([2, 1, 2, 3], 3));
+
+
+</script>

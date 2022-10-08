@@ -1,1 +1,17 @@
 
+Write a JavaScript program to flatten an object with the paths for keys.
+<script>
+
+    // Method 2 
+    //#Source https://bit.ly/2neWfJ2 
+    const flattenObject = (obj, prefix = '') =>
+        Object.keys(obj).reduce((acc, k) => {
+            const pre = prefix.length ? prefix + '.' : '';
+            if (typeof obj[k] === 'object') Object.assign(acc, flattenObject(obj[k], pre + k));
+            else acc[pre + k] = obj[k];
+            return acc;
+        }, {});
+    console.log(flattenObject({ a: { b: { c: 1 } }, d: 1 }));
+
+
+</script>

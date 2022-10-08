@@ -1,16 +1,23 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
+<h5>Points to remember</h5>
+- read the code carefully<br>
 
+<h3>
+    Write a JavaScript program to check three given numbers, if the three numbers are same return 30 otherwise return 20 and if two numbers are same return 40.</h3>
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+    function categorizeNumbers(...numbers){
+        if(numbers[0] == numbers[1] && numbers[1] == numbers[2]){
+            console.log(30);
+        } else if(numbers[0] == numbers[1] || numbers[1] == numbers[2] || numbers[2] == numbers[0]){
+            console.log(40);
+        } else{
+            console.log(20);
+        }
+    }
 
+    categorizeNumbers(10,10,10);
+    categorizeNumbers(10,10,8);
+    categorizeNumbers(1,2,3);
 
 </script>

@@ -1,1 +1,29 @@
 
+<h5>Points to remember</h5>
+- remember array methods<br>
+
+<h3> Write a JavaScript program to replace the names of multiple object keys with the values provided. </h3>
+<p>The extension is </p><span id="ext"></span>
+
+<script>
+
+	// Method 2 
+	//#Source https://bit.ly/2neWfJ2 
+	const rename_keys = (keysMap, obj) =>
+		Object.keys(obj).reduce(
+			(acc, key) => ({
+				...acc,
+				...{ [keysMap[key] || key]: obj[key] }
+			}),
+			{}
+		);
+	const obj = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+	console.log("Original Object");
+	console.log(obj);
+	console.log("-------------------------------------");
+	result = rename_keys({ name: 'firstName', job: 'Actor' }, obj);
+	console.log("New Object");
+	console.log(result);
+
+
+</script>
