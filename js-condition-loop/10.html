@@ -1,1 +1,35 @@
 
+Write a JavaScript program to construct the following pattern, using a nested for loop.
+*
+* *
+* * *
+* * * *
+* * * * *
+
+<script>
+	document.write("<br>");
+	// Method 1
+	for (let i = 0; i < 5; i++) {
+		for (let j = 0; j <= i; j++) {
+			document.write("*");
+		}
+		document.write("<br>");
+	}
+
+	// Method 2 
+	var x, y, chr;
+	for (x = 1; x <= 6; x++) {
+		for (y = 1; y < x; y++) {
+			chr = chr + ("*");
+		}
+		console.log(chr);
+		chr = '';
+	}
+
+	// Method 3 
+	for (let x = 1; x <= 5; x++) {
+		console.log(" * ".repeat(x));
+	}
+
+
+</script>

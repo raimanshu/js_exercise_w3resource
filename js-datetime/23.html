@@ -1,1 +1,47 @@
 
+Write a JavaScript function to get English ordinal suffix for the day of the month, 2 characters (st, nd, rd or th.).
+Test Data :
+dt = new Date(2015, 10, 1);
+console.log(english_ordinal_suffix(dt));
+"1st"
+
+
+<script>
+
+
+	function english_ordinal_suffix(dt) {
+
+
+
+
+		// Method 2 
+		console.log(dt.getDate() + (dt.getDate() % 10 == 1 && dt.getDate() != 11 ? 'st' : (dt.getDate() % 10 == 2 && dt.getDate() != 12 ? 'nd' : (dt.getDate() % 10 == 3 && dt.getDate() != 13 ? 'rd' : 'th'))));
+
+
+		// Method 3
+		const nth = (d) => {
+			if (d > 3 && d < 21) return "th";
+			switch (d % 10) {
+				case 1:
+					return "st";
+				case 2:
+					return "nd";
+				case 3:
+					return "rd";
+				default:
+					return "th";
+			}
+		};
+
+
+		const day = dt.toLocaleDateString("en-US", { day: "numeric" });
+		console.log(`${day}${nth(+day)}`);
+	}
+
+
+	english_ordinal_suffix(new Date());
+
+	english_ordinal_suffix(new Date(2015, 10, 1));
+
+
+</script>

@@ -1,1 +1,49 @@
 
+Write a JavaScript function that accept row, column, (to identify a particular cell) and a string to update the content
+of that cell.
+Sample HTML file :
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<title>Change the content of a cell</title>
+</head>
+
+<body>
+	<table id="myTable" border="1">
+		<tr>
+			<td>Row1 cell1</td>
+			<td>Row1 cell2</td>
+		</tr>
+		<tr>
+			<td>Row2 cell1</td>
+			<td>Row2 cell2</td>
+		</tr>
+		<tr>
+			<td>Row3 cell1</td>
+			<td>Row3 cell2</td>
+		</tr>
+	</table>
+	<form>
+		<input type="button" onclick="changeContent()" value="Change content">
+	</form>
+</body>
+
+</html>
+
+
+<script>
+
+	// Method 2 
+	function insert_Row() {
+		var x = document.getElementById('sampleTable').insertRow(0);
+		var y = x.insertCell(0);
+		var z = x.insertCell(1);
+		y.innerHTML = "New Cell1";
+		z.innerHTML = "New Cell2";
+	}
+
+
+</script>

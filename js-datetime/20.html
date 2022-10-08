@@ -1,1 +1,22 @@
 
+Write a JavaScript function to get a textual representation of a day (three letters, Mon through Sun).
+Test Data :
+dt = new Date(2015, 10, 1);
+console.log(short_Days(dt));
+"Sun"
+
+
+
+<script>
+
+	// Method 2 
+	Date.shortDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+	function short_Days(dt) {
+		console.log(Date.shortDays[dt.getDay()]);
+	}
+
+	short_Days(new Date());
+	short_Days(new Date(2015, 10, 1));
+
+</script>

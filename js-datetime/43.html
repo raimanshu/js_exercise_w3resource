@@ -1,1 +1,22 @@
 
+Write a JavaScript function to add specified months to a date.
+Test Data :
+dt = new Date(2014,10,2);
+console.log(add_months(dt, 10).toString());
+Output :
+"Wed Sep 02 2015 00:00:00 GMT+0530 (India Standard Time)"
+
+<script>
+
+	// Method 2 
+	function add_months(dt, n) {
+
+		console.log(new Date(dt.setMonth(dt.getMonth() + n)));
+	}
+
+	add_months(new Date(), 10);
+
+	add_months(new Date(2014, 10, 2), 10);
+
+
+</script>

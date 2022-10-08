@@ -1,1 +1,31 @@
 
+Write a JavaScript function that will return the number of minutes in hours and minutes.
+
+Test Data :
+console.log(timeConvert(200));
+Output :
+"200 minutes = 3 hour(s) and 20 minute(s)."
+
+<script>
+
+	function timeConvert(n) {
+		// Method 1 
+		let hr = Math.floor(n / 60);
+		let min = n % 60;
+		console.log(n + " minutes = " + hr + " hour(s) and " + min + " minute(s).");
+
+
+
+		// Method 2 
+		var num = n;
+		var hours = (num / 60);
+		var rhours = Math.floor(hours);
+		var minutes = (hours - rhours) * 60;
+		var rminutes = Math.round(minutes);
+		console.log(num + " minutes = " + rhours + " hour(s) and " + rminutes + " minute(s).");
+	}
+
+	timeConvert(200);
+
+
+</script>

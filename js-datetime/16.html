@@ -1,1 +1,27 @@
 
+Write a JavaScript function to count the number of days passed since beginning of the year.
+
+Test Data :
+console.log(days_passed(new Date(2015, 0, 15)));
+15
+console.log(days_passed(new Date(2015, 11, 14)));
+348
+
+<script>
+
+
+	function days_passed(dt) {
+		// Method 1 
+		console.log((dt - (new Date(dt.getFullYear(), 0, 0)))/(1000*60*60*24));
+
+			// Method 2 
+		var current = new Date(dt.getTime());
+		var previous = new Date(dt.getFullYear(), 0, 1);
+
+		console.log(Math.ceil((current - previous + 1) / 86400000));
+	}
+	days_passed(new Date(2015, 0, 15));
+	days_passed(new Date(2015, 11, 14));
+
+
+</script>

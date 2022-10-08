@@ -1,16 +1,21 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
-
+Write a JavaScript function to add specified years to a date.
+Test Data :
+dt = new Date(2014,10,2);
+console.log(add_years(dt, 10).toString());
+Output :
+"Sat Nov 02 2024 00:00:00 GMT+0530 (India Standard Time)"
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+
+    function add_years(dt, n) {
+        // Method 2 
+        console.log((new Date(dt.setFullYear(dt.getFullYear() + n))));
+    }
+
+    add_years(new Date(), 10);
+
+    add_years(new Date(2014, 10, 2), 10);
 
 
 </script>

@@ -1,1 +1,39 @@
 
+Write a JavaScript function to find whether or not the date is in daylights savings time.
+Test Data :
+dt = new Date();
+console.log(daylights_savings(dt));
+1
+
+<script>
+
+	function daylights_savings(dt) {
+
+		// Method 2 
+		var dst = null;
+		for (var i = 0; i < 12; ++i) {
+			var d = new Date(dt.getFullYear(), i, 1);
+			var offset = dt.getTimezoneOffset();
+
+			if (dst === null)
+				dst = offset;
+			else if (offset < dst) {
+				dst = offset;
+				break;
+			}
+			else if (offset > dst)
+				break;
+		}
+		console.log((dt.getTimezoneOffset() == dst) | 0);
+
+		// Method 3 
+		var dat = dt.getTimezoneOffset();
+		console.log((dat < 0) ? -(dat / 60) : dat / 60)
+	}
+
+	daylights_savings(new Date());
+
+	daylights_savings(new Date(1989, 10, 1));
+
+
+</script>

@@ -1,1 +1,30 @@
 
+<h5>Points to remember</h5>
+- All use cases are not handeled<br>
+
+<h3>Write a JavaScript program to sort an array of numbers, using the bucket sort algorithm.</h3>
+
+
+
+<script>
+
+
+    // Method 2 
+    //Source:https://bit.ly/3hEZdCl
+    // BucketSort
+    const bucketSort = (arr, size = 5) => {
+        const min = Math.min(...arr);
+        const max = Math.max(...arr);
+        const buckets = Array.from(
+            { length: Math.floor((max - min) / size) + 1 },
+            () => []
+        );
+        arr.forEach(val => {
+            buckets[Math.floor((val - min) / size)].push(val);
+        });
+        return buckets.reduce((acc, b) => [...acc, ...b.sort((a, b) => a - b)], []);
+    };
+    console.log(bucketSort([6, 3, 4, 1]));
+
+
+</script>

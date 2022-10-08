@@ -1,1 +1,30 @@
 
+Write a JavaScript function to get difference between two dates in days.
+
+Test Data :
+console.log(date_diff_indays('04/02/2014', '11/04/2014'));
+console.log(date_diff_indays('12/02/2014', '11/04/2014'));
+Output :
+216
+-28
+
+<script>
+
+
+	function date_diff_indays(date1, date2) {
+		// Method 1
+		let diff = ((new Date(date1)) - (new Date(date2))) / (1000 * 60 * 60 * 24);
+		// to convert milliseconds into time
+		Math.sign(diff) == -1 ? console.log(-diff) : console.log(diff);
+
+		// Method 2
+		dt1 = new Date(date1);
+		dt2 = new Date(date2);
+		console.log(Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate())) / (1000 * 60 * 60 * 24)));
+
+	}
+	date_diff_indays('04/02/2014', '11/04/2014');
+	date_diff_indays('12/02/2014', '11/04/2014');
+
+
+</script>

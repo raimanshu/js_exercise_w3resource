@@ -1,1 +1,34 @@
 
+Write a JavaScript program to highlight the bold words of the following paragraph, on mouse over a certain link.
+Sample link and text :
+[On mouse over here bold words of the following paragraph will be highlighted]
+We have just started this section for the users (beginner to intermediate) who want to work with various JavaScript
+problems and write scripts online to test their JavaScript skill.
+
+<script>
+
+	// Method 2 
+	//First create a list of all bold items 
+	var bold_Items;
+	window.onload = getBold_items();
+
+	// Collect all <strong> tags
+	function getBold_items() {
+		bold_Items = document.getElementsByTagName('strong');
+	}
+	// iterate all bold tags and change color  
+	function highlight() {
+		for (var i = 0; i < bold_Items.length; i++) {
+			bold_Items[i].style.color = "green";
+		}
+	}
+
+	// On mouse out highlighted words become black
+	function return_normal() {
+		for (var i = 0; i < bold_Items.length; i++) {
+			bold_Items[i].style.color = "black";
+		}
+	}
+
+
+</script>

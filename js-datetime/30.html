@@ -1,1 +1,15 @@
 
+Write a JavaScript function to get lowercase Ante meridiem and Post meridiem.
+
+<script>
+
+	// Method 2 
+	function lower_am_pm(dt) {
+		console.log((dt.getHours() < 12 ? 'AM' : 'PM').toLowerCase());
+	}
+
+	lower_am_pm(new Date());
+
+	lower_am_pm(new Date(1989, 10, 1));
+
+</script>

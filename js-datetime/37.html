@@ -1,1 +1,29 @@
 
+Write a JavaScript function to get Timezone.
+Test Data :
+dt = new Date();
+console.log(seconds_with_leading_zeros(dt));
+"India Standard Time"
+
+
+<script>
+
+
+	function seconds_with_leading_zeros(dt) {
+		// Method 2 
+		console.log(/\((.*)\)/.exec(new Date().toString())[1]);
+
+		// Method 3
+
+		console.log(dt.toLocaleDateString("en-US", { timeZoneName: "long" }).split(",")[1]);
+
+		// Method 4
+		let getTimeZone = (date = new Date(dt)) => Intl.DateTimeFormat().resolvedOptions().timeZone
+		console.log(getTimeZone())
+	}
+
+	seconds_with_leading_zeros(new Date());
+
+	seconds_with_leading_zeros(new Date(1989, 10, 1));
+
+</script>

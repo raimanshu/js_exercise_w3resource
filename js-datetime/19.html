@@ -1,1 +1,26 @@
 
+Write a JavaScript function to get the day of the month, 2 digits with leading zeros.
+Test Data :
+d= new Date(2015, 10, 1);
+console.log(day_of_the_month(d));
+"01"
+
+
+
+<script>
+
+
+	function day_of_the_month(d) {
+		// Method 1 
+		console.log(('0' + d.getDate()).slice(-2));
+
+		// Method 2 
+		console.log((d.getDate() < 10 ? '0' : '') + d.getDate());
+	}
+
+	day_of_the_month(new Date());
+
+	day_of_the_month(new Date(2015, 10, 1));
+
+
+</script>

@@ -1,1 +1,25 @@
 
+Write a JavaScript function to get 12-hour format of an hour with leading zeros.
+Test Data :
+dt = new Date(1989, 10, 1);
+console.log(hours_with_zeroes(dt));
+"12"
+
+
+<script>
+
+
+    function hours_with_zeroes(dt) {
+        // Method 2 
+        console.log(((dt.getHours() % 12 || 12) < 10 ? '0' : '') + (dt.getHours() % 12 || 12));
+
+
+        // Method 3
+        console.log(dt.toLocaleString("en-US", { hour: '2-digit' }).slice(0, 2));
+    }
+    hours_with_zeroes(new Date());
+
+    hours_with_zeroes(new Date(1989, 10, 1));
+
+
+</script>

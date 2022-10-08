@@ -1,1 +1,22 @@
 
+Write a JavaScript function to get a short textual representation of a month, three letters (Jan through Dec).
+Test Data :
+dt = new Date(2015, 10, 1);
+console.log(short_months(dt));
+"Nov"
+
+<script>
+
+    // Method 2 
+    Date.shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    function short_months(dt) {
+        console.log(Date.shortMonths[dt.getMonth()]);
+    }
+
+    short_months(new Date());
+
+    short_months(new Date(2015, 10, 1));
+
+
+</script>

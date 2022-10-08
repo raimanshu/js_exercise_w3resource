@@ -1,1 +1,22 @@
 
+Write a JavaScript function to get a numeric representation of a month, with leading zeros (01 through 12).
+Test Data :
+dt = new Date(2015, 10, 1);
+console.log(numeric_month(dt));
+"11"
+<script>
+
+
+    function numeric_month(dt) {
+        // Method 1 
+        console.log(('0' + (dt.getMonth() + 1)).slice(-2));
+
+        // Method 2 
+        console.log((dt.getMonth() < 9 ? '0' : '') + (dt.getMonth() + 1));
+    }
+    numeric_month(new Date());
+
+    numeric_month(new Date(2015, 10, 1));
+
+
+</script>

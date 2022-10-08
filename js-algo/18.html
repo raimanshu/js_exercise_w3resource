@@ -1,1 +1,36 @@
 
+<h5>Points to remember</h5>
+- <br>
+
+<h3>Write a JavaScript program to sort an array of objects, ordered by a property, based on the array of orders
+    provided. </h3>
+
+
+<script>
+
+
+    // Method 2 
+    const orderWith = (arr, prop, order) => {
+        const orderValues = order.reduce((acc, v, i) => {
+            acc[v] = i;
+            return acc;
+        }, {});
+        return [...arr].sort((a, b) => {
+            if (orderValues[a[prop]] === undefined) return 1;
+            if (orderValues[b[prop]] === undefined) return -1;
+            return orderValues[a[prop]] - orderValues[b[prop]];
+        });
+    };
+
+    const users = [
+        { name: 'fred', language: 'Javascript' },
+        { name: 'barney', language: 'TypeScript' },
+        { name: 'frannie', language: 'Javascript' },
+        { name: 'anna', language: 'Java' },
+        { name: 'jimmy' },
+        { name: 'nicky', language: 'Python' },
+    ];
+    console.log(orderWith(users, 'language', ['Javascript', 'TypeScript', 'Java']));
+
+
+</script>

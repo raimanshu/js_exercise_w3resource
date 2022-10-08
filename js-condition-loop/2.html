@@ -1,1 +1,38 @@
 
+Write a JavaScript conditional statement to find the sign of product of three numbers. Display an alert box with the
+specified sign.
+Sample numbers : 3, -7, 2
+Output : The sign is -
+<script>
+
+	// Method 1 
+
+	function findSign(num1, num2, num3) {
+		var finalSign = Math.sign(num1) * Math.sign(num2) * Math.sign(num3);
+		console.log(JSON.stringify(finalSign).slice(0, 1));
+	}
+
+	findSign(3, -7, 2);
+
+	// Method 2 
+	// var x = 3;
+	// var y = -7;
+	// var z = 2;
+	// if (x > 0 && y > 0 && z > 0) {
+	// 	alert("The sign is +");
+	// }
+	// else if (x < 0 && y < 0 && z < 0) {
+	// 	console.log("The sign is -");
+	// }
+	// else if (x > 0 && y < 0 && z < 0) {
+	// 	console.log("The sign is +");
+	// }
+	// else if (x < 0 && y > 0 && z < 0) {
+	// 	console.log("The sign is +");
+	// }
+	// else {
+	// 	console.log("The sign is -");
+	// }
+
+
+</script>

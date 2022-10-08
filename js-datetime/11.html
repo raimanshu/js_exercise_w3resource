@@ -1,16 +1,39 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
+Write a JavaScript function to get the maximum date from an array of dates.
 
+Test Data :
+console.log(max_date(['2015/02/01', '2015/02/02', '2015/01/03']));
+Output :
+"2015/02/02"
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+
+	function max_date(all_dates) {
+		// Method 1
+		// let maxDate = all_dates.forEach((a,b) => {
+
+		// });
+
+		// Method 2 
+		var max_dt = all_dates[0],
+			max_dtObj = new Date(all_dates[0]);
+		all_dates.forEach(function (dt, index) {
+			if (new Date(dt) > max_dtObj) {
+				max_dt = dt;
+				max_dtObj = new Date(dt);
+			}
+		});
+		console.log(max_dt);
+
+		// Method 3 
+		var arr = all_dates.sort();
+		console.log(arr.slice(-1));
+
+		// Method 4 
+		var arr2 = all_dates.sort().reverse();
+		console.log(arr2.slice(0,1));
+	}
+	max_date(['2015/02/01', '2015/02/02', '2015/01/03']);
 
 
 </script>

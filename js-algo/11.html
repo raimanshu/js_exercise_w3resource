@@ -1,16 +1,41 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
+<h5>Points to remember</h5>
+- <br>
+
+<h3>
+    Write a JavaScript program to sort a list of elements using Counting sort.
+    According to Wikipedia "In computer science, counting sort is an algorithm for sorting a collection of objects
+    according to keys that are small integers; that is, it is an integer sorting algorithm. It operates by counting the
+    number of objects that have each distinct key value, and using arithmetic on those counts to determine the positions
+    of each key value in the output sequence. Its running time is linear in the number of items and the difference
+    between the maximum and minimum key values, so it is only suitable for direct use in situations where the variation
+    in keys is not significantly greater than the number of items. However, it is often used as a subroutine in another
+    sorting algorithm, radix sort, that can handle larger keys more efficiently".
+</h3>
 
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+
+    // Method 2 
+    function gnomeSort(arr) {
+        function moveBack(i) {
+            for (; i > 0 && arr[i - 1] > arr[i]; i--) {
+                var t = arr[i];
+                arr[i] = arr[i - 1];
+                arr[i - 1] = t;
+            }
+        }
+        for (var i = 1; i < arr.length; i++) {
+            if (arr[i - 1] > arr[i]) moveBack(i);
+        }
+        return arr;
+    }
+
+    var arra = [3, 0, 2, 5, -1, 4, 1];
+    console.log("Original Array Elements");
+    console.log(arra);
+    console.log("Sorted Array Elements");
+    console.log(gnomeSort(arra));
 
 
 </script>

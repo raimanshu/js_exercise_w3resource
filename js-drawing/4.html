@@ -1,1 +1,24 @@
 
+Write a JavaScript program to draw the following right-angled triangle.
+Expected Output :
+right angled triangle
+
+
+<script>
+
+	// Method 2 
+	function draw() {
+		var canvas = document.getElementById('canvas');
+		if (canvas.getContext) {
+			var context = canvas.getContext('2d');
+
+			context.beginPath();
+			context.moveTo(75, 75);
+			context.lineTo(10, 75);
+			context.lineTo(10, 25);
+			context.fill();
+		}
+	}
+
+
+</script>

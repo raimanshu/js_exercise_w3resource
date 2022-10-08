@@ -1,16 +1,35 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
-
+Write a JavaScript program to compute the greatest common divisor (GCD) of two positive integers.
 
 <script>
 
 	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+	var a = 2154; //First number
+	var b = 458;  //Second number 
+	var gcd;
+	while (a != b) {
+		if (a > b) {
+			a = a - b;
+		}
+		else {
+			b = b - a;
+		}
+	}
+	gcd = a;
+	console.log(gcd);
+
+	// Method 3 
+	function test(a, b) {
+		let c = Math.min(a, b);
+		let max = 1;
+		for (let i = 1; i <= c; i++) {
+			if (a % i == 0 && b % i == 0 && i >= max) {
+				max = i;
+			}
+		}
+		console.log(max);
+	}
+
+	test(2154, 458);
 
 
 </script>

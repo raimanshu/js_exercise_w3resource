@@ -1,1 +1,27 @@
 
+Write a JavaScript function to get the amount of days of a year.
+
+Test Data :
+console.log(days_of_a_year(2015));
+365
+console.log(days_of_a_year(2016));
+366
+
+<script>
+
+	 
+	function days_of_a_year(year) {
+
+		// Method 2
+		console.log(isLeapYear(year) ? 366 : 365);
+	}
+
+	function isLeapYear(year) {
+		return year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0);
+	}
+
+	days_of_a_year(2015);
+	days_of_a_year(2016);
+
+
+</script>

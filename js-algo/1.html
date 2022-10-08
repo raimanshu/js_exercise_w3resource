@@ -1,16 +1,43 @@
-Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
-the second one.
+Write a JavaScript program to sort a list of elements using Quick sort.
+Quick sort is a comparison sort, meaning that it can sort items of any type for which a "less-than" relation (formally, a total order) is defined
 
 
 <script>
 
-	// Method 2 
-	//#Source https://bit.ly/2neWfJ2
-	const matches = (obj, source) =>
-		Object.keys(source).every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);
-	console.log(matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true })); // true
-	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
-	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
+
+        // Method 2 
+        function quick_Sort(origArray) {
+                if (origArray.length <= 1) {
+                        return origArray;
+                } else {
+
+                        var left = [];
+                        var right = [];
+                        var newArray = [];
+                        var pivot = origArray.pop();
+                        var length = origArray.length;
+
+                        for (var i = 0; i < length; i++) {
+                                if (origArray[i] <= pivot) {
+                                        left.push(origArray[i]);
+                                } else {
+                                        right.push(origArray[i]);
+                                }
+                        }
+
+                        return newArray.concat(quick_Sort(left), pivot, quick_Sort(right));
+                }
+        }
+
+        var myArray = [3, 0, 2, 5, -1, 4, 1];
+
+        console.log("Original array: " + myArray);
+        var sortedArray = quick_Sort(myArray);
+        console.log("Sorted array: " + sortedArray);
 
 
 </script>
+
+</body>
+
+</html>
