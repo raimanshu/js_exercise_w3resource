@@ -9,7 +9,7 @@ Expected Output : "thequickbrownfxjmpsvlazydg"
 	function unique_char(str1) {
 		// Method 1
 		let newStr = new Set(str1.split(""));
-		console.log(newStr);
+		console.log(Array.from(newStr).join(""));
 
 		// Method 2 
 		var str = str1;
@@ -21,9 +21,9 @@ Expected Output : "thequickbrownfxjmpsvlazydg"
 
 			}
 		}
-		return uniql;
+		console.log(uniql);
 	}
-	console.log(unique_char("thequickbrownfoxjumpsoverthelazydog"));
+	unique_char("thequickbrownfoxjumpsoverthelazydog");
 
 
 </script>
