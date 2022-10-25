@@ -2,12 +2,23 @@
 Write a JavaScript function to get the number of occurrences of each letter in specified string.
 <script>
 
-	// Method 2 
+
 	function Char_Counts(str1) {
+		// Method 2 
 		var uchars = {};
 		str1.replace(/\S/g, function (l) { uchars[l] = (isNaN(uchars[l]) ? 1 : uchars[l] + 1); });
-		return uchars;
+		console.log(uchars);
+		
+// 		Method 3
+		let container = {};
+
+		for ( character of string )
+		{
+		container[character] ? container[character] += 1 : container[character] = 1 ;
+		};
+
+		console.log(container);
 	}
-	console.log(Char_Counts("The quick brown fox jumps over the lazy dog"));
+	Char_Counts("The quick brown fox jumps over the lazy dog");
 
 </script>
