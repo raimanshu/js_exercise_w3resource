@@ -29,11 +29,15 @@ Write a JavaScript function to find longest substring in a given a string withou
                 }
             }
         }
-        return longest_string.length > str.length ? longest_string : str;
-    }
-    console.log(longest_substring_without_repeating_characters("google.com"));
+        console.log(longest_string.length > str.length ? longest_string : str);
 
-    console.log(longest_substring_without_repeating_characters("example.com"));
+
+        var newText = Array.from(new Set(str));
+        console.log(newText.join(""));
+    }
+    longest_substring_without_repeating_characters("google.com");
+
+    longest_substring_without_repeating_characters("example.com");
 
 
 </script>

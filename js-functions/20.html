@@ -1,21 +1,26 @@
-
-Write a JavaScript function that generates a string id (specified length) of random characters.
-Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-
-
+Write a JavaScript function that generates a string id (specified length) of
+random characters. Sample character list :
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
 <script>
+  function makeid(l) {
+    // Method 2
+    var text = "";
+    var char_list =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (var i = 0; i < l; i++) {
+      text += char_list.charAt(Math.floor(Math.random() * char_list.length));
+    }
+    console.log(text);
 
-	// Method 2 
-	function makeid(l) {
-		var text = "";
-		var char_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-		for (var i = 0; i < l; i++) {
-			text += char_list.charAt(Math.floor(Math.random() * char_list.length));
-		}
-		return text;
-	}
-	console.log(makeid(8));
+    // Method 3
+    let code = [];
+    while (length > 0) {
+      code.push(char_list.charAt(Math.random() * char_list.length));
+      length--;
+    }
+    console.log(code.join(""));
+  }
 
-
+  makeid(8);
 </script>
