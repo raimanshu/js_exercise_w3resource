@@ -1,32 +1,27 @@
 <h5>Points to remember</h5>
 
+<br />
 
-<br>
+<h3>
+  Write a JavaScript program to find the sum of squares of a numeric vector.
+</h3>
 
-<h3>Write a JavaScript program to find the sum of squares of a numeric vector.</h3>
-
-
-<br><br><br><br>
+<br /><br /><br /><br />
 
 <p id="result"></p>
 
-
-
-
 <script>
+  // Method 2
+  // function sum_sq(array) {
+  //     var sum = 0,
+  //         i = array.length;
+  //     while (i--)
+  //         sum += Math.pow(array[i], 2);
+  //     return sum;
+  // }
+  // console.log(sum_sq([0, 1, 2, 3, 4]));
 
-
-
-
-
-    // Solution
-    // function sum_sq(array) {
-    //     var sum = 0,
-    //         i = array.length;
-    //     while (i--)
-    //         sum += Math.pow(array[i], 2);
-    //     return sum;
-    // }
-    // console.log(sum_sq([0, 1, 2, 3, 4]));
-
+  // Method 3
+  let array = [1, 2, 1, 24, 6];
+  console.log(array.reduce((sum, item) => sum + item * item, 0));
 </script>

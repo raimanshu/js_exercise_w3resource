@@ -1,42 +1,88 @@
 <h5>Points to remember</h5>
 it's commment has more simple answers
 
-<br>
+<br />
 
-<h3>Write a JavaScript program which accept a string as input and swap the case of each character. For example if you
-    input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.</h3>
+<h3>
+  Write a JavaScript program which accept a string as input and swap the case of
+  each character. For example if you input 'The Quick Brown Fox' the output
+  should be 'tHE qUICK bROWN fOX'.
+</h3>
 
-
-<br><br><br><br>
+<br /><br /><br /><br />
 
 <p id="result"></p>
 
-
-
-
 <script>
+  // Method 2
+  // var str = 'c';
+  // var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  // var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+  // var result = [];
 
+  // for (var x = 0; x < str.length; x++) {
+  //     if (UPPER.indexOf(str[x]) !== -1) {
+  //         result.push(str[x].toLowerCase());
+  //     }
+  //     else if (LOWER.indexOf(str[x]) !== -1) {
+  //         result.push(str[x].toUpperCase());
+  //     }
+  //     else {
+  //         result.push(str[x]);
+  //     }
+  // }
+  // console.log(result.join(''));
 
+  // Method 3
+  let a = "The Quick Brown Fox";
+  b = " ";
+  for (let i of a) {
+    if (i == i.toLowerCase()) {
+      b = b + i.toUpperCase();
+    }
+    if (i == i.toUpperCase()) {
+      b = b + i.toLowerCase();
+    }
+  }
 
+  console.log(b);
 
+  //   Method 4
+  function swapCase(phrase) {
+    var newPhrase = [];
+    for (let word of phrase) {
+      if (word === word.toUpperCase()) {
+        newPhrase.push(word.toLowerCase());
+      } else {
+        newPhrase.push(word.toUpperCase());
+      }
+    }
+    return newPhrase.join(" ");
+  }
 
-    // Solution
-    // var str = 'c';
-    // var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    // var LOWER = 'abcdefghijklmnopqrstuvwxyz';
-    // var result = [];
+  console.log(swapCase("The Quick Brown Fox"));
 
-    // for (var x = 0; x < str.length; x++) {
-    //     if (UPPER.indexOf(str[x]) !== -1) {
-    //         result.push(str[x].toLowerCase());
-    //     }
-    //     else if (LOWER.indexOf(str[x]) !== -1) {
-    //         result.push(str[x].toUpperCase());
-    //     }
-    //     else {
-    //         result.push(str[x]);
-    //     }
-    // }
-    // console.log(result.join(''));
+  //   Method 4
+  let text = "The Quick Brown Fox".split("");
 
+  (function () {
+    text.forEach((item, index) => {
+      item.match(/[A-Z]/g)
+        ? (text[index] = item.toLowerCase())
+        : (text[index] = item.toUpperCase());
+    });
+    console.log(text.join(""));
+  })();
+
+  //   Method 5 \
+  const swapCase = ([...rest]) =>
+    console.log(
+      rest
+        .map((item) =>
+          item == item.toUpperCase()
+            ? item.toLocaleLowerCase()
+            : item.toUpperCase()
+        )
+        .join("")
+    );
 </script>

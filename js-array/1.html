@@ -24,6 +24,7 @@
 
 
 <script>
+    // Method 1 
     function checkArray(value) {
         if (Array.isArray(value)) { //Built-in function to check Array internally it check "[object Array]"
             return true;
@@ -34,7 +35,7 @@
     console.log(checkArray([1, 2, 4, 0]));
 
 
-    // Solution
+    // Method 2
     // var is_array = function (input) {
     //     if (toString.call(input) === "[object Array]")
     //         return true;

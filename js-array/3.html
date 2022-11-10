@@ -1,4 +1,5 @@
 <h5>Points to remember</h5>
+substring can only be used with strings not array
 
 <br>
 
@@ -13,27 +14,28 @@
 
 
 <script>
-    var first = function (array, n) {
-        // if (array == null)
-        //     return void 0;
-        // if (n == null)
-        //     return array[0];
-        // if (n < 0)
-        //     return [];
-        return array.su(0, n);
+    // Method 1 
+    function first1(array, n) {
+        if (array == null)
+            return void 0;
+        if (n == null)
+            return array[0];
+        if (n < 0)
+            return [];
+        return array.substring(0, n);
     };
 
-    console.log(first([7, 9, 0, -2]));
-    console.log(first([], 3));
-    console.log(first([7, 9, 0, -2], 3));
-    console.log(first([7, 9, 0, -2], 6));
-    console.log(first([7, 9, 0, -2], -3));
+    console.log(first1([7, 9, 0, -2]));
+    console.log(first1([], 3));
+    console.log(first1([7, 9, 0, -2], 3));
+    console.log(first1([7, 9, 0, -2], 6));
+    console.log(first1([7, 9, 0, -2], -3));
 
 
 
 
 
-    // Solution
+    // Method 2
     // var first = function (array, n) {
     //     if (array == null)
     //         return void 0;
