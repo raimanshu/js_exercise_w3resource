@@ -18,13 +18,11 @@
 
 <script>
 
-    const array1 = [1, 2, 3];
-    const array2 = [100, 2, 1, 10];
-    console.log([...new Set(array1.concat(array2))]);
 
 
 
-    // Solution
+
+    // Method 2
     // function union(arra1, arra2) {
 
     //     if ((arra1 == null) || (arra2 == null))
@@ -50,5 +48,9 @@
     // }
     // console.log(union([1, 2, 3], [100, 2, 1, 10]));
 
+    // Method 3
+    const array1 = [1, 2, 3];
+    const array2 = [100, 2, 1, 10];
+    console.log([...new Set(array1.concat(array2))]);
 
 </script>

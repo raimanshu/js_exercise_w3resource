@@ -26,7 +26,7 @@
 
 
 
-    // Solution
+    // Method 2
 //     const unzip = arr =>
 //   arr.reduce(
 //     (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
@@ -36,6 +36,16 @@
 //   );
 // console.log(unzip([['a', 1, true], ['b', 2, false]]));
 // console.log(unzip([['a', 1, true], ['b', 2]]));
+
+
+// Method 3
+const unzip = (arr) => {
+    const tempObj = arr.flat().reduce((acc, cur) => {
+        acc[typeof cur] ? acc[typeof cur].push(cur) : (acc[typeof cur] = [cur]);
+        return acc;
+    }, {});
+    return Object.values(tempObj);
+};
 
 
 

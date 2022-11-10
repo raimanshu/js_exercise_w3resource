@@ -1,71 +1,72 @@
 <h5>Points to remember</h5>
 
+<br />
 
-<br>
+<h3>
+  Write a JavaScript function to get nth largest element from an unsorted array.
+  Go to the editor Test Data : console.log(nthlargest([ 43, 56, 23, 89, 88, 90,
+  99, 652], 4));
+</h3>
 
-<h3>Write a JavaScript function to get nth largest element from an unsorted array. Go to the editor
-
-    Test Data :
-    console.log(nthlargest([ 43, 56, 23, 89, 88, 90, 99, 652], 4));</h3>
-
-
-<br><br><br><br>
+<br /><br /><br /><br />
 
 <p id="result"></p>
 
-
-
-
 <script>
+  // Method 2
+  // function nthlargest(arra, highest) {
+  //     var x = 0,
+  //         y = 0,
+  //         z = 0,
+  //         temp = 0,
+  //         tnum = arra.length,
+  //         flag = false,
+  //         result = false;
 
+  //     while (x < tnum) {
+  //         y = x + 1;
 
+  //         if (y < tnum) {
+  //             for (z = y; z < tnum; z++) {
 
+  //                 if (arra[x] < arra[z]) {
+  //                     temp = arra[z];
+  //                     arra[z] = arra[x];
+  //                     arra[x] = temp;
+  //                     flag = true;
+  //                 } else {
+  //                     continue;
+  //                 }
+  //             }
+  //         }
 
+  //         if (flag) {
+  //             flag = false;
+  //         } else {
+  //             x++;
+  //             if (x === highest) {
 
-    // Solution
-    // function nthlargest(arra, highest) {
-    //     var x = 0,
-    //         y = 0,
-    //         z = 0,
-    //         temp = 0,
-    //         tnum = arra.length,
-    //         flag = false,
-    //         result = false;
+  //                 result = true;
+  //             }
+  //         }
+  //         if (result) {
+  //             break;
+  //         }
+  //     }
 
-    //     while (x < tnum) {
-    //         y = x + 1;
+  //     return (arra[(highest - 1)]);
+  // }
 
-    //         if (y < tnum) {
-    //             for (z = y; z < tnum; z++) {
+  // console.log(nthlargest([43, 56, 23, 89, 88, 90, 99, 652], 4));
 
-    //                 if (arra[x] < arra[z]) {
-    //                     temp = arra[z];
-    //                     arra[z] = arra[x];
-    //                     arra[x] = temp;
-    //                     flag = true;
-    //                 } else {
-    //                     continue;
-    //                 }
-    //             }
-    //         }
+  // Method 3
+  function fun(arr, num) {
+    arr.sort((x, y) => x - y);
+    return arr[num];
+  }
 
-    //         if (flag) {
-    //             flag = false;
-    //         } else {
-    //             x++;
-    //             if (x === highest) {
+  // Method 4
+  const func = (arr, n) => arr.sort((a, b) => b - a)[n - 1];
 
-    //                 result = true;
-    //             }
-    //         }
-    //         if (result) {
-    //             break;
-    //         }
-    //     }
-
-    //     return (arra[(highest - 1)]);
-    // }
-
-    // console.log(nthlargest([43, 56, 23, 89, 88, 90, 99, 652], 4));
-
+  console.log(func([43, 56, 23, 89, 88, 90, 99, 652], 4));
 </script>

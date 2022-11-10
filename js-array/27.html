@@ -1,53 +1,54 @@
 <h5>Points to remember</h5>
 
+<br />
 
-<br>
+<h3>
+  Write a JavaScript function to retrieve the value of a given property from all
+  elements in an array. Go to the editor Sample array : [NaN, 0, 15, false, -22,
+  '',undefined, 47, null] Expected result : [15, -22, 47]
+</h3>
 
-<h3>Write a JavaScript function to retrieve the value of a given property from all elements in an array. Go to the
-    editor
-    Sample array : [NaN, 0, 15, false, -22, '',undefined, 47, null]
-    Expected result : [15, -22, 47]</h3>
-
-
-<br><br><br><br>
+<br /><br /><br /><br />
 
 <p id="result"></p>
 
-
-
-
 <script>
+  // Solution
+  var library = [
+    { author: "Bill Gates", title: "The Road Ahead", libraryID: 1254 },
+    { author: "Steve Jobs", title: "Walter Isaacson", libraryID: 4264 },
+    {
+      author: "Suzanne Collins",
+      title: "Mockingjay: The Final Book of The Hunger Games",
+      libraryID: 3245,
+    },
+  ];
 
+  // function property_value(array, property_key) {
+  //     var arr = [],
+  //         index = -1,
+  //         arrlen = array.length, array_items;
 
+  //     while (++index < arrlen) {
+  //         array_items = array[index];
 
+  //         if (array_items.hasOwnProperty(property_key)) {
+  //             arr[arr.length] = array_items[property_key];
+  //         }
+  //     }
 
+  //     return arr;
+  // }
 
-    // Solution
-    var library = [
-        { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254 },
-        { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264 },
-        { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245 }
-    ];
+  // console.log(property_value(library, 'title'));
 
-    // function property_value(array, property_key) {
-    //     var arr = [],
-    //         index = -1,
-    //         arrlen = array.length, array_items;
+  // console.log(property_value(library, 'author'));
 
-    //     while (++index < arrlen) {
-    //         array_items = array[index];
-
-    //         if (array_items.hasOwnProperty(property_key)) {
-    //             arr[arr.length] = array_items[property_key];
-    //         }
-    //     }
-
-    //     return arr;
-    // }
-
-    // console.log(property_value(library, 'title'));
-
-    // console.log(property_value(library, 'author'));
-
-
+  // Method 3
+  function retrv(arr) {
+    return arr.filter(function myFunction(value) {
+      return value;
+    });
+  }
+  console.log(retrv([NaN, 0, 15, false, -22, "", undefined, 47, null]));
 </script>

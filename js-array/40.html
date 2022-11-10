@@ -24,7 +24,7 @@ console.log(array_range(-6, 4));
 
 
 
-    // Solution
+    // Method 2
     // function array_range(start, len) {
     //     var arr = new Array(len);
     //     for (var i = 0; i < len; i++, start++) {
@@ -37,6 +37,15 @@ console.log(array_range(-6, 4));
     // console.log(array_range(1, 4));
 
     // console.log(array_range(-6, 4));
+
+
+    // Method 3 
+    function arrayRange( start, range ) {
+	return Array( range ).fill().map(( el, idx ) => start + idx );
+}
+
+console.log( arrayRange( 1, 4 )); // [ 1, 2, 3, 4 ]
+console.log( arrayRange( -6, 4 )); // [ -6, -5, -4, -3 ]
 
 
 </script>

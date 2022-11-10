@@ -1,38 +1,32 @@
 <h5>Points to remember</h5>
 
+<br />
 
-<br>
+<h3>
+  Write a JavaScript function to create a specified number of elements with
+  pre-filled string value array. Go to the editor Test Data :
+  console.log(array_filled(3, 'default value')); ["default value", "default
+  value", "default value"] console.log(array_filled(4, 'password'));
+  ["password", "password", "password", "password"]
+</h3>
 
-<h3>Write a JavaScript function to create a specified number of elements with pre-filled string value array. Go to the
-    editor
-
-    Test Data :
-    console.log(array_filled(3, 'default value'));
-    ["default value", "default value", "default value"]
-    console.log(array_filled(4, 'password'));
-    ["password", "password", "password", "password"]</h3>
-
-
-<br><br><br><br>
+<br /><br /><br /><br />
 
 <p id="result"></p>
 
-
-
-
 <script>
+  // Method 2
+  // function array_filled(n, val) {
+  //     return Array.apply(null, Array(n)).map(String.prototype.valueOf, val);
+  // }
 
+  // console.log(array_filled(3, 'default value'));
+  // console.log(array_filled(4, 'password'));
 
-
-
-
-    // Solution
-    // function array_filled(n, val) {
-    //     return Array.apply(null, Array(n)).map(String.prototype.valueOf, val);
-    // }
-
-    // console.log(array_filled(3, 'default value'));
-    // console.log(array_filled(4, 'password'));
-
-
+  // Method 3
+  function ex37(len, val) {
+    return Array(len).fill(val);
+  }
+  console.log(ex37(3, "default value"));
+  console.log(ex37(4, "password"));
 </script>

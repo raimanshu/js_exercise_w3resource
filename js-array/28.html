@@ -1,40 +1,72 @@
 <h5>Points to remember</h5>
 
+<br />
 
-<br>
+<h3>
+  Write a JavaScript function to find the longest common starting substring in a
+  set of strings. Go to the editor Sample array :
+  console.log(longest_common_starting_substring(['go', 'google'])); Expected
+  result : "go"
+</h3>
 
-<h3>Write a JavaScript function to find the longest common starting substring in a set of strings. Go to the editor
-
-    Sample array : console.log(longest_common_starting_substring(['go', 'google']));
-    Expected result : "go"</h3>
-
-
-<br><br><br><br>
+<br /><br /><br /><br />
 
 <p id="result"></p>
 
-
-
-
 <script>
+  // Method 2
+  // function longest_common_starting_substring(arr1) {
+  //     var arr = arr1.concat().sort(),
+  //         a1 = arr[0], a2 = arr[arr.length - 1], L = a1.length, i = 0;
+  //     while (i < L && a1.charAt(i) === a2.charAt(i)) i++;
+  //     return a1.substring(0, i);
+  // }
 
+  // console.log(longest_common_starting_substring(['go', 'google']));
 
+  // console.log(longest_common_starting_substring(['SQLInjection', 'SQLTutorial']));
 
+  // console.log(longest_common_starting_substring(['abcd', '1234']));
 
+  // Method 3
+  function longest_common_deeper(arr) {
+    let result = "",
+      tmp = "";
 
-    // Solution
-    // function longest_common_starting_substring(arr1) {
-    //     var arr = arr1.concat().sort(),
-    //         a1 = arr[0], a2 = arr[arr.length - 1], L = a1.length, i = 0;
-    //     while (i < L && a1.charAt(i) === a2.charAt(i)) i++;
-    //     return a1.substring(0, i);
-    // }
-
-    // console.log(longest_common_starting_substring(['go', 'google']));
-
-    // console.log(longest_common_starting_substring(['SQLInjection', 'SQLTutorial']));
-
-    // console.log(longest_common_starting_substring(['abcd', '1234']));
-
-
+    arr.sort().forEach((e, i, a) => {
+      if (i === a.length - 1) return;
+      let idx = 1;
+      while (idx <= e.length) {
+        if (a[i + 1].startsWith(e.slice(0, idx))) {
+          tmp = e.slice(0, idx);
+          idx++;
+        } else break;
+      }
+      result = tmp.length > result.length ? tmp : result;
+    });
+    return result;
+  }
+  console.log(
+    longest_common_deeper([
+      "goog",
+      "google",
+      "googlesearch",
+      "answerme",
+      "answer",
+      "answerm",
+      "answera",
+    ])
+  );
+  console.log(
+    longest_common_deeper([
+      "goo",
+      "google",
+      "googlesearch",
+      "abcdefg",
+      "abcdefgh",
+      "abcdefg2",
+      "abcdefgt",
+      "abcdefgp",
+    ])
+  );
 </script>

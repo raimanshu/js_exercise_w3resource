@@ -1,75 +1,95 @@
 <h5>Points to remember</h5>
 
+<br />
 
-<br>
+<h3>
+  Write a JavaScript function to fill an array with values (numeric, string with
+  one character) on supplied bounds. Go to the editor Test Data :
+  console.log(num_string_range('a', "z", 2)); ["a", "c", "e", "g", "i", "k",
+  "m", "o", "q", "s", "u", "w", "y"]
+</h3>
 
-<h3> Write a JavaScript function to fill an array with values (numeric, string with one character) on supplied bounds.
-    Go to the editor
-
-    Test Data :
-    console.log(num_string_range('a', "z", 2));
-    ["a", "c", "e", "g", "i", "k", "m", "o", "q", "s", "u", "w", "y"]</h3>
-
-
-<br><br><br><br>
+<br /><br /><br /><br />
 
 <p id="result"></p>
 
-
-
-
 <script>
+  // Method 2
+  // function num_string_range(start, end, step) {
+  //     var range = [];
+  //     if ((step === 0) || (typeof start == "undefined" || typeof end == "undefined") || (typeof start != typeof end))
+  //         return false;
 
+  //     if (end < start) {
+  //         step = -step;
+  //     }
 
+  //     if (typeof start == "number") {
 
+  //         while (step > 0 ? end >= start : end <= start) {
+  //             range.push(start);
+  //             start += step;
+  //         }
+  //     }
+  // else if (typeof start == "string") {
 
+  //     if (start.length != 1 || end.length != 1) {
+  //         throw TypeError("Strings with one character are supported.");
+  //     }
 
-    // Solution
-    // function num_string_range(start, end, step) {
-    //     var range = [];
-    //     if ((step === 0) || (typeof start == "undefined" || typeof end == "undefined") || (typeof start != typeof end))
-    //         return false;
+  //     start = start.charCodeAt(0);
+  //     end = end.charCodeAt(0);
 
-    //     if (end < start) {
-    //         step = -step;
-    //     }
+  //     while (step > 0 ? end >= start : end <= start) {
+  //         range.push(String.fromCharCode(start));
+  //         start += step;
+  //     }
 
-    //     if (typeof start == "number") {
+  // }
 
-    //         while (step > 0 ? end >= start : end <= start) {
-    //             range.push(start);
-    //             start += step;
-    //         }
-    //     }
-        // else if (typeof start == "string") {
+  // else {
+  //     throw TypeError("Only string and number are supported");
+  //     }
 
-        //     if (start.length != 1 || end.length != 1) {
-        //         throw TypeError("Strings with one character are supported.");
-        //     }
+  //     return range;
 
-        //     start = start.charCodeAt(0);
-        //     end = end.charCodeAt(0);
+  // }
 
-        //     while (step > 0 ? end >= start : end <= start) {
-        //         range.push(String.fromCharCode(start));
-        //         start += step;
-        //     }
+  // console.log(num_string_range('a', "z", 2));
+  // console.log(num_string_range("Z", "A", 2));
+  // console.log(num_string_range(0, -5, 1));
+  // console.log(num_string_range(0, 25, 5));
+  // console.log(num_string_range(20, 5, 5));
 
-        // }
+  // Method 3
+  function num_string_range(letter1, letter2, interval) {
+    var result = [];
+    var str = "abcdefghijklmnopqrstuvwxyz";
 
-        // else {
-        //     throw TypeError("Only string and number are supported");
-    //     }
+    str = str.split("");
+    for (var i = 0; i < str.length; i += interval) {
+      result.push(str[i]);
+    }
+    return result;
+  }
 
-    //     return range;
+  console.log(num_string_range("a", "z", 2));
+  ["a", "c", "e", "g", "i", "k", "m", "o", "q", "s", "u", "w", "y"];
 
-    // }
+  console.log(num_string_range("a", "z", 3));
+  ["a", "d", "g", "j", "m", "p", "s", "v", "y"];
 
-    // console.log(num_string_range('a', "z", 2));
-    // console.log(num_string_range("Z", "A", 2));
-    // console.log(num_string_range(0, -5, 1));
-    // console.log(num_string_range(0, 25, 5));
-    // console.log(num_string_range(20, 5, 5));
+  // Method 4
+  function fill(x, y, num) {
+    let newArra = [];
 
+    for (let i = 0; i < 26; i += num) {
+      let newAlph = String.fromCharCode(65 + i);
+      newArra.push(newAlph);
+    }
 
+    return newArra;
+  }
+
+  console.log(fill("a", "z", 2));
 </script>

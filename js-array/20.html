@@ -10,18 +10,11 @@ comment is awsome
 
 <p id="result"></p>
 
-
-
-
 <script>
 
-const findDuplicates = arr => [...new Set(arr.filter(v => arr.indexOf(v) !== arr.lastIndexOf(v)))];
-
-console.log(findDuplicates([1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6]));
 
 
-
-    // // Solution
+    // // Method 2
     // function find_duplicate_in_array(arra1) {
     //     var object = {};
     //     var result = [];
@@ -43,6 +36,13 @@ console.log(findDuplicates([1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6]));
     // }
 
     // console.log(find_duplicate_in_array([1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6]));
+
+
+    // Method 3
+const findDuplicates = arr => [...new Set(arr.filter(v => arr.indexOf(v) !== arr.lastIndexOf(v)))];
+
+console.log(findDuplicates([1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6]));
+
 
 
 </script>
