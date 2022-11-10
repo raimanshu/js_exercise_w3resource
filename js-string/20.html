@@ -22,7 +22,7 @@
 
 
 
-    // Solution
+    // Method 2
     // function formatted_string(pad, user_str, pad_pos) {
     //     if (typeof user_str === 'undefined')
     //         return pad;
@@ -35,6 +35,18 @@
     // }
     // console.log(formatted_string('0000', 123, 'l'));
     // console.log(formatted_string('00000000', 123, ''));
+
+    // Method 3
+    function formatted_string(pad, str, pos) {
+  str = str.toString();
+  if (pos === 'l') {
+    return pad.slice(0, pad.length - str.length) + str;
+  } else {
+    return str + pad.slice(str.length);
+  }
+}
+console.log(formatted_string('0000',123,'l')); // "0123" 
+console.log(formatted_string('00000000',123,'')); // "12300000"
 
 
 </script>

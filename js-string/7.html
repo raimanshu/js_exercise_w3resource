@@ -1,29 +1,23 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to parameterize a string. Go to the editor
-    Test Data :
-    console.log(string_parameterize("Robin Singh from USA."));
-    "robin-singh-from-usa"
+<h3>
+  Write a JavaScript function to parameterize a string. Go to the editor Test
+  Data : console.log(string_parameterize("Robin Singh from USA."));
+  "robin-singh-from-usa"
 </h3>
 
-
-
-
-
-
 <script>
-   
+  // Method 2
+  // string_parameterize = function (str1) {
+  //     return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
+  // };
+  // console.log(string_parameterize("Robin Singh from USA."));
 
+  // Method 3
+  function parameterize(str) {
+    return str.toLowerCase().replaceAll(" ", "-");
+  }
 
-    // Solution
-    // string_parameterize = function (str1) {
-    //     return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
-    // };
-    // console.log(string_parameterize("Robin Singh from USA."));
-
-
+  console.log(parameterize("this is not the best version"));
 </script>

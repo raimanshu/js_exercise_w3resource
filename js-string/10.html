@@ -1,32 +1,30 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function that takes a string which has lower and upper case letters as a parameter and converts
-    upper case letters to lower case, and lower case letters to upper case. Go to the editor
-    Test Data :
-    console.log(swapcase('AaBbc'));
-    "aAbBC"
+<h3>
+  Write a JavaScript function that takes a string which has lower and upper case
+  letters as a parameter and converts upper case letters to lower case, and
+  lower case letters to upper case. Go to the editor Test Data :
+  console.log(swapcase('AaBbc')); "aAbBC"
 </h3>
 
-
-
-
-
-
 <script>
-  
+  // Method 2
+  // swapcase = function swapcase(str) {
+  //     return str.replace(/([a-z]+)|([A-Z]+)/g, function (match, chr) {
+  //         return chr ? match.toUpperCase() : match.toLowerCase();
+  //     });
+  // }
+  // console.log(swapcase('AaBbc'));
 
+  // Method 3
+  function swapcase(str) {
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] === str[i].toLowerCase()) str[i].toUpperCase();
+      else str[i].toLowerCase();
+    }
+    return str;
+  }
 
-    // Solution
-    // swapcase = function swapcase(str) {
-    //     return str.replace(/([a-z]+)|([A-Z]+)/g, function (match, chr) {
-    //         return chr ? match.toUpperCase() : match.toLowerCase();
-    //     });
-    // }
-    // console.log(swapcase('AaBbc'));
-
-
+  console.log(swapcase("AaBbc"));
 </script>

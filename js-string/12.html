@@ -1,44 +1,44 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to uncamelize a string. Go to the editor
-    Test Data :
-    console.log(uncamelize('helloWorld'));
-    console.log(uncamelize('helloWorld','-'));
-    console.log(uncamelize('helloWorld','_'));
-    "hello world"
-    "hello-world"
-    "hello_world"
+<h3>
+  Write a JavaScript function to uncamelize a string. Go to the editor Test Data
+  : console.log(uncamelize('helloWorld'));
+  console.log(uncamelize('helloWorld','-'));
+  console.log(uncamelize('helloWorld','_')); "hello world" "hello-world"
+  "hello_world"
 </h3>
 
-
-
-
-
-
 <script>
-  
+  // Method 2
+  // function uncamelize(str, separator) {
+  //     // Assume default separator is a single space.
+  //     if (typeof (separator) == "undefined") {
+  //         separator = " ";
+  //     }
+  //     // Replace all capital letters by separator followed by lowercase one
+  //     var str = str.replace(/[A-Z]/g, function (letter) {
+  //         return separator + letter.toLowerCase();
+  //     });
+  //     // Remove first separator
+  //     return str.replace("/^" + separator + "/", '');
+  // }
+  // console.log(uncamelize('helloWorld'));
+  // console.log(uncamelize('helloWorld', '-'));
+  // console.log(uncamelize('helloWorld', '_'));
 
+  // Method 3
+  const uncamelize = (str, separator = " ") => {
+    let result = str.replace(
+      /[A-Z]/g,
+      (letter) => separator + letter.toLowerCase()
+    );
+    result[0] === separator && (result = result.slice(1));
+    return result;
+  };
 
-    // Solution
-    // function uncamelize(str, separator) {
-    //     // Assume default separator is a single space.
-    //     if (typeof (separator) == "undefined") {
-    //         separator = " ";
-    //     }
-    //     // Replace all capital letters by separator followed by lowercase one
-    //     var str = str.replace(/[A-Z]/g, function (letter) {
-    //         return separator + letter.toLowerCase();
-    //     });
-    //     // Remove first separator
-    //     return str.replace("/^" + separator + "/", '');
-    // }
-    // console.log(uncamelize('helloWorld'));
-    // console.log(uncamelize('helloWorld', '-'));
-    // console.log(uncamelize('helloWorld', '_'));
-
-
+  console.log(uncamelize("helloWorld")); // hello world
+  console.log(uncamelize("helloWorld", "-")); // hello-world
+  console.log(uncamelize("helloWorld", "_")); // hello_world
+  console.log(uncamelize("HelloWorld", "_")); // hello_world
 </script>

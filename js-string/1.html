@@ -19,11 +19,12 @@
 
 
 <script>
+    // Method 1 
     var value = prompt('Enter a value');
     document.getElementById('result').innerText = typeof value;
 
 
-    // Solution
+    // Method 2
     // is_string = function (input) {
     //     if (Object.prototype.toString.call(input) === '[object String]')
     //         return true;
@@ -32,5 +33,10 @@
     // };
     // console.log(is_string('w3resource'));
     // console.log(is_string([1, 2, 4, 0]));
+
+    // Method 3 
+    function checkIsString(value){
+return typeof value === `string` || value instanceof String;
+}
 
 </script>

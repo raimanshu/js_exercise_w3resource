@@ -1,33 +1,27 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to convert a string in abbreviated form. Go to the editor
-    Test Data :
-    console.log(abbrev_name("Robin Singh"));
-    "Robin S."
+<h3>
+  Write a JavaScript function to convert a string in abbreviated form. Go to the
+  editor Test Data : console.log(abbrev_name("Robin Singh")); "Robin S."
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // abbrev_name = function (str1) {
+  //     var split_names = str1.trim().split(" ");
+  //     if (split_names.length > 1) {
+  //         return (split_names[0] + " " + split_names[1].charAt(0) + ".");
+  //     }
+  //     return split_names[0];
+  // };
+  // console.log(abbrev_name("Robin Singh"));
 
+  // Method 3
+  function abreviateName(name) {
+    let arr = name.split(" ");
+    return arr[0] + " " + arr[1][0] + ".";
+  }
 
-
-    // Solution
-    // abbrev_name = function (str1) {
-    //     var split_names = str1.trim().split(" ");
-    //     if (split_names.length > 1) {
-    //         return (split_names[0] + " " + split_names[1].charAt(0) + ".");
-    //     }
-    //     return split_names[0];
-    // };
-    // console.log(abbrev_name("Robin Singh"));
-
-
+  console.log(abreviateName("Resource School"));
 </script>

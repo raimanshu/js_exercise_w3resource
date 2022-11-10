@@ -20,7 +20,7 @@
 
 
 
-    // Solution
+    // Method 2
     // function escape_HTML(html_str) {
     //     'use strict';
 
@@ -37,6 +37,23 @@
     // }
 
     // console.log(escape_HTML('&lt;a href=&quot;javascript-string-exercise-17.php&quot; target=&quot;_blank&quot;&gt;'));
+
+
+    // Method 3 
+    const escape_HTML = str => {
+const escapeKey = {
+'"': '"',
+'<': '<',
+'>': '>',
+'&': '&'
+
+}
+return str.replace(/\"|<|>|&/g, function(matched) {
+return escapeKey[matched];
+});
+}
+
+console.log(escape_HTML(''));
 
 
 

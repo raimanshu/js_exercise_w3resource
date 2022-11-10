@@ -1,30 +1,23 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3> Write a JavaScript function to capitalize the first letter of each word in a string. Go to the editor
-    Test Data :
-    console.log(capitalize_Words('js string exercises'));
-    "Js String Exercises"
+<h3>
+  Write a JavaScript function to capitalize the first letter of each word in a
+  string. Go to the editor Test Data : console.log(capitalize_Words('js string
+  exercises')); "Js String Exercises"
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  //capitalize_Words
+  // function capitalize_Words(str) {
+  //     return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+  // }
+  // console.log(capitalize_Words('js string exercises'));
 
-
-
-    // Solution
-    //capitalize_Words 
-    // function capitalize_Words(str) {
-    //     return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
-    // }
-    // console.log(capitalize_Words('js string exercises'));
-
-
+  // Method 3
+  const capitalize_Words = (str) => str
+    .split(" ")
+    .map((str) => `${str[0].toUpperCase()}${str.slice(1)}`)
+    .join(" ");
 </script>
