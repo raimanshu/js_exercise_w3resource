@@ -21,4 +21,19 @@
 console.log(different_values([12, 10, 33, 34], 10));
 console.log(different_values([12, 10, 33, 34], 24));
 console.log(different_values([12, 10, 33, 44], 40));
+
+
+// Method 3
+function absDff(arr,n){
+let nwarr = [];
+for(let i = 0; i < arr.length; i++){
+for(j = i +1; j < arr.length; j++){
+if(Math.abs(arr[i] - arr[j]) <= n){
+nwarr.push(Math.abs(arr[i] - arr[j]));
+}
+}
+}
+return Math.max(...nwarr);
+}
+console.log(absDff([12,34,55,66],23));//22
 </script>

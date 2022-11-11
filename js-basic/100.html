@@ -15,5 +15,18 @@ function check_common_element(arra1, arra2) {
 }
 console.log(check_common_element([1,2,3], [3,4,5]));   
 console.log(check_common_element([1,2,3], [5,6,7]));  
+
+
+// Method 3 
+function commonEl(arr1, arr2){
+let ans = false;
+for (let i = 0; i < Math.max(arr1.length, arr2.length); i++){
+if (arr2.includes(arr1[i])){
+ans = true
+}
+}
+return ans
+}
+console.log(commonEl([3,2,6], [4, 5, 2])) //true
     
 </script>

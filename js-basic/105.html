@@ -1,35 +1,49 @@
-
 <h3>
-    Write a JavaScript program to find the number of times to replace a given number with the sum of its digits until it
-    convert to a single digit number.
+  Write a JavaScript program to find the number of times to replace a given
+  number with the sum of its digits until it convert to a single digit number.
 </h3>
 
 <script>
-// Method 2 
-    function digit_to_one(num) {
+  // Method 2
+      function digit_to_one(num) {
 
-        var digitSum = function (num) {
+          var digitSum = function (num) {
 
-            var digit_sum = 0;
-            while (num) {
-                digit_sum += num % 10;
-                num = Math.floor(num / 10);
-            }
+              var digit_sum = 0;
+              while (num) {
+                  digit_sum += num % 10;
+                  num = Math.floor(num / 10);
+              }
 
-            return digit_sum;
-        };
+              return digit_sum;
+          };
 
-        var result = 0;
+          var result = 0;
 
-        while (num >= 10) {
-            result += 1;
-            num = digitSum(num);
-        }
+          while (num >= 10) {
+              result += 1;
+              num = digitSum(num);
+          }
 
-        return result;
-    }
+          return result;
+      }
 
-    console.log(digit_to_one(123))
-    console.log(digit_to_one(156))
+      console.log(digit_to_one(123))
+      console.log(digit_to_one(156))
 
+
+      // Method 3
+      function test(num){
+  num=num.toString();
+  var newnum=0;
+  var c=1;
+  for(var i=0; i<num.length; i++){newnum+="num[i]*1}"; if(newnum.tostring().length="">1){
+  test(newnum);
+  c++;
+  }
+  return c;
+  }
+}
+  console.log(test(123));
+  console.log(test(156));
 </script>

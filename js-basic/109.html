@@ -27,5 +27,26 @@ return prime_num1;
 console.log(sort_prime(5))
 console.log(sort_prime(11))
 console.log(sort_prime(19))
+
+// Method 3 
+function primes (n){
+let res = [];
+let flag;
+for (let i = 2; i <= n; i++){
+flag = true;
+for (let j = 2; j <= i; j++){
+if (i % j == 0 && i != j && j != 1) {
+flag = false;
+break;
+}
+}
+if (flag) res.push(i);
+}
+return res;
+}
+
+console.log(primes(5)); // [ 2, 3, 5 ]
+console.log(primes(11));// [ 2, 3, 5, 7, 11 ]
+console.log(primes(19));// [ 2, 3, 5, 7, 11, 13, 17, 19 ]
     
 </script>

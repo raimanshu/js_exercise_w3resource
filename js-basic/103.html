@@ -28,5 +28,16 @@ function digit_delete(num) {
 console.log(digit_delete(100));
 console.log(digit_delete(10));
 console.log(digit_delete(1245)); 
+
+
+// Method 3
+function findMaximal2(n) {
+let arr = n.toString().split('');
+arr.sort();
+let smallest = arr[0];
+let str = n.toString();
+let del = str.replace(smallest, '');
+return del;
+}
     
 </script>

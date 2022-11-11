@@ -19,5 +19,18 @@
 console.log(number_of_InversionsNaive([0, 3, 2, 5, 9]));   
 console.log(number_of_InversionsNaive([1, 5, 4, 3]));   
 console.log(number_of_InversionsNaive([10, 30, 20, -10])); 
+
+// Method 3
+function nrInv(arr) {
+var count = 0;
+for (i = arr.length - 1; i > 0; i--) {
+for (j = i - 1; j >= 0; j--) {
+if (arr[i] < arr[j]) {
+count ++;
+}
+}
+}
+return count;
+}
     
 </script>

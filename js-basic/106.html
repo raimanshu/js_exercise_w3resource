@@ -19,5 +19,22 @@ function divide_digit(num, d) {
 console.log(divide_digit(-12, 2))
 console.log(divide_digit(13, 2))
 console.log(divide_digit(13, 1))
+
+
+// Method 3 
+function actividad_106(x,y){
+var ctr = 0
+if(y === 1 ){
+return x
+}
+while(x%y===0){
+x/=y
+ctr++
+}
+return `Resultado final = ${x} Número de divisiones = ${ctr}`
+}
+console.log(actividad_106(-12,2))
+console.log(actividad_106(24,2))
+console.log(actividad_106(100,2))
     
 </script>
