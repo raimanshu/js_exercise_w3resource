@@ -17,4 +17,11 @@
 console.log(int_sum(8))
 console.log(int_sum(9))
 console.log(int_sum(26))
+
+// Method 3
+let sumAll = (num) => num == 1 ? 1 : num + sumAll(Math.floor(num/2))
+
+console.log(sumAll(8)) // 15
+console.log(sumAll(9)) // 16
+console.log(sumAll(26)) // 49
 </script>

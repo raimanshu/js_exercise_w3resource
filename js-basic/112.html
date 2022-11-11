@@ -20,4 +20,20 @@ function trailing_zeros_factorial(n) {
 console.log(trailing_zeros_factorial(8))
 console.log(trailing_zeros_factorial(9))
 console.log(trailing_zeros_factorial(10))
+
+// Method 3
+function funtailZero(n) {
+let fact = (n) => n == 1 ? 1 : n * fact(n-1)
+let count = 0
+let num = fact(n)
+while (num % 5 == 0) {
+count++
+num = num / 5
+}
+return count
+}
+
+console.log(funtailZero(8)) // 1
+console.log(funtailZero(9)) // 1
+console.log(funtailZero(10)) // 2
 </script>

@@ -23,5 +23,21 @@ function is_diagonal_matrix(user_matrix) {
 console.log(is_diagonal_matrix([[1, 0, 0], [0, 2, 0], [0, 0, 3] ]));
 console.log(is_diagonal_matrix([[1, 0, 0], [0, 2, 3], [0, 0, 3] ]));
 
+// Method 3 
+function matrixDiagonal(mdiag){
+var sum=0;
+for(var i = 0; i < mdiag.length; i++)
+{
+for ( var j = 0; j < mdiag.length; j++ ) {
+if ( i !== j ) {
+sum += mdiag [ i ] [ j ];
+}}}
+return sum == 0 ;}
+
+var x = [ [ 1, 0, 0, 0 ], [ 0, 2, 0, 0 ], [ 0, 0, 3, 0 ], [ 0, 0, 0, 4 ] ];
+var y = [ [ 1, 0, 0 ], [ 0, 2, 3 ], [ 0, 0, 3 ] ];
+console.log ( matrixDiagonal ( x ) );
+console.log ( matrixDiagonal ( y ) );
+
 
 </script>

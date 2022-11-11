@@ -15,4 +15,10 @@ console.log(is_correct_Sentence("This tool will help you write better English an
 console.log(is_correct_Sentence("This tool will help you write better English and efficiently corrects texts"));            
 console.log(is_correct_Sentence("this tool will help you write better English and efficiently corrects texts."));
 
+
+// Method 3 
+var str = "This tool will help you write better English and efficiently corrects texts.";
+var capReg = /[A-Z]/;
+alert((str[0].match(capReg) && str.slice(-1).endsWith('.'))? "Correct" : "Incorrect" );
+
 </script>
