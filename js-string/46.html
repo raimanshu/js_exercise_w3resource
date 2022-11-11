@@ -19,11 +19,20 @@
 
 
 
-    // Solution
+    // Method 2
     // function startsWith(input, string) {
     //     return input.indexOf(string) === 0;
     // }
     // console.log(startsWith('js string exercises', 'js'));
+
+    // Method 3
+    function checkStartsWith(str, search) 
+       {
+           let regex = new RegExp("^" + search),
+               check = regex.test(str);
+           return check;
+       }
+       console.log(checkStartsWith('js string exercises', 'js')); // true
 
 
 </script>

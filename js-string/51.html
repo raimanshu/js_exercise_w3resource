@@ -1,0 +1,63 @@
+<h5>Points to remember</h5>
+<p></p>
+
+<h3>
+    Write a JavaScript function to implement the Boyer-Moore String Search Algorithm.
+    From Wikipedia,
+    In computer science, the Boyer-Moore string-search algorithm is an efficient string-searching algorithm that is the standard benchmark for practical string-search literature. It was developed by Robert S. Boyer and J Strother Moore in 1977. The original paper contained static tables for computing the pattern shifts without an explanation of how to produce them. The algorithm for producing the tables was published in a follow-on paper; this paper contained errors which were later corrected by Wojciech Rytter in 1980. The algorithm preprocesses the string being searched for (the pattern), but not the string being searched in (the text). It is thus well-suited for applications in which the pattern is much shorter than the text or where it persists across multiple searches. The Boyer-Moore algorithm uses information gathered during the preprocess step to skip sections of the text, resulting in a lower constant factor than many other string search algorithms. In general, the algorithm runs faster as the pattern length increases. The key features of the algorithm are to match on the tail of the pattern rather than the head, and to skip along the text in jumps of multiple characters rather than searching every single character in the text.
+    The Boyer-Moore string search algorithm allows linear time in search by skipping indices when searching inside a string for a pattern.
+    Test Data :
+    ('THIS IS A TEST TEXT', 'TEST') -> 10
+    ('THIS IS A TEST TEXT', 'TEST') -> 14
+</h3>
+
+<script>
+  // Method 2
+/*
+ *Source:shorturl.at/rvwPV
+ *Implementation of the Boyer-Moore String Search Algorithm.
+ *The Boyer–Moore string search algorithm allows linear time in
+ *search by skipping indices when searching inside a string for a pattern.
+ **/
+ const buildBadMatchTable = (str) => {
+  const tableObj = {}
+  const strLength = str.length
+  for (let i = 0; i < strLength - 1; i++) {
+    tableObj[str[i]] = strLength - 1 - i
+  }
+  if (tableObj[str[strLength - 1]] === undefined) {
+    tableObj[str[strLength - 1]] = strLength
+  }
+  return tableObj
+}
+const boyerMoore = (str, pattern) => {
+ const badMatchTable = buildBadMatchTable(pattern)
+  let offset = 0
+  const patternLastIndex = pattern.length - 1
+  const maxOffset = str.length - pattern.length
+  // if the offset is bigger than maxOffset, cannot be found
+  while (offset <= maxOffset) {
+    let scanIndex = 0
+    while (pattern[scanIndex] === str[scanIndex + offset]) {
+      if (scanIndex === patternLastIndex) {
+        // found at this index
+        return offset
+      }
+      scanIndex++
+    }
+    const badMatchString = str[offset + patternLastIndex]
+    if (badMatchTable[badMatchString]) {
+      // increase the offset if it exists
+      offset += badMatchTable[badMatchString]
+    } else {
+      offset++
+    }
+  }
+  return -1
+}
+
+console.log(boyerMoore('THIS IS A TEST TEXT', 'TEST'))
+console.log(boyerMoore('AAIOOOAADDZXYCAADAABAABA', 'AADA'))
+
+
+</script>

@@ -34,7 +34,7 @@
 
 
 
-    // Solution
+    // Method 2
     // function successor(str) {
     //     var alphabet = 'abcdefghijklmnopqrstuvwxyz',
     //         length = alphabet.length,
@@ -91,6 +91,17 @@
 
     // console.log(successor('abcd'));
     // console.log(successor('3456'));
+
+
+    // Method 3
+    function successor(str){
+var last = str.charCodeAt(str.length-1) + 1;
+var res = String.fromCharCode(last);
+var str = str.substring(0, str.length -1);
+return str + res;
+};
+console.log(successor('abcd'));
+console.log(successor('3456'));
 
 
 </script>

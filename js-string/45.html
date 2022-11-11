@@ -1,45 +1,54 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to get humanized number with the correct suffix such as 1st, 2nd, 3rd or 4th. Go to the
-    editor
-    Test Data :
-    console.log(humanize(1));
-    console.log(humanize(20));
-    console.log(humanize(302));
-    "1st"
-    "20th"
-    "302nd"
+<h3>
+  Write a JavaScript function to get humanized number with the correct suffix
+  such as 1st, 2nd, 3rd or 4th. Go to the editor Test Data :
+  console.log(humanize(1)); console.log(humanize(20));
+  console.log(humanize(302)); "1st" "20th" "302nd"
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function humanize(number) {
+  //     if (number % 100 >= 11 && number % 100 <= 13)
+  //         return number + "th";
 
+  //     switch (number % 10) {
+  //         case 1: return number + "st";
+  //         case 2: return number + "nd";
+  //         case 3: return number + "rd";
+  //     }
 
+  //     return number + "th";
+  // }
+  // console.log(humanize(1));
+  // console.log(humanize(20));
+  // console.log(humanize(302));
 
-    // Solution
-    // function humanize(number) {
-    //     if (number % 100 >= 11 && number % 100 <= 13)
-    //         return number + "th";
+  // Method 3
+  function humanize(num) {
+    var arr = ["th", "st", "nd", "rd"];
+    if (num)
+      return num < 4
+        ? num + arr[num]
+        : num < 11
+        ? num + arr[0]
+        : num + arr[num % 10];
+  }
+  console.log(humanize(1));
+  console.log(humanize(20));
+  console.log(humanize(302));
 
-    //     switch (number % 10) {
-    //         case 1: return number + "st";
-    //         case 2: return number + "nd";
-    //         case 3: return number + "rd";
-    //     }
-
-    //     return number + "th";
-    // }
-    // console.log(humanize(1));
-    // console.log(humanize(20));
-    // console.log(humanize(302));
-
-
+  // Method 4
+  function humanize(n) {
+    var suf = ["th", "st", "nd", "rd"];
+    var last = String(n).substr(-1);
+    for (var i = 0; i < suf.length; i++) {
+      if (last < 4) return n + suf[last];
+    }
+  }
+  console.log(humanize(1));
+  console.log(humanize(20));
+  console.log(humanize(302));
 </script>

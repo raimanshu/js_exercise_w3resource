@@ -1,38 +1,52 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to create a Zerofilled value with optional +, - sign. Go to the editor
-    Test Data :
-    console.log(zeroFill(120, 5, '-'));
-    "+00120"
-    console.log(zeroFill(29, 4));
-    "0029"
+<h3>
+  Write a JavaScript function to create a Zerofilled value with optional +, -
+  sign. Go to the editor Test Data : console.log(zeroFill(120, 5, '-'));
+  "+00120" console.log(zeroFill(29, 4)); "0029"
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function zeroFill(number, width, osign) {
+  //     var num = '' + Math.abs(number),
+  //         zerosw = width - num.length,
+  //         sign = number >= 0;
+  //     return (sign ? (osign ? '+' : '') : '-') +
+  //         Math.pow(10, Math.max(0, zerosw)).toString().substr(1) + num;
+  // }
 
+  // console.log(zeroFill(120, 5, '-'));
 
+  // console.log(zeroFill(29, 4));
 
-    // Solution
-    // function zeroFill(number, width, osign) {
-    //     var num = '' + Math.abs(number),
-    //         zerosw = width - num.length,
-    //         sign = number >= 0;
-    //     return (sign ? (osign ? '+' : '') : '-') +
-    //         Math.pow(10, Math.max(0, zerosw)).toString().substr(1) + num;
-    // }
+  // Method 3
+  function zeroFill(n1, n2, n3) {
+    return "0".repeat(n2 - n1.toString().length) + n1;
+  }
+  console.log(zeroFill(120, 5, "-"));
+  console.log(zeroFill(29, 4));
 
-    // console.log(zeroFill(120, 5, '-'));
+  // Method 4
+  let zerofill = (what, len, sign) => {
+    return (sign ? "+" : "-") + "0".repeat(len - what.toString().length) + what;
+  };
 
-    // console.log(zeroFill(29, 4));
+  console.log(zerofill(120, 5, "-")); // +00120
+  console.log(zerofill(29, 4)); // -0029
 
-
+  // Method 5
+  function zeroFill(input, strlen, sign) {
+    var str = input.toString();
+    while (str.length < strlen) {
+      str = "0" + str;
+    }
+    if (sign === "-") {
+      str = "+" + str;
+    }
+    return str;
+  }
+  console.log(zeroFill(120, 5, "-"));
+  console.log(zeroFill(29, 4));
 </script>

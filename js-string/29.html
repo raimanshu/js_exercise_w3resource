@@ -1,50 +1,45 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to find a word within a string. Go to the editor
-    Test Data :
-    console.log(search_word('The quick brown fox', 'fox'));
-    console.log(search_word('aa, bb, cc, dd, aa', 'aa'));
-    Output :
-    "'fox' was found 1 times."
-    "'aa' was found 2 times."
+<h3>
+  Write a JavaScript function to find a word within a string. Go to the editor
+  Test Data : console.log(search_word('The quick brown fox', 'fox'));
+  console.log(search_word('aa, bb, cc, dd, aa', 'aa')); Output : "'fox' was
+  found 1 times." "'aa' was found 2 times."
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function search_word(text, word) {
 
+  //     var x = 0, y = 0;
 
+  //     for (i = 0; i < text.length; i++) {
+  //         if (text[i] == word[0]) {
+  //             for (j = i; j < i + word.length; j++) {
+  //                 if (text[j] == word[j - i]) {
+  //                     y++;
+  //                 }
+  //                 if (y == word.length) {
+  //                     x++;
+  //                 }
+  //             }
+  //             y = 0;
+  //         }
+  //     }
+  //     return "'" + word + "' was found " + x + " times.";
+  // }
 
-    // Solution
-    // function search_word(text, word) {
+  // console.log(search_word('The quick brown fox', 'fox'));
+  // console.log(search_word('aa, bb, cc, dd, aa', 'aa'));
 
-    //     var x = 0, y = 0;
-
-    //     for (i = 0; i < text.length; i++) {
-    //         if (text[i] == word[0]) {
-    //             for (j = i; j < i + word.length; j++) {
-    //                 if (text[j] == word[j - i]) {
-    //                     y++;
-    //                 }
-    //                 if (y == word.length) {
-    //                     x++;
-    //                 }
-    //             }
-    //             y = 0;
-    //         }
-    //     }
-    //     return "'" + word + "' was found " + x + " times.";
-    // }
-
-    // console.log(search_word('The quick brown fox', 'fox'));
-    // console.log(search_word('aa, bb, cc, dd, aa', 'aa'));
-
-
+  // Methos 3
+  function searchWord(input, word) {
+    var word = input.match(new RegExp(word, "g"));
+    if (word != null) {
+      console.log(word[0], "was found", word.length, "time");
+    } else {
+      console.log("Not Found");
+    }
+  }
 </script>

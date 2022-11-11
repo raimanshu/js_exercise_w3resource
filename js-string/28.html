@@ -1,38 +1,33 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to convert Hexadecimal to ASCII format. Go to the editor
-    Test Data :
-    console.log(hex_to_ascii('3132'));
-    console.log(hex_to_ascii('313030'));
-    Output :
-    "12"
-    "100"
+<h3>
+  Write a JavaScript function to convert Hexadecimal to ASCII format. Go to the
+  editor Test Data : console.log(hex_to_ascii('3132'));
+  console.log(hex_to_ascii('313030')); Output : "12" "100"
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function hex_to_ascii(str1) {
+  //     var hex = str1.toString();
+  //     var str = '';
+  //     for (var n = 0; n < hex.length; n += 2) {
+  //         str += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
+  //     }
+  //     return str;
+  // }
+  // console.log(hex_to_ascii('3132'));
+  // console.log(hex_to_ascii('313030'));
 
+  // Method 3
+  function hexaToASCII(str) {
+    return str.replace(/.{1,2}/g, (temp) =>
+      String.fromCharCode(parseInt(temp, 16))
+    );
+  }
 
-
-    // Solution
-    // function hex_to_ascii(str1) {
-    //     var hex = str1.toString();
-    //     var str = '';
-    //     for (var n = 0; n < hex.length; n += 2) {
-    //         str += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
-    //     }
-    //     return str;
-    // }
-    // console.log(hex_to_ascii('3132'));
-    // console.log(hex_to_ascii('313030'));
-
-
+  console.log(hexaToASCII("3132"));
+  console.log(hexaToASCII("313030"));
+  console.log(hexaToASCII("496e66696e697479"));
 </script>

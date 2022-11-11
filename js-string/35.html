@@ -19,7 +19,7 @@
 
 
 
-    // Solution
+    // Method 2
     // function strip_html_tags(str) {
     //     if ((str === null) || (str === ''))
     //         return false;
@@ -29,6 +29,28 @@
     // }
 
     // console.log(strip_html_tags('PHP Exercises'));
+
+    // Method 3
+    function removeHTMLTag(str) 
+       {
+           return str.replace(/<[/]?\w+>/g, "");
+       }
+       console.log(removeHTMLTag('
+PHP Exercises
+
+'));
+
+// Method 4
+
+function strip_html_tags(str){
+
+return str.replace(/<\/?\w+>|<\/\w+>/g, "");
+}
+
+console.log(strip_html_tags('
+PHP Exercises
+
+'));
 
 
 </script>

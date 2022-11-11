@@ -1,36 +1,44 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to remove the first occurrence of a given 'search string' from a string. Go to the
-    editor
-    Test Data :
-    console.log(remove_first_occurrence("The quick brown fox jumps over the lazy dog", 'the'));
-    Output :
-    "The quick brown fox jumps over lazy dog"
+<h3>
+  Write a JavaScript function to remove the first occurrence of a given 'search
+  string' from a string. Go to the editor Test Data :
+  console.log(remove_first_occurrence("The quick brown fox jumps over the lazy
+  dog", 'the')); Output : "The quick brown fox jumps over lazy dog"
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function remove_first_occurrence(str, searchstr) {
+  //     var index = str.indexOf(searchstr);
+  //     if (index === -1) {
+  //         return str;
+  //     }
+  //     return str.slice(0, index) + str.slice(index + searchstr.length);
+  // }
 
+  // console.log(remove_first_occurrence("The quick brown fox jumps over the lazy dog", 'the'));
 
+  // Method 3
+  function removeFirstOccurence(str, searchStr) {
+    if (typeof searchStr === "number") searchStr += "";
+    if (searchStr === undefined) return str;
+    return str.split(searchStr).join("");
+  }
 
-    // Solution
-    // function remove_first_occurrence(str, searchstr) {
-    //     var index = str.indexOf(searchstr);
-    //     if (index === -1) {
-    //         return str;
-    //     }
-    //     return str.slice(0, index) + str.slice(index + searchstr.length);
-    // }
+  console.log(
+    removeFirstOccurence("The quick brown fox jumps over the lazy dog", "the")
+  );
 
-    // console.log(remove_first_occurrence("The quick brown fox jumps over the lazy dog", 'the'));
-
-
+  // Method 4
+  function remove_first_occurrence(str1, str2) {
+    return str1.replace(str2, "");
+  }
+  console.log(
+    remove_first_occurrence(
+      "The quick brown fox jumps over the lazy dog",
+      "the"
+    )
+  );
 </script>

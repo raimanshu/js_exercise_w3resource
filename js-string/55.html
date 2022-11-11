@@ -1,0 +1,37 @@
+<h5>Points to remember</h5>
+<p></p>
+
+<h3>
+    Write a JavaScript function to check whether a string is a Pangram or not. Go to the editor
+    A pangram or holoalphabetic sentence is a sentence using every letter of a given alphabet at least once. Pangrams have been used to display typefaces, test equipment, and develop skills in handwriting, calligraphy, and keyboarding
+    Test Data :
+    ("The quick brown fox jumps over the lazy dog") -> true
+    ("Waltz, bad nymph, for quick jigs vex.") -> true
+    ("The five boxing wizards jump quickly.") -> true
+    ("The boxing wizards jump quickly.") -> false
+    (12356) -> "It must be a string."
+</h3>
+
+<script>
+  // Method 2
+  const test = (string) => {
+  if (typeof string !== 'string') {
+    return 'It must be a string.'
+  }
+  const result = new Set()
+  for (const ch of string.toUpperCase()) 
+  {
+    if (/[A-Z]/.test(ch)) 
+    {
+        result.add(ch)
+    }
+  }
+  return result.size === 26
+}
+console.log(test("The quick brown fox jumps over the lazy dog"))
+console.log(test("Waltz, bad nymph, for quick jigs vex."))
+console.log(test("The five boxing wizards jump quickly."))
+console.log(test("The boxing wizards jump quickly."))
+console.log(test(12356))
+
+</script>

@@ -1,29 +1,22 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to capitalize each word in the string. Go to the editor
-    Test Data :
-    console.log(capitalizeWords('js string exercises'));
-    "JS STRING EXERCISES"
+<h3>
+  Write a JavaScript function to capitalize each word in the string. Go to the
+  editor Test Data : console.log(capitalizeWords('js string exercises')); "JS
+  STRING EXERCISES"
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function capitalizeWords(str) {
+  //     return str.replace(/\w\S*/g, function (txt) { return txt.substr(0).toUpperCase(); });
+  // }
+  // console.log(capitalizeWords('js string exercises'));
 
-
-
-    // Solution
-    // function capitalizeWords(str) {
-    //     return str.replace(/\w\S*/g, function (txt) { return txt.substr(0).toUpperCase(); });
-    // }
-    // console.log(capitalizeWords('js string exercises'));
-
-
+  // Method 3
+  function capitalizeWords(str) {
+    return str.toUpperCase();
+  }
+  console.log(capitalizeWords("js string exercises"));
 </script>

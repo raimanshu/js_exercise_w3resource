@@ -19,7 +19,7 @@
 
 
 
-    // Solution
+    // Method 2
     // function remove_non_ascii(str) {
 
     //     if ((str === null) || (str === ''))
@@ -31,6 +31,14 @@
     // }
 
     // console.log(remove_non_ascii('äÄçÇéÉêPHP-MySQLöÖÐþúÚ'));
+
+    // Method 3
+    function remove_non_ascii(str) {
+
+return str.replace(/^\W+|\W+$/g, "");
+}
+
+console.log(remove_non_ascii('???????PHP-MySQL??????'));
 
 
 </script>

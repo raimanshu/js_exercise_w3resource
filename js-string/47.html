@@ -1,30 +1,28 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to test whether a string ends with a specified string. Go to the editor
-    Test Data :
-    console.log(endsWith('JS string exercises', 'exercises'));
-    true
+<h3>
+  Write a JavaScript function to test whether a string ends with a specified
+  string. Go to the editor Test Data : console.log(endsWith('JS string
+  exercises', 'exercises')); true
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function endsWith(input, string) {
+  //     var index = input.length - string.length;
+  //     return index >= 0 && input.indexOf(string, index) > -1;
+  // }
+  // console.log(endsWith('JS string exercises', 'exercises'));
 
+  // Method 3
+  function endsWith(str, sub) {
+    return str.indexOf(sub) === str.length - sub.length;
+  }
 
-
-    // Solution
-    // function endsWith(input, string) {
-    //     var index = input.length - string.length;
-    //     return index >= 0 && input.indexOf(string, index) > -1;
-    // }
-    // console.log(endsWith('JS string exercises', 'exercises'));
-
-
+  // Method 4
+  function endsWith(str, substr) {
+    return str.slice(str.lastIndexOf(substr)) === substr;
+  }
+  console.log(endsWith("JS string exercises", "exercises"));
 </script>

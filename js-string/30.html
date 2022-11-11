@@ -1,42 +1,45 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function check if a string ends with specified suffix. Go to the editor
-    Test Data :
-    console.log(string_endsWith('JS PHP PYTHON','PYTHON'));
-    true
-    console.log(string_endsWith('JS PHP PYTHON',''));
-    false
+<h3>
+  Write a JavaScript function check if a string ends with specified suffix. Go
+  to the editor Test Data : console.log(string_endsWith('JS PHP
+  PYTHON','PYTHON')); true console.log(string_endsWith('JS PHP PYTHON',''));
+  false
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function string_endsWith(str, suffix) {
 
+  //     if (((str === null) || (str === '')) || ((suffix === null) || (suffix === ''))) {
+  //         return false;
+  //     }
+  //     else {
+  //         str = str.toString();
+  //         suffix = suffix.toString();
+  //     }
+  //     return str.indexOf(suffix, str.length - suffix.length) !== -1;
+  // }
 
+  // console.log(string_endsWith('JS PHP PYTHON', 'PYTHON'));
 
-    // Solution
-    // function string_endsWith(str, suffix) {
+  // console.log(string_endsWith('JS PHP PYTHON', ''));
 
-    //     if (((str === null) || (str === '')) || ((suffix === null) || (suffix === ''))) {
-    //         return false;
-    //     }
-    //     else {
-    //         str = str.toString();
-    //         suffix = suffix.toString();
-    //     }
-    //     return str.indexOf(suffix, str.length - suffix.length) !== -1;
-    // }
+  // Methos 3
+  function string_endsWith(str1, str2) {
+    var res = true;
+    if (str2 === "") return false;
+    if (str1.endsWith(str2)) return res;
+  }
+  console.log(string_endsWith("JS PHP PYTHON", "PYTHON"));
+  console.log(string_endsWith("JS PHP PYTHON", ""));
 
-    // console.log(string_endsWith('JS PHP PYTHON', 'PYTHON'));
-
-    // console.log(string_endsWith('JS PHP PYTHON', ''));
-
-
+  // Method 4
+  const stringEndsWith = (string, suffix) => {
+    if (string.length - suffix.length == string.indexOf(suffix)) {
+      return true;
+    }
+    return false;
+  };
 </script>

@@ -1,40 +1,40 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to create a case-insensitive search. Go to the editor
-    Test Data :
-    console.log(case_insensitive_search('JavaScript Exercises', 'exercises'));
-    "Matched"
-    console.log(case_insensitive_search('JavaScript Exercises', 'Exercises'));
-    "Matched"
-    console.log(case_insensitive_search('JavaScript Exercises', 'Exercisess'));
-    "Not Matched"
+<h3>
+  Write a JavaScript function to create a case-insensitive search. Go to the
+  editor Test Data : console.log(case_insensitive_search('JavaScript Exercises',
+  'exercises')); "Matched" console.log(case_insensitive_search('JavaScript
+  Exercises', 'Exercises')); "Matched"
+  console.log(case_insensitive_search('JavaScript Exercises', 'Exercisess'));
+  "Not Matched"
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function case_insensitive_search(str, search_str) {
+  //     var result = str.search(new RegExp(search_str, "i"));
 
+  //     if (result > 0)
+  //         return 'Matched';
+  //     else
+  //         return 'Not Matched';
+  // }
+  // console.log(case_insensitive_search('JavaScript Exercises', 'exercises'));
+  // console.log(case_insensitive_search('JavaScript Exercises', 'Exercises'));
+  // console.log(case_insensitive_search('JavaScript Exercises', 'Exercisess'));
 
+  // Method 3
+  function case_insensitive_search(str1, str2) {
+    let re = new RegExp(str2, "ig");
+    return re.test(str1) ? "Matched" : "Not Matched";
+  }
 
-    // Solution
-    // function case_insensitive_search(str, search_str) {
-    //     var result = str.search(new RegExp(search_str, "i"));
+  // Method 4
+  const case_insensitive_search = (str, strMatch) => {
+    const g = str.toLowerCase().split(" ");
+    return g.includes(strMatch.toLowerCase());
+  };
 
-    //     if (result > 0)
-    //         return 'Matched';
-    //     else
-    //         return 'Not Matched';
-    // }
-    // console.log(case_insensitive_search('JavaScript Exercises', 'exercises'));
-    // console.log(case_insensitive_search('JavaScript Exercises', 'Exercises'));
-    // console.log(case_insensitive_search('JavaScript Exercises', 'Exercisess'));
-
-
+  console.log(case_insensitive_search("JavaScript Exercises", "Exercises"));
 </script>

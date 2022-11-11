@@ -1,39 +1,34 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to convert ASCII to Hexadecimal format. Go to the editor
-    Test Data :
-    console.log(ascii_to_hexa('12'));
-    console.log(ascii_to_hexa('100'));
-    Output :
-    "3132"
-    "313030"
+<h3>
+  Write a JavaScript function to convert ASCII to Hexadecimal format. Go to the
+  editor Test Data : console.log(ascii_to_hexa('12'));
+  console.log(ascii_to_hexa('100')); Output : "3132" "313030"
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function ascii_to_hexa(str) {
+  //     var arr1 = [];
+  //     for (var n = 0, l = str.length; n < l; n++) {
+  //         var hex = Number(str.charCodeAt(n)).toString(16);
+  //         arr1.push(hex);
+  //     }
+  //     return arr1.join('');
+  // }
 
+  // console.log(ascii_to_hexa('12'));
+  // console.log(ascii_to_hexa('100'));
 
-
-    // Solution
-    // function ascii_to_hexa(str) {
-    //     var arr1 = [];
-    //     for (var n = 0, l = str.length; n < l; n++) {
-    //         var hex = Number(str.charCodeAt(n)).toString(16);
-    //         arr1.push(hex);
-    //     }
-    //     return arr1.join('');
-    // }
-
-    // console.log(ascii_to_hexa('12'));
-    // console.log(ascii_to_hexa('100'));
-
-
+  // Method 3
+  function ascii_to_hexa(str) {
+    var hex = "";
+    for (var i = 0; i < str.length; i++) {
+      hex += "" + str.charCodeAt(i).toString(16);
+    }
+    return hex;
+  }
+  console.log(ascii_to_hexa("12"));
+  console.log(ascii_to_hexa("100"));
 </script>

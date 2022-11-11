@@ -1,34 +1,42 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to convert a string to title case. Go to the editor
-    Test Data :
-    console.log(sentenceCase('PHP exercises. python exercises.'));
-    "Php Exercises. Python Exercises."
+<h3>
+  Write a JavaScript function to convert a string to title case. Go to the
+  editor Test Data : console.log(sentenceCase('PHP exercises. python
+  exercises.')); "Php Exercises. Python Exercises."
 </h3>
 
-
-
-
-
 <script>
+  // Method 2
+  // function sentenceCase(str) {
+  //     if ((str === null) || (str === ''))
+  //         return false;
+  //     else
+  //         str = str.toString();
 
+  //     return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+  // }
 
+  // console.log(sentenceCase('PHP exercises. python exercises.'));
 
-    // Solution
-    // function sentenceCase(str) {
-    //     if ((str === null) || (str === ''))
-    //         return false;
-    //     else
-    //         str = str.toString();
+  // Method 3
+  function sentenceCase(str) {
+    return str.replace(/\b[a-z]/g, (chr) => chr.toUpperCase());
+  }
 
-    //     return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
-    // }
+  console.log(sentenceCase("PHP exercises. python exercises."));
 
-    // console.log(sentenceCase('PHP exercises. python exercises.'));
+  // Method 4
+  let toTitleCase = (sentence) => {
+    let arr = sentence.split(" ");
+    let upperCase = "";
 
+    for (let i of arr) {
+      upperCase += i[0].toUpperCase() + i.slice(1) + " ";
+    }
+    return upperCase;
+  };
 
+  toTitleCase("the quick brown fox jumped");
 </script>

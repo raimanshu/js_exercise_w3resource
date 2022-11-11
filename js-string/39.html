@@ -19,11 +19,22 @@
 
 
 
-    // Solution
+    // Method 2
     // function Uncapitalize(str1) {
     //     return str1.charAt(0).toLowerCase() + str1.slice(1);
     // }
     // console.log(Uncapitalize('Js string exercises'));
 
+    // Method 3
+    function Uncapitalize(str){
+return str.toLowerCase();
+};
+console.log(Uncapitalize('Js string exercises'));
+
+// Method 4
+function Uncapitalize(str) {
+return str[0].toLocaleLowerCase() + str.substring(1);
+}
+console.log(Uncapitalize('Js string exercises'));
 
 </script>

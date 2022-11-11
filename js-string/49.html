@@ -1,41 +1,42 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3>Write a JavaScript function to get unique guid (an acronym for 'Globally Unique Identifier?) of the specified
-    length, or 32 by default. Go to the editor
-    Test Data :
-    console.log(guid());
-    console.log(guid(15));
-    "hRYilcoV7ajokxsYFl1dba41AyE0rUQR"
-    "b7pwBqrZwqaDrex"
+<h3>
+  Write a JavaScript function to get unique guid (an acronym for 'Globally
+  Unique Identifier?) of the specified length, or 32 by default. Go to the
+  editor Test Data : console.log(guid()); console.log(guid(15));
+  "hRYilcoV7ajokxsYFl1dba41AyE0rUQR" "b7pwBqrZwqaDrex"
 </h3>
 
-
-
-
-
 <script>
+  // Method 2
+  // function guid(len) {
+  //     var buf = [],
+  //         chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
+  //         charlen = chars.length,
+  //         length = len || 32;
 
+  //     for (var i = 0; i < length; i++) {
+  //         buf[i] = chars.charAt(Math.floor(Math.random() * charlen));
+  //     }
 
-    // Solution
-    // function guid(len) {
-    //     var buf = [],
-    //         chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
-    //         charlen = chars.length,
-    //         length = len || 32;
+  //     return buf.join('');
+  // }
 
-    //     for (var i = 0; i < length; i++) {
-    //         buf[i] = chars.charAt(Math.floor(Math.random() * charlen));
-    //     }
+  // console.log(guid());
+  // console.log(guid(15));
 
-    //     return buf.join('');
-    // }
-
-    // console.log(guid());
-    // console.log(guid(15));
-
-
+  // Method 3\
+  let guID2 = (len = 32) => {
+    let id = "";
+    while (len--) {
+      id += String.fromCharCode(
+        ((id = (Math.random() * 62) | 0),
+        (id += id > 9 ? (id < 36 ? 55 : 61) : 48))
+      );
+    }
+    return id;
+  };
+  console.log(guID2(20));
+  // g5woOAeJIHpCedImJczJ
 </script>

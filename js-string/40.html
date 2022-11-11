@@ -1,33 +1,39 @@
 <h5>Points to remember</h5>
-<p>
+<p></p>
 
-</p>
-
-
-<h3> Write a JavaScript function to Uncapitalize the first letter of each word of a string. Go to the editor
-    Test Data :
-    console.log(unCapitalize_Words('Js String Exercises'));
-    "js string exercises"
+<h3>
+  Write a JavaScript function to Uncapitalize the first letter of each word of a
+  string. Go to the editor Test Data : console.log(unCapitalize_Words('Js String
+  Exercises')); "js string exercises"
 </h3>
 
-
-
-
-
-
 <script>
+  // Method 2
+  // function unCapitalize_Words(str) {
+  //     return str.replace(/\w\S*/g,
+  //         function (txt) {
+  //             return txt.charAt(0).toLowerCase() + txt.substr(1).toLowerCase();
+  //         });
+  // }
 
+  // console.log(unCapitalize_Words('Js String Exercises'));
 
+  // Method 3
+  function unCapitalize_Words(str) {
+    return str.replace(/\b\w/g, function (chr) {
+      return chr.toLowerCase();
+    });
 
-    // Solution
-    // function unCapitalize_Words(str) {
-    //     return str.replace(/\w\S*/g,
-    //         function (txt) {
-    //             return txt.charAt(0).toLowerCase() + txt.substr(1).toLowerCase();
-    //         });
-    // }
-
-    // console.log(unCapitalize_Words('Js String Exercises'));
-
-
+    // Method 4
+    function unCapitalize_Words(str) {
+      return str
+        .trim()
+        .split(" ")
+        .map(function (word) {
+          return word.charAt(0).toLocaleLowerCase() + word.slice(1);
+        })
+        .join(" ");
+    }
+    console.log(unCapitalize_Words("Js String Exercises"));
+  }
 </script>

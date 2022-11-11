@@ -1,0 +1,30 @@
+<h5>Points to remember</h5>
+<p></p>
+
+<h3>
+    Write a JavaScript function to check whether a string is in Pascal case or not. Go to the editor
+    A PascalCase naming convention capitalizes the first letter of each compound word in a variable. It is a best practice in software development to use descriptive variable names.
+    Test Data :
+    ("XmlStream") -> true
+    ("IOStream") -> true
+    ("javascript") -> false
+    (12356) -> "It must be a string."
+</h3>
+
+<script>
+  // Method 2
+  const test = (word) => {
+  if (typeof word !== 'string')
+  {
+    return 'It must be a string.'
+  }
+  const pattern = /^[A-Z][A-Za-z]*$/
+  return pattern.test(word)
+}
+console.log(test("XmlStream"))
+console.log(test("IOStream"))
+console.log(test("IEnumerable"))
+console.log(test("javascript"))
+console.log(test(12356))
+
+</script>
