@@ -6,7 +6,7 @@
 </h3>
 
 <script>
-
+// Method 2
 function test_same_elements_both_arrays(arra1, arra2) {
   var result = 0;
   for(var i = 0; i < arra1.length; i++) {
@@ -23,4 +23,11 @@ console.log(test_same_elements_both_arrays([1,2,3,4], [1,2,3,4]));
 console.log(test_same_elements_both_arrays([1,2,3,4], [1,2,3,5]));
 console.log(test_same_elements_both_arrays([1,2,3,4], [11,22,33,44]));
 
+// Method 2
+function intersectCount(firstArr, secondArr) {
+        let set1 = new Set(firstArr),
+            set2 = new Set(secondArr);
+        return [...set1].filter(e => set2.has(e)).length;
+    }
+   
 </script>

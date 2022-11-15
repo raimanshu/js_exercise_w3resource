@@ -7,7 +7,7 @@
 </h3>
 
 <script>
-
+// Method 2
 function halv_array_swap(iarra) {
   if (((iarra.length)%2)!=0)
     {
@@ -24,5 +24,18 @@ function halv_array_swap(iarra) {
 
 console.log(halv_array_swap([1,2,3,4,5,6]))
 console.log(halv_array_swap([1,2,3,4,5,6,7]))
+
+// Method 3
+function halves(arr){
+let part1 = arr.slice(0, Math.floor(arr.length / 2));
+let part2 = arr.slice(Math.floor(arr.length / 2));
+return [...part2, ...part1];
+}
+
+// Method 4
+function swap_two_halves(arr) {
+        return arr.concat(arr.splice(0, arr.length / 2));
+    }
+
 
 </script>

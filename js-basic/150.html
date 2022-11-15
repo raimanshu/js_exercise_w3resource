@@ -7,7 +7,7 @@
 </h3>
 
 <script>
-
+// Method 2
     function swap_adjacent_digits(n) {
         if (n.toString().length % 2 != 0) {
             return false;
@@ -27,5 +27,16 @@
     console.log(swap_adjacent_digits(1234));
     console.log(swap_adjacent_digits(123456));
     console.log(swap_adjacent_digits(12345));
+
+
+    // Method 3
+    const arr = [1, 2, 3, 4, 5, 8];
+const x = (arrArg) => {
+for (let i = 0; i < arrArg.length; i += 2) {
+[arrArg[i], arrArg[i + 1]] = [arrArg[i + 1], arrArg[i]];
+}
+return arrArg;
+};
+console.log(x(arr));
 
 </script>

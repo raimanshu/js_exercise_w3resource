@@ -8,7 +8,7 @@
 </h3>
 
 <script>
-
+// Method 2
 function break_address(url_add) {
     var data = url_add.split("://")
     var protocol = data[0];
@@ -26,5 +26,14 @@ function break_address(url_add) {
 var url_add = "https://www.w3resource.com/javascript-exercises/"
 console.log("Original address: "+url_add)
 console.log(break_address(url_add))
+
+// Method 3
+const breakUrl = url => console.log(url.split(/[^\w.-]+/g));
+
+// Method 4
+function breakUrl(url){
+let output = [];
+return output = url.match(/[a-z]+/gi);
+}
 
 </script>

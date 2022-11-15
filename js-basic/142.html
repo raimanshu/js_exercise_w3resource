@@ -7,7 +7,7 @@
 </h3>
 
 <script>
-
+// Method 2
 function simplify_path(main_path) {
   var parts = main_path.split('/'),
       new_path = [],
@@ -35,5 +35,15 @@ function simplify_path(main_path) {
   return result;
 }
 console.log(simplify_path("/home/var/./www/../html//sql/"));
+
+// Method 3
+function simplify(path) {
+let spl = path.split('/');
+return spl.filter(e => {
+return e !== '.' && e !== '..' && e !== '';
+}).join('/');
+}
+let path = '/home/var/./www/../html//sql/';
+console.log(simplify(path)); // home/var/www/html/sql
 
 </script>

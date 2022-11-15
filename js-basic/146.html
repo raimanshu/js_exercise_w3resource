@@ -7,6 +7,7 @@
 </h3>
 
 <script>
+  // Method 2
 function sum_Of_Cubes(n) {
   var sumn = 0;
 
@@ -18,6 +19,17 @@ function sum_Of_Cubes(n) {
 
 console.log(sum_Of_Cubes(3));
 console.log(sum_Of_Cubes(4));
+
+// Method 3
+function sumCube(n) {
+        return Math.pow((n * n + n) / 2, 2);
+    }
+   
+    // Method 4
+    const sumOfCubee = (n, sum = 0) =>{
+if(n == 1 ) return n ;
+return sum = Math.pow(n, 3) + sumOfCubee(--n) ;
+}
 
     
 </script>
