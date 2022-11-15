@@ -4,7 +4,7 @@
 </h3>
 
 <script>
-
+// Method 2 
 function max_even(arra) {
 
 arra.sort((x, y) => y - x);
@@ -17,5 +17,11 @@ for (var i = 0; i < arra.length; i++) {
 
 console.log(max_even([20, 40, 200]));
 console.log(max_even([20, 40, 200, 301]));
+
+// Method 3 
+function getMaxEven(arr) {
+      return Math.max.apply(null, arr.filter(e => e % 2 === 0));
+    }
+  
 
 </script>

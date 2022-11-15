@@ -7,6 +7,7 @@
 </h3>
 
 <script>
+	// Method 2
 function sixteen_bits_reverse(num) {
 	var result = 0;
 	for (var i = 0; i < 16; i++) 
@@ -19,6 +20,13 @@ function sixteen_bits_reverse(num) {
 console.log(sixteen_bits_reverse(12345));
 console.log(sixteen_bits_reverse(10));
 console.log(sixteen_bits_reverse(5));
+
+// Method 3
+function sixteen_bits_reverse(num){
+let reversed = num.toString(2);
+reversed = "0".repeat(16 - reversed.length) + reversed;
+return parseInt(reversed.split('').reverse().join(''), 2);
+}
 
     
 </script>

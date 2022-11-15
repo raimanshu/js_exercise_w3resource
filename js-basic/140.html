@@ -7,6 +7,7 @@
 </h3>
 
 <script>
+  // Method 2
 function test_same_digit(num) {
   var first = num % 10;
   while (num) {
@@ -19,6 +20,13 @@ num = Math.floor(num / 10);
 console.log(test_same_digit(1234));
 console.log(test_same_digit(1111));
 console.log(test_same_digit(22222222));
+// Method 3
+function isOneDigit(n) {
+        return new Set(n + '').size === 1;
+    }
+
+    // Method 4
+    const asd78 = n=>console.log(n.toString(10).split('').filter(Number).every((val,i,arr)=>val == arr[0]));
 
     
 </script>

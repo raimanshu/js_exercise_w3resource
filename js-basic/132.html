@@ -4,7 +4,7 @@
 </h3>
 
 <script>
-
+// Method 2
 function prime_factors(num) {
   function is_prime(num) {
     for (let i = 2; i <= Math.sqrt(num); i++)
@@ -29,6 +29,48 @@ console.log(prime_factors(101));
 console.log(prime_factors(103));
 console.log(prime_factors(104));
 console.log(prime_factors(105));
+
+// Method 3 
+function findAllPrime(num) {
+let d = 2
+let factor = []
+while(num > 2) {
+if (num % d === 0) {
+factor.push(d)
+num /= d
+} else {
+d++
+}
+}
+return [...new Set(factor)]
+}
+
+console.log(findAllPrime(100)) // [2, 5]
+
+// Method 4
+function check(num) {
+
+arr = [];
+
+for (let i = 2; i <= num ; i++) {
+
+if (num % i == 0) {
+if (i == 2 || i % 2) {
+arr.push(i);
+}
+num /= i;
+}
+}
+
+return arr;
+
+}
+
+console.log(check(100));
+console.log(check(101));
+console.log(check(103));
+console.log(check(104));
+console.log(check(105));
 
     
 </script>

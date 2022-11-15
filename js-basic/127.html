@@ -7,7 +7,7 @@
 </h3>
 
 <script>
-
+// Method 2 
 function mirror_bits(n) {
     let t = n.toString(2).split("");
     let str_len = t.length;
@@ -22,5 +22,21 @@ console.log(mirror_bits(14));
 console.log(mirror_bits(56));
 // 234 -> 11101010 -> 01010111 -> 87
 console.log(mirror_bits(234));
+
+// Method 3 
+function mirror_bits(n) {
+let temp = n.toString(2).split("");
+let largo = temp.length;
+for (let i = 0; i < 8 - largo; i++) {
+temp.unshift("0");
+}
+return parseInt(temp.reverse().join(""), 2);
+}
+
+console.log(mirror_bits(14)); // 112
+
+console.log(mirror_bits(56)); // 28
+
+console.log(mirror_bits(234)); // 87
 
 </script>

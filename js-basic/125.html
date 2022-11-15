@@ -4,7 +4,7 @@
 </h3>
 
 <script>
-
+// Method 2 
 function longest_str_in_array(arra)
   {
     var max_str = arra[0].length;
@@ -20,5 +20,10 @@ function longest_str_in_array(arra)
 }
 console.log(longest_str_in_array(["ab", "a", "abcd"]));
 console.log(longest_str_in_array(["ab", "ab", "ab"]));
+
+// Method 3 
+function findLongestString(arr) {
+return arr.reduce((a, b) => a.length <= b.length ? b : a)
+}
 
 </script>

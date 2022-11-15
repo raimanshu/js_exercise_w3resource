@@ -9,6 +9,7 @@
 </h3>
 
 <script>
+  // Method 2
 function find_rightmost_round_number(input_arr) {
 
 var result = 0;
@@ -25,6 +26,16 @@ return result;
 console.log(find_rightmost_round_number([1, 22, 30, 54, 56]));
 console.log(find_rightmost_round_number([1, 22, 32, 54, 56]));
 console.log(find_rightmost_round_number([1, 22, 32, 54, 50]));
+
+// Method 3
+function rightmostRound(arr) {
+for (i = arr.length-1; i>=0; i--) {
+if (arr[i]%10 === 0) {
+return i;
+}
+}
+return 0;
+}
 
     
 </script>

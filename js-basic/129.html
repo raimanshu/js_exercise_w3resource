@@ -4,7 +4,7 @@
 </h3>
 
 <script>
-
+// Method 2 
 function next_Prime_num(num) {
     for (var i = num + 1;; i++) {
         var isPrime = true;
@@ -19,6 +19,18 @@ function next_Prime_num(num) {
         }
     }
 }
+// Method 3 
+function next_Prime_num(num) {
+num++
+while (num % 2 == 0) {
+num++;
+
+}
+return num;
+}
+
+console.log(next_Prime_num(3));
+console.log(next_Prime_num(17));
 
 console.log(next_Prime_num(3));
 console.log(next_Prime_num(17));

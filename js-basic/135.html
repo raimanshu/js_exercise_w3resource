@@ -7,7 +7,7 @@
 </h3>
 
 <script>
-
+// Method 2
 function remove_duplicate_cchars(str) {
   var arr_char = str.split("");
   var result_arr = [];
@@ -24,5 +24,19 @@ console.log(remove_duplicate_cchars("python"));
 console.log(remove_duplicate_cchars("abcabc"));
 console.log(remove_duplicate_cchars("1365451"));
 
+
+// Method 3
+function removeChar(str) {
+    const tempObj = {};
+    const result = [];
+
+    [...str].filter(char => tempObj[char] ? tempObj[char]++ : tempObj[char] = 1)
+
+    for (char in tempObj) {
+        tempObj[char] === 1 && result.push(char)
+    }
+
+    return result.join('')
+}
     
 </script>

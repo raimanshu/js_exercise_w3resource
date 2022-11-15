@@ -4,7 +4,7 @@
 </h3>
 
 <script>
-
+// Method 2
 function change_char(str1) {
 	var result = [];
 	for (var i = 0; i < str1.length; i++)
@@ -17,5 +17,23 @@ function change_char(str1) {
 }
 console.log(change_char("abcxyz"));
 console.log(change_char("python"));  
+
+// Method 3
+function encrypt(str) {
+     let dict = {' ': ' '};
+      for (let i = 0; i < 26; i++) {
+        dict[String.fromCharCode(97 + i)] = String.fromCharCode(97 + 25 - i);
+      }
+      return str.split('').map(x => dict[x]).join('');
+  }
+
+//   Method 4
+function replaceChar(str){
+
+let a = 'abcdefghijklmnopqrstuvwxyz'
+let b = a.split('').reverse().join('');
+let result = [];
+
+for(let i=0; i<str.length; i++){="" result.push(b.charat(a.indexof(str[i])));="" }="" return="" result.join('');="" }="" console.log(replacechar('python'));="">
 
 </script>

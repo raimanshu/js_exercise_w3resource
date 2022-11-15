@@ -10,7 +10,7 @@
 </h3>
 
 <script>
-
+// Method 2
 function prefix_sums(arr) {
   var new_arr = [];
   for (var i = 0; i < arr.length; i++) {
@@ -25,5 +25,15 @@ function prefix_sums(arr) {
 console.log(prefix_sums([1, 2, 3, 4, 5]));
 
 console.log(prefix_sums([1, 2, -3, 4, 5]));
+
+// Method 3
+function calculateSum(arr) {
+    let step = 0;
+
+    return arr.map(item => {
+        step += item;
+        return step
+    })
+}
 
 </script>

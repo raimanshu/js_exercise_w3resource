@@ -5,6 +5,7 @@
 </h3>
 
 <script>
+    // Method 2 
 function nearest_round_number(num) {
     while (num % 10) {
         num++;
@@ -14,6 +15,13 @@ function nearest_round_number(num) {
 
 console.log(nearest_round_number(56));
 console.log(nearest_round_number(592));
+
+// Method 3 
+function rounded(num) {
+return Math.ceil(num/10) *10;
+}
+console.log(rounded(5216)); // 5220
+console.log(rounded(32)); // 40
 
     
 </script>

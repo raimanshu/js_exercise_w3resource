@@ -5,7 +5,7 @@
 </h3>
 
 <script>
-
+// Method 2 
 function proper_improper_test(num) {
   return Math.abs(num[0] / num[1]) < 1
     ? "Proper fraction."
@@ -16,5 +16,15 @@ console.log(proper_improper_test([2, 4]));
 console.log(proper_improper_test([103, 3]));
 console.log(proper_improper_test([104, 2]));
 console.log(proper_improper_test([5, 40]));
+
+// Method 3
+const check = ([a,b]) =>{
+return a < b ? "Proper fraction" : "Improper fraction";
+}
+console.log(check([12, 300]));
+console.log(check([2, 4]));
+console.log(check([103, 3]));
+console.log(check([104, 2]));
+console.log(check([5, 40]));
 
 </script>
