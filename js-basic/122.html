@@ -4,7 +4,7 @@
 </h3>
 
 <script>
-
+// Method 2
 function is_monotonous(num) {
     if (num.length === 1) {
         return true;
@@ -20,5 +20,25 @@ function is_monotonous(num) {
 console.log(is_monotonous([1, 2, 3]));
 console.log(is_monotonous([1, 2, 2]))
 console.log(is_monotonous([-3, -2, -1]))
+
+// Method 3
+function check(arr){
+if(arr == undefined || arr.length < 2){return false;}
+for(let i = 0; i < arr.length -1; i++){
+
+if( !(arr[i] < arr[i +1]) ){
+for(let j = 0; j < arr.length -1; j++){
+
+if( !(arr[j] > arr[j +1]) ){
+return false;
+}
+
+}
+}
+
+}
+
+return true;
+}
 
 </script>

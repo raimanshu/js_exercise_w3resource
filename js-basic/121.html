@@ -5,7 +5,7 @@
 </h3>
 
 <script>
-
+// Method 2 
 function lower_triangular_matrix(user_matrix) {
     for (var i = 0; i < user_matrix.length; i++) 
          {
@@ -20,5 +20,20 @@ function lower_triangular_matrix(user_matrix) {
 
 console.log(lower_triangular_matrix([[1, 0, 0],[2, 0, 0], [0, 3, 3]]));
 console.log(lower_triangular_matrix([[1, 0, 1],[2, 0, 0], [0, 3, 3]]));
+
+// Method 3 
+function is_diagona_matrix(arr) {
+var result = true;
+for (var i = 0; i < arr.length; i++)
+{
+if (arr[i][(arr.length-1)-i] != 0){
+
+return false;
+}
+}
+return true;
+}
+console.log(is_diagona_matrix([[1, 0, 0],[2, 0, 0], [0, 3, 3]]))
+console.log(is_diagona_matrix([[1, 0, 0], [0, 2, 0], [0, 0, 3] ]))
 
 </script>

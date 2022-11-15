@@ -1,23 +1,35 @@
-
 <h3>
-    Write a JavaScript program to check whether a given integer has an increasing digits sequence.
+  Write a JavaScript program to check whether a given integer has an increasing
+  digits sequence.
 </h3>
 
 <script>
+  // Method 2
+  function is_increasing_digits_Sequence(num) {
+    var arr_num = ("" + num).split("");
 
-function is_increasing_digits_Sequence(num) {
-
-var arr_num = ('' + num).split('');
-
-for (var i = 0; i < arr_num.length - 1; i++) {
-  if (parseInt(arr_num[i]) >= parseInt(arr_num[i + 1]))
-    return false;
+    for (var i = 0; i < arr_num.length - 1; i++) {
+      if (parseInt(arr_num[i]) >= parseInt(arr_num[i + 1])) return false;
+    }
+    return true;
   }
-return true;
-}
 
-console.log(is_increasing_digits_Sequence(123));
-console.log(is_increasing_digits_Sequence(1223));
-console.log(is_increasing_digits_Sequence(45677));
+  console.log(is_increasing_digits_Sequence(123));
+  console.log(is_increasing_digits_Sequence(1223));
+  console.log(is_increasing_digits_Sequence(45677));
 
+  // Method 3
+  function incDigSeq(num) {
+    var numStr = num.toString().split("");
+
+    for (var i = 0; i < numStr.length - 1; i++) {
+      if (numStr[i] >= numStr[i + 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  console.log(incDigSeq(123));
+  console.log(incDigSeq(1223));
+  console.log(incDigSeq(45677));
 </script>

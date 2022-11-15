@@ -1,22 +1,42 @@
 <h3>
-    Write a JavaScript program to check whether a point lies strictly inside a given circle.
-    Input:
-    Center of the circle (x, y)
-    Radius of circle: r
-    Point inside a circle (a, b)
+  Write a JavaScript program to check whether a point lies strictly inside a
+  given circle. Input: Center of the circle (x, y) Radius of circle: r Point
+  inside a circle (a, b)
 </h3>
 
 <script>
-function check_a_point(a, b, x, y, r) {
+  // Method 2
+  function check_a_point(a, b, x, y, r) {
     var dist_points = (a - x) * (a - x) + (b - y) * (b - y);
     r *= r;
     if (dist_points < r) {
-        return true;
+      return true;
     }
     return false;
-}
+  }
 
-console.log(check_a_point(0, 0, 2, 4, 6));
-console.log(check_a_point(0, 0, 6, 8, 6));
+  console.log(check_a_point(0, 0, 2, 4, 6));
+  console.log(check_a_point(0, 0, 6, 8, 6));
 
+  // Method 3
+  function checkApoint(a, b, x, y, r) {
+    let point = (x - a) ** 2 + (y - b) ** 2;
+    r = r ** 2;
+    if (point < r) return true;
+    return false;
+  }
+
+  console.log(checkApoint(0, 0, 2, 4, 6)); // true
+  console.log(checkApoint(0, 0, 6, 8, 6)); // false
+
+  // Method 4
+  function checkPoint(center, radius, point) {
+    let distance = Math.sqrt(
+      Math.pow(point[0] - center[0], 2) + Math.pow(point[1] - center[1], 2)
+    );
+    return distance < radius;
+  }
+
+  console.log(checkPoint([2, 4], 6, [0, 0]));
+  console.log(checkPoint([6, 8], 6, [0, 0]));
 </script>
