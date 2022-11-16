@@ -1,39 +1,62 @@
-Write a JavaScript function to get the least common multiple (LCM) of more than 2 integers.
-Test Data :
-console.log(lcm_more_than_two_numbers([100,90,80,7]));
-console.log(lcm_more_than_two_numbers([5,10,15,25]));
-Output :
-25200
-150
+Write a JavaScript function to get the least common multiple (LCM) of more than
+2 integers. Test Data : console.log(lcm_more_than_two_numbers([100,90,80,7]));
+console.log(lcm_more_than_two_numbers([5,10,15,25])); Output : 25200 150
 
 <script>
+  // Method 2
+  function lcm_more_than_two_numbers(input_array) {
+    if (toString.call(input_array) !== "[object Array]") return false;
+    var r1 = 0,
+      r2 = 0;
+    var l = input_array.length;
+    for (i = 0; i < l; i++) {
+      r1 = input_array[i] % input_array[i + 1];
+      if (r1 === 0) {
+        input_array[i + 1] =
+          (input_array[i] * input_array[i + 1]) / input_array[i + 1];
+      } else {
+        r2 = input_array[i + 1] % r1;
+        if (r2 === 0) {
+          input_array[i + 1] = (input_array[i] * input_array[i + 1]) / r1;
+        } else {
+          input_array[i + 1] = (input_array[i] * input_array[i + 1]) / r2;
+        }
+      }
+    }
+    return input_array[l - 1];
+  }
 
-	// Method 2 
-	function lcm_more_than_two_numbers(input_array) {
-		if (toString.call(input_array) !== "[object Array]")
-			return false;
-		var r1 = 0, r2 = 0;
-		var l = input_array.length;
-		for (i = 0; i < l; i++) {
-			r1 = input_array[i] % input_array[i + 1];
-			if (r1 === 0) {
-				input_array[i + 1] = (input_array[i] * input_array[i + 1]) / input_array[i + 1];
-			}
-			else {
-				r2 = input_array[i + 1] % r1;
-				if (r2 === 0) {
-					input_array[i + 1] = (input_array[i] * input_array[i + 1]) / r1;
-				}
-				else {
-					input_array[i + 1] = (input_array[i] * input_array[i + 1]) / r2;
-				}
-			}
-		}
-		return input_array[l - 1];
-	}
+  console.log(lcm_more_than_two_numbers([100, 90, 80, 7]));
+  console.log(lcm_more_than_two_numbers([5, 10, 15, 25]));
 
-	console.log(lcm_more_than_two_numbers([100, 90, 80, 7]));
-	console.log(lcm_more_than_two_numbers([5, 10, 15, 25]));
+  // Method 3
+  function me(n, m, p, q) {
+    "use strict";
+    var x = n * m * p * q;
+    for (var i = m; i <= x; i++) {
+      if (i % n === 0 && i % m === 0 && i % p === 0 && i % q === 0) {
+        return i;
+      }
+    }
+  }
+  console.log(me(100, 90, 80, 7));
 
-
+  // Method 4
+  function gcdtest(a, b) {
+    if (!b) return b === 0 ? a : NaN;
+    return gcdtest(b, a % b);
+  }
+  function gcdNumbers(arr) {
+    let result = 0;
+    for (let i = 0; i < arr.length; i++) result = gcdtest(arr[i], result);
+    return result;
+  }
+  function lcmtest(a, b) {
+    return Math.abs(a * b) / gcdtest(a, b);
+  }
+  function lcmNumbers(arr) {
+    let result = 1;
+    for (let i = 0; i < arr.length; i++) result = lcmtest(arr[i], result);
+    return result;
+  }
 </script>

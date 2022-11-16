@@ -1,37 +1,44 @@
-
-Write a JavaScript function to get the least common multiple (LCM) of two numbers.
-Note :
-According to Wikipedia - A common multiple is a number that is a multiple of two or more integers. The common multiples
-of 3 and 4 are 0, 12, 24, .... The least common multiple (LCM) of two numbers is the smallest number (not zero) that is
-a multiple of both.
-Test Data :
-console.log(lcm_two_numbers(3,15));
-console.log(lcm_two_numbers(10,15));
-Output :
-15
-30
+Write a JavaScript function to get the least common multiple (LCM) of two
+numbers. Note : According to Wikipedia - A common multiple is a number that is a
+multiple of two or more integers. The common multiples of 3 and 4 are 0, 12, 24,
+.... The least common multiple (LCM) of two numbers is the smallest number (not
+zero) that is a multiple of both. Test Data :
+console.log(lcm_two_numbers(3,15)); console.log(lcm_two_numbers(10,15)); Output
+: 15 30
 
 <script>
+  // Method 2
 
-	// Method 2 
+  function lcm_two_numbers(x, y) {
+    if (typeof x !== "number" || typeof y !== "number") return false;
+    return !x || !y ? 0 : Math.abs((x * y) / gcd_two_numbers(x, y));
+  }
 
-	function lcm_two_numbers(x, y) {
-		if ((typeof x !== 'number') || (typeof y !== 'number'))
-			return false;
-		return (!x || !y) ? 0 : Math.abs((x * y) / gcd_two_numbers(x, y));
-	}
+  function gcd_two_numbers(x, y) {
+    x = Math.abs(x);
+    y = Math.abs(y);
+    while (y) {
+      var t = y;
+      y = x % y;
+      x = t;
+    }
+    return x;
+  }
+  console.log(lcm_two_numbers(3, 15));
+  console.log(lcm_two_numbers(10, 15));
 
-	function gcd_two_numbers(x, y) {
-		x = Math.abs(x);
-		y = Math.abs(y);
-		while (y) {
-			var t = y;
-			y = x % y;
-			x = t;
-		}
-		return x;
-	}
-	console.log(lcm_two_numbers(3, 15));
-	console.log(lcm_two_numbers(10, 15));
+  // Method 3
+  const gcd = (a, b) => (!b ? a : gcd(b, a % b));
 
+  // Method 4
+  function ex9(x, y) {
+    if (!y) return y === 0 ? x : NaN;
+    return ex9(y, x % y);
+  }
+
+  function ex10(x, y) {
+    return (x * y) / ex9(x, y);
+  }
+  console.log(ex10(3, 15));
+  console.log(ex10(10, 15));
 </script>

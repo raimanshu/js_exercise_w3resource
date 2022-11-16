@@ -30,5 +30,13 @@ Output :
 	console.log(product([100, -200, 3]));
 	console.log(product([1, 2, 'a', 3]));
 
+	// Method 3
+	function sum(arr) {
+let r = 1;
+for (const e of arr) if (typeof e == typeof 0) r *= e;
+return r;
+}
+console.log(sum([1, 2, 3])); // 1 * 2 * 3 = 6
+console.log(sum([5,2,"a",5])) // 5 * 2 * 5 = 50
 
 </script>

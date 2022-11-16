@@ -30,4 +30,48 @@ true
 	console.log(is_Numeric(-200));
 
 
+	// Method 3
+	const is_Numeric = value => !!parseFloat(value);
+
+// Method 4
+	function ex16(nr){
+var res = false;
+if(typeof nr === 'number'){
+res = true;
+}
+return res;
+}
+console.log(ex16(12));
+console.log(ex16('asdfg'));
+console.log(ex16('12'));
+console.log(ex16(''));
+console.log(ex16(1.20));
+console.log(ex16(-200));
+
+// Method 5
+const is_Numeric = (inp) => {
+
+return !/[^0-9.-]/.test(inp.toString());
+
+}
+
+console.log(is_Numeric(12)); // true
+console.log(is_Numeric('abcd')); // false
+console.log(is_Numeric('12')); // true
+console.log(is_Numeric(' ')); // false
+console.log(is_Numeric(1.20)); // true
+console.log(is_Numeric(-200)); // true
+
+
+// Method 6
+function me(x) {
+"use strict";
+if(x / 1 === x) {
+return true;
+}else {
+return false;
+}
+}
+console.log(me(-12));
+
 </script>

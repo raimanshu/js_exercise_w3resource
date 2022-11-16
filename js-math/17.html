@@ -30,4 +30,16 @@ Output :
 	console.log(sum([1, 2, 'a', 3]));
 
 
+	// method 3
+	function sum(arra) { return arra.reduce((p, c) => parseFloat(p) + parseFloat(c)) }
+
+	// Method 4
+	function sum(arr) {
+let r = 0;
+for (const e of arr) r += e;
+return r;
+}
+console.log(sum([1,2,3])) // 6
+
+
 </script>

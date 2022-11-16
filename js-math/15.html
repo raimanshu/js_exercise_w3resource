@@ -33,4 +33,29 @@ true
 	console.log(is_Int(-23));
 
 
+	// Method 3
+	function isInt(n) { return parseInt(n) === n }
+
+	// Method 4
+	function is_Int(num) {
+return parseInt(num) === num;
+}
+
+// Method 5
+function is_Int(num)
+{
+if ((num.toString().split('').includes('.')) || (num == null) || (Number.isNaN(num)))
+{
+return false
+}
+{
+return true
+}
+}console.log(is_Int(23));
+console.log(is_Int(4e2));
+console.log(is_Int(NaN));
+console.log(is_Int(23.75));
+console.log(is_Int(-23));
+
+
 </script>
