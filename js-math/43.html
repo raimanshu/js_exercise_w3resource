@@ -43,4 +43,22 @@ console.log(primeFactorsTo(15));
 
 
 
+	// Method 4
+	function generatePrime(range) {
+for (let number = 2; number <= range; number++)
+if (checkPrime(number)) console.log(number);
+}
+
+generatePrime(20);
+
+function checkPrime(number) {
+for (let factor = 2; factor < number; factor++)
+if (number % factor === 0)
+// 20 % 2 === 0 - not prime, 19 % 2 === 0 - prime
+return false;
+
+return true;
+}
+
+
 </script>

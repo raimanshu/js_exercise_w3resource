@@ -13,5 +13,23 @@ console.log(sqrt_to_int(17));
 
 	console.log(sqrt_to_int(17));
 
+	// Method 3
+	function sqrt_to_int(num) {
+    return Math.round(Math.sqrt(num));
+}
+
+console.log(sqrt_to_int(17)); //  4
+
+// Method 4
+var sqrt_to_int = (function() {
+
+return function(num){
+return Math.floor( Math.sqrt(num) );
+};
+
+})();
+
+console.log(sqrt_to_int(17));
+
 
 </script>

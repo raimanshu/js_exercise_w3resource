@@ -21,5 +21,15 @@ console.log(nthroot(64, -2));
     console.log(nthroot(64, 2));
     console.log(nthroot(64, -2));
 
+    // Method 3
+    const root = (num1,num2) => (num2<0)?Math.sqrt(1/num1,num2):Math.sqrt(num1,num2)
+
+    // Method 4
+    function nthroot(base, root) {
+    return Math.pow(base, 1 / root);
+}
+
+console.log(nthroot(64, 2)); //8
+console.log(nthroot(64, -2)); // 0.125
 
 </script>

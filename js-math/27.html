@@ -16,5 +16,16 @@ console.log(pointDirection(1, 0, 1, 10));
     console.log(pointDirection(1, 0, 12, 0));
     console.log(pointDirection(1, 0, 1, 10));
 
+    // Method 3
+    var pointDirection = (function() {
+
+return function(a,b,c,d){
+var x = c - a, y = d - b, theta = Math.atan2(y, x), degrees = theta*180/Math.PI;
+return degrees;
+};
+
+})();
+console.log(pointDirection(1, 0, 12, 0)); //0
+console.log(pointDirection(1, 0, 1, 10)); //90
 
 </script>

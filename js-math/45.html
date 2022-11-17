@@ -26,4 +26,14 @@ Write a JavaScript function to subtract elements from one another in an array.
 	console.log(subtraction([7, 3, 2, -1]));
 
 
+	// Method 3
+	function subtractElements (array) {
+var result = array[0];
+for(var i = 1; i < array.length; i++) result -= array[i];
+return result;
+}
+
+console.log(subtractElements([6,7, 9, 14, 78, -91]));
+
+
 </script>

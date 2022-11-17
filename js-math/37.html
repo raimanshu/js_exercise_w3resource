@@ -21,5 +21,17 @@ console.log(value_limit(15, 0, 12));
 	console.log(value_limit(-7, 0, 12));
 	console.log(value_limit(15, 0, 12));
 
+	// Method 3
+	function value_limit(val, min, max) {
+return Math.max(Math.min(val,max),min);
+}
+
+// Method 4
+function value_limit(num, min, max) {
+  if (num < min) return min
+  else if ( num > max) return max
+  else return num;
+}
+
 
 </script>

@@ -18,4 +18,16 @@ console.log(pythagorean(4, 3));
     console.log(pythagorean(4, 3));
 
 
+    // Method 3
+    var pythagorean = (function() {
+
+return function(a,b){
+return Math.sqrt(a*a+b*b);
+};
+
+})();
+
+console.log(pythagorean(4, 3));
+
+
 </script>

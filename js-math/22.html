@@ -37,5 +37,23 @@ Write a JavaScript function that Convert Roman Numeral to Integer
 	console.log(roman_to_Int('XXVI'));
 	console.log(roman_to_Int('CI'));
 
+	// Method 3
+	function roman_to_Int(num){
+        let roman = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'];
+	let value = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+        let str = 0;
+	for (let i=12; i >= 0; i--){
+		while (num.indexOf(roman[i]) === 0){
+			let reg = new RegExp(roman[i])
+			num = num.replace(reg,'');
+			str += value[i];
+		}
+	}
+	return str;
+}
+
+console.log(roman_to_Int('XXVI'));
+console.log(roman_to_Int('CI'));
+
 
 </script>

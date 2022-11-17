@@ -35,4 +35,25 @@ console.log(combinations(5, 3));
 	console.log(combinations(5, 3));
 
 
+	// Method 3
+	function factorial(x) {
+return x === 1 ? x : x * factorial(x - 1);
+}
+
+function getComb (n,r){
+return factorial(n)/(factorial(r)*factorial(n-r));
+}
+
+getComb(6,2);
+
+// Method 4
+function factorial(n) {
+    return n === 1? n : n * factorial(--n);
+}
+function combinations(n, r) {
+    return factorial(n) / (factorial(r) * factorial(n - r));
+}
+console.log(combinations(6, 2)); // 15
+
+
 </script>

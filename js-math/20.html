@@ -33,4 +33,19 @@ Output :
 	console.log(binomial(10, 2));
 
 
+	// Method 3
+	function factorial(x) {
+  return x === 1 ? x : x * factorial(x - 1) ;
+}
+
+function binomial (n, k) {
+    if (!Number.isInteger(n) || !Number.isInteger(k)) {
+      return false;
+    }
+    return factorial(n) / (factorial(k) * factorial(n-k));
+}
+
+console.log(binomial(8,3)); // 56
+
+
 </script>

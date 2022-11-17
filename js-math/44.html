@@ -31,4 +31,31 @@ Hamming Numbers are numbers whose only prime factors are 2, 3 and 5.
 	console.log(Hamming(20));
 
 
+	// Method 3
+	var hamming_numbers = (function() {
+
+var is_humming_number = function(num){
+while (num%5===0) {num /= 5;}
+while (num%3===0) {num /= 3;}
+while (num%2===0) {num /= 2;}
+return (num===1);
+};
+
+return function(n){
+var arr = [1], i=2;
+while ( n > 1 ){
+if (is_humming_number(i)){
+n--;
+arr.push(i);
+}
+i++;
+}
+return arr;
+};
+
+})();
+
+console.log(hamming_numbers(20));
+
+
 </script>

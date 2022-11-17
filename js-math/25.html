@@ -17,5 +17,13 @@ n1 = '$40.24', n2 = '$21.57';
 
 	console.log(parseFloat(n1.replace(regp, '')) / parseFloat(n2.replace(regp, '')));
 
+	// Method 3
+	function makeCurrencyMath (n1,n2) {
+var n1 = n1.replace("$","");
+var n2 = n2.replace("$","");
+return parseFloat(n1) + parseFloat(n2); // you can also replace the operator -, * , /
+}
+console.log( makeCurrencyMath("$40.24","$21.57"));
+
 
 </script>

@@ -18,4 +18,16 @@ Write a JavaScript function to calculate the divisor and modulus of two integers
 	console.log(div_mod(17, 4));
 
 
+	// Method 3
+	var divmod = (function() {
+
+return function(a,b){
+return [Math.floor(a/b), a%b];
+};
+
+})();
+
+console.log(divmod(8,5))
+
+
 </script>

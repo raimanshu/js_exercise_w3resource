@@ -13,5 +13,16 @@ console.log(percentage(1000, 47.12));
 
     console.log(percentage(1000, 47.12));
 
+    // Method 3
+    var percentage = (function() {
+
+return function(n,percent){
+return n*percent/100;
+};
+
+})();
+
+console.log(percentage(1000, 47.12));
+
 
 </script>

@@ -16,5 +16,15 @@ Write a JavaScript function to create random background color.
 
     random_bg_color();
 
+    // Method 3
+    (function () {
+var result = '#', i = 0;
+while (i < 6) {
+result += (Math.floor(Math.random()*16)).toString(16);
+i++;
+}
+document.body.style.background = result;
+})();
+
 
 </script>

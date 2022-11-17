@@ -23,5 +23,18 @@ console.log(number_test(10));
 
 	console.log(number_test(10));
 
+	// Method 3
+	function number_test(num) {
+  return Number.isInteger(num)? "It is a whole number." :  "Number has a decimal place."
+}
+
+// Method 4
+function number_test (input) {
+return parseInt(input) === input ? "It is a whole number" : "Number has a decimal place";
+}
+
+console.log(number_test(25.66));
+console.log(number_test(10));
+
 
 </script>

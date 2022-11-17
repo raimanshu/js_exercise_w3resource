@@ -51,5 +51,25 @@ number-theoretic and cryptographic calculations.
 
 	console.log(Euclid_gcd(17, 4));
 
+	// Method 3
+	var get_gcd = (function() {
+
+var recursive = function(a,b){
+if (b == 0)
+{
+return a;
+}
+return recursive(b, a % b);
+};
+
+return function(a,b){
+return recursive(a,b);
+};
+
+})();
+
+console.log(get_gcd(8,12));
+console.log(get_gcd(-4,6));
+
 
 </script>

@@ -17,5 +17,21 @@ console.log(int_round5(137));
     console.log(int_round5(137));
     console.log(int_round5(142));
 
+    // Method 3
+    var int_round5 = (function() {
+
+const divider = 5;
+
+return function(num){
+var rest = num % divider, round = num-rest;
+return round+divider;
+};
+
+})();
+
+console.log(int_round5(32));
+console.log(int_round5(137));
+console.log(int_round5(142));
+
 
 </script>
