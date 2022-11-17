@@ -6,6 +6,8 @@
     Write a JavaScript program to get the first non-null / undefined argument.
 </h3>
 
+Use Array.prototype.find() and Array.prototype.includes() to find the first value that is not equal to undefined or null.
+
 <script>
 
     // Method 2 
@@ -13,5 +15,8 @@
     const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
     console.log(coalesce(null, undefined, '', NaN, 'abcd'));
 
+    // Method 3
+    const coalesce2 = (...args) => args.find(x => x!= (undefined||null));
+console.log(coalesce2(null, undefined,' ', NaN, 'abcd'));
 
 </script>

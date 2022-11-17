@@ -5,6 +5,8 @@
 <h3>
     Write a JavaScript program to count the occurrences of a value in an array.</h3>
 
+    Use Array.prototype.reduce() to increment a counter each time the specific value is encountered inside the array.
+
 <script>
 
     // Method 2 
@@ -13,5 +15,12 @@
     console.log(countOccurrences([1, 1, 2, 1, 2, 3], 1));
     console.log(countOccurrences([1, 1, 2, 1, 2, 3], 2));
     console.log(countOccurrences([1, 1, 2, 1, 2, 3], 3));
+
+    // Method 3
+    const countOccurrences2 = (arr, val) => arr.filter(x => x == val).length
+
+console.log(countOccurrences2([1, 1, 2, 1, 2, 3], 1)) // 3
+console.log(countOccurrences2([1, 1, 2, 1, 2, 3], 2)) // 2
+console.log(countOccurrences2([1, 1, 2, 1, 2, 3], 3)) // 1
 
 </script>

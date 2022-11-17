@@ -6,6 +6,9 @@
     Write a JavaScript program that accepts a converging function and a list of branching functions and returns a
     function that applies each branching function to the arguments and the results of the branching functions are passed
     as arguments to the converging function.
+
+    Use Array.prototype.map() and Function.prototype.apply() to apply each function to the given arguments.
+Use the spread operator (...) to call converger with the results of all other functions.
 </h3>
 
 <script>
@@ -21,4 +24,11 @@
     console.log(average([1, 2, 3, 4, 5, 6, 7]));
 
 
+// Method 3
+function average(arr)
+{
+var a = arr.reduce( function(total,num) {return total + num})
+var b = a/arr.length
+return b
+}
 </script>

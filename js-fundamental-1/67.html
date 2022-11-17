@@ -6,6 +6,9 @@
     Write a JavaScript program to perform left-to-right function composition.
 </h3>
 
+Use Array.prototype.reduce() to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+
 <script>
 
     // Method 2 
@@ -17,5 +20,15 @@
 
     console.log(addAndSquare(1, 2));
     console.log(addAndSquare(3, 2));
+
+    // Method 3
+    const compose2 = (f1,f2) => (...args) => f1.bind(null, f2(...args))()
+
+const add2 = x => x * x
+const square2 = (x, y) => x + y
+const addAndSquare2 = compose2(add, square)
+
+console.log(addAndSquare2(1,2)) // 9
+console.log(addAndSquare2(3, 2)) // 25
 
 </script>

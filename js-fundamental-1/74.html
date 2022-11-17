@@ -7,12 +7,21 @@
     true.
 </h3>
 
+
+Use Array.prototype.filter() and Array.prototype.findIndex() to find the appropriate values.
+Omit the last argument, comp, to use a default strict equality comparator.
+
 <script>
 
     // Method 2 
     //#Source https://bit.ly/2neWfJ2 
     const differenceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
     console.log(differenceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)));
+
+    // Method 3
+    const differenceWith2 = (arr, val, comp) => arr.filter(a => !val.some(b => comp(a,b) ))
+
+console.log(differenceWith2([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b))) // [1, 1.2]
 
 
 </script>
