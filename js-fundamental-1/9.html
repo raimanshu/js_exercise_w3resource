@@ -5,6 +5,9 @@
 
 <h3>Write a JavaScript program to combine the numbers of a given array into an array containing all combinations. </h3>
 
+Use Array.prototype.reduce() combined with Array.prototype.map() to iterate over elements and combine into an array containing all combinations.
+
+
 <p>Days Left : </p><label id="days"></label>
 
 <script>
@@ -15,6 +18,14 @@
 	console.log(powerset([1, 2]));
 	console.log(powerset([1, 2, 3]));
 	console.log(powerset([1, 2, 3, 4]));
+
+	// Method 3
+	const powerset2 = arr =>
+arr.reduce((a, x) => [...a, ...a.map(y => [...y, x])], [
+[]
+]);
+
+console.log(powerset2([1,2])) // [[], [1],[2],[1,2]]
 
 
 </script>

@@ -1,6 +1,9 @@
 Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to
 the second one.
 
+Use Object.keys() to get all the keys of the second object.
+Use Array.prototype.every(), Object.prototype.hasOwnProperty() and strict comparison to determine if all keys exist in the first object and have the same values.
+
 
 <script>
 
@@ -12,5 +15,11 @@ the second one.
 	console.log(matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true })); // false
 	console.log(matches({ hair: 'long', beard: true }, { age: 26, hair: 'long', beard: true })); // false
 
+// Method 3
+const checkEl = (objec1, objec2) =>
+{
+return ( JSON.stringify(objec1) === JSON.stringify(objec2))
+}
 
+console.log ( checkEl ({ hair: 'long', beard: true }, { hair: 'long', beard: true, age: 9 }) )
 </script>

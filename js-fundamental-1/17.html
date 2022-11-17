@@ -6,6 +6,9 @@
 	the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.
 </h3>
 
+Use Array.prototype.reduce() and Array.prototype.push() to add elements to groups, based on filter.
+If filter has a truthy value for any element, add it to the first group, otherwise add it to the second group.
+
 <input placeholder="Enter a number" id="fNum">
 
 
@@ -19,6 +22,11 @@
 	console.log(bifurcate([1, 2, 3, 4], [true, true, false, true]));
 	console.log(bifurcate([1, 2, 3, 4], [true, true, true, true]));
 	console.log(bifurcate([1, 2, 3, 4], [false, false, false, false]));
+
+	// Method 3
+	let fonk = (arr1,arr2) => arr1.reduce(
+
+(total,value,indx)=>((arr2[indx])?total[0].push(value):total[1].push(value),total),[[],[]]);
 
 
 </script>

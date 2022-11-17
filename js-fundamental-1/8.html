@@ -5,6 +5,10 @@
 <h3>Write a JavaScript program to filter out the specified values from a specified array. Return the original array
 	without the filtered values</h3>
 
+	Use Array.prototype.filter() and Array.prototype.includes() to pull out the values that are not needed.
+Set Array.prototype.length to mutate the passed in an array by resetting its length to 0.
+Use Array.prototype.push() to re-populate it with only the pulled values.
+
 <p>Enter the number between 1 to 10</p>
 <input id="number" onclick="checkNumber(event)">
 
@@ -24,5 +28,14 @@
 	let arra2 = ['a', 'b', 'c', 'a', 'b', 'c'];
 	console.log(pull(arra2, 'b'));
 
+
+	// Method 3
+	const unik = (arr, ...args) => arr.filter((str)=>!args.includes(str));
+
+	// Method 4
+	const pull2 = (arr, ...target) => arr.filter(el => target.every(x => x !== el))
+
+console.log(pull2(['a', 'b', 'c', 'a', 'b', 'c'], 'a', 'c')); // ["b", "b"]
+console.log(pull2(['a', 'b', 'c', 'a', 'b', 'c'], 'b')); // ["a", "c", "a", "c"]
 
 </script>

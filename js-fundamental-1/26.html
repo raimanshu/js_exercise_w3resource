@@ -5,6 +5,10 @@
 <h3>
     Write a JavaScript program that will return true if the string is y/yes or false if the string is n/no.
 </h3>
+
+Use RegExp.prototype.test() to check if the string evaluates to y/yes or n/no.
+Omit the second argument, def to set the default answer as no.
+
 <script>
 
     // Method 2 
@@ -15,6 +19,10 @@
     console.log(yes_No('yes'));
     console.log(yes_No('No'));
     console.log(yes_No('Foo', true));
+
+    // Method 3
+    const yes_No2 = (l, ans = false) => l.match(/yes|y/gi) ? true : l.match(/no|n/gi) ? false : ans
+
 
 
 </script>

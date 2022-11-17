@@ -4,6 +4,9 @@
 
 Write a JavaScript program to extend a 3-digit color code to a 6-digit color code.
 
+Use Array.prototype.map(), String.prototype.split() and Array.prototype.join() to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
+Array.prototype.slice() is used to remove # from string start since it's added once.
+
 
 
 <script>
@@ -21,5 +24,20 @@ Write a JavaScript program to extend a 3-digit color code to a 6-digit color cod
 	console.log(extend_Hex('#03f'));
 	console.log(extend_Hex('05a'));
 
+
+	// Method 3
+	// one line
+const extendHex = (hexCode) =>
+"#".concat(
+[...hexCode.slice(1)].reduce((acc, val) => acc.concat(val, val), "")
+);
+
+// Method 4
+const extendHex2 = (shortHex) => {
+let hex = shortHex.match(/\w/g).map(x => x + x)
+return '#' + hex.join('')
+}
+console.log(extendHex('f3c')) // #ff33cc
+console.log(extendHex('#03f')) // #0033ff
 
 </script>

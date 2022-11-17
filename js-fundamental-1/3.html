@@ -1,6 +1,12 @@
 
 Write a JavaScript program to converts a comma-separated values (CSV) string to a 2D array.
 
+Note: Use String.split('\n') to create a string for each row, then String.split(delimiter) to separate the values in each row. Omit the second argument, delimiter, to use a default delimiter of ,. Omit the third argument, omitFirstRow, to include the first row (title row) of the CSV string.
+
+Use Array.prototype.slice() and Array.prototype.indexOf('\n') to remove the first row (title row) if omitFirstRow is true.
+Use String.prototype.split('\n') to create a string for each row, then String.prototype.split(delimiter) to separate the values in each row.
+Omit the second argument, delimiter, to use a default delimiter of ,.
+Omit the third argument, omitFirstRow, to include the first row (title row) of the CSV string.
 
 <script>
 
@@ -16,5 +22,24 @@ Write a JavaScript program to converts a comma-separated values (CSV) string to 
 	console.log(csv_to_array('a;b\nc;d', ';'));
 	console.log(csv_to_array('head1,head2\na,b\nc,d', ',', true));
 
+	// Method 3
+	data.slice(omitFirstRow ? data.indexOf('\n') + 1 : 0).split('\n').map(part => part.split(delimiter))
+
+// Method 4
+	const conv = str => {
+return (str.split(',').join(" ").split(";").join(" ")).split("\n").map(e => e.split(" "))
+}
+
+// Method 5
+
+let csvToArr = (csv, deli = ',', omitFirstRow = false) => {
+return csv.slice(omitFirstRow ? csv.indexOf('\n') + 1 : 0)
+.split('\n').map(e => e.split(deli))
+}
+
+
+console.log(csvToArr('a,b\nc,d'))
+console.log(csvToArr('a;b\nc;d',';'))
+console.log(csvToArr('row1,row2\na,b\nc,d',',',true))
 
 </script>

@@ -4,6 +4,9 @@
 
 Write a JavaScript program to filter out the non-unique values in an array.
 
+Use new Set() and the spread operator (...) to create an array of the unique values in arr.
+Use Array.prototype.filter() to create an array containing only the unique values.
+
 
 
 <p id="result"></p>
@@ -17,5 +20,8 @@ Write a JavaScript program to filter out the non-unique values in an array.
 	console.log(filter_Non_Unique([1, 2, 2, 3, 4, 4, 5]));
 	console.log(filter_Non_Unique([1, 2, 3, 4]));
 
+
+	// Method 3
+	let fonk = (arr1) => arr1.reduce((total,value)=>((arr1.indexOf(value,arr1.indexOf(value))===arr1.lastIndexOf(value))?total.push(value):null,total),[]);
 
 </script>

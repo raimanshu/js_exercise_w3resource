@@ -3,6 +3,10 @@
 - remember array methods<br>
 
 <h3> Write a JavaScript program to replace the names of multiple object keys with the values provided. </h3>
+
+Use Object.keys() in combination with Array.prototype.reduce() and the spread operator (...) to get the object's keys and rename them according to keysMap.
+
+
 <p>The extension is </p><span id="ext"></span>
 
 <script>
@@ -24,6 +28,31 @@
 	result = rename_keys({ name: 'firstName', job: 'Actor' }, obj);
 	console.log("New Object");
 	console.log(result);
+
+
+	// Method3
+	const replaceKeys = (names, obj) => {
+  for (const prop in obj) {
+    if (names[prop]) {
+      obj[prop] = names[prop];
+    }
+  }
+
+  return obj;
+};
+
+// Method 4
+let renameKey = (keyObj, obj) => {
+let result = {}
+for (let key in obj) {
+result[keyObj[key] || key] = obj[key]
+}
+return result
+}
+
+
+let obj = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+console.log(renameKey({ name: 'firstName', job: 'Actor' }, obj)); //{firstName: "Bobo", Actor: "Programmer", shoeSize: 100}
 
 
 </script>

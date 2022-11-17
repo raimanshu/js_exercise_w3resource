@@ -6,6 +6,8 @@
     Write a JavaScript program to measure the time taken by a function to execute.
 </h3>
 
+Use Console.time() and Console.timeEnd() to measure the difference between the start and end times to determine how long the callback took to execute.
+
 <script>
 
     // Method 2 
@@ -16,6 +18,14 @@
     console.log("Time taken: " + time_taken(() => Math.pow(2, 10)) + " ms");
     console.log("Time taken: " + time_taken(() => Math.sqrt(225)) + " ms");
     console.log("Time taken: " + time_taken(() => Math.sqrt((5 * 5) + (6 * 6))) + " ms");
+
+    // Method 3
+    // use performance.now
+
+const t0 = performance.now();
+doSomething();
+const t1 = performance.now();
+console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
 
 
 </script>

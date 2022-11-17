@@ -5,6 +5,9 @@
     Write a JavaScript program to generate a random hexadecimal color code.
 </h3>
 
+Use Math.random() to generate a random 24-bit (6 * 4bits) hexadecimal number.
+Use bit shifting and then convert it to an hexadecimal string using Number.prototype.toString(16).
+
 <input id="c1">
 <button onclick="toF()"> Convert to F</button>
 <label id="f1"></label><span> F</span>
@@ -26,5 +29,15 @@
 
     console.log(random_hex_color_code())
 
+// Method 3
+    console.log('#'+Math.floor(Math.random()*1e7).toString(16));
+// Method 4
+let items = ["a", "b", "c", "d", "e", "f"];
+let item = items[Math.floor(Math.random()*items.length)];
+console.log(item);
+let random = Math.random().toString().slice(2, 6);
+console.log (`
+#${item}${random}${item}
+`);
 
 </script>

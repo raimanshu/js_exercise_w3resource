@@ -4,6 +4,9 @@
 
 Write a JavaScript program to dcapitalize the first letter of a string.
 
+Use array destructuring and String.prototype.toLowerCase() to decapitalize first letter, ...rest to get array of characters after first letter and then Array.prototype.join('') to make it a string again.
+Omit the upperRest argument to keep the rest of the string intact, or set it to true to convert to uppercase.
+
 <script>
 
 	// Method 2 
@@ -12,6 +15,13 @@ Write a JavaScript program to dcapitalize the first letter of a string.
 		first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));
 	console.log(decapitalize('W3resource'))
 	console.log(decapitalize('Red', true));
+
+	// Method 3
+	const decapitalize2 = (str, upperRest = false) =>
+str[0].toLowerCase() + (upperRest ? str.slice(1).toUpperCase() : str.slice(1))
+
+console.log(decapitalize2('W3resource')) // w3resource
+console.log(decapitalize2('Red', true)); // rED
 
 
 </script>

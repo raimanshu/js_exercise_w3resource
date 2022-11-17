@@ -1,6 +1,13 @@
 
 Write a JavaScript program to copy a string to the clipboard.
 
+Create a new <textarea> element, fill it with the supplied data and add it to the HTML document.
+	Use Selection.getRangeAt()to store the selected range (if any).
+	Use Document.execCommand('copy') to copy to the clipboard.
+	Remove the <textarea> element from the HTML document.
+	Finally, use Selection().addRange() to recover the original selected range (if any).
+	NOTICE: The same functionality can be easily implemented by using the new asynchronous Clipboard API, which is still experimental but should be used in the future instead of this snippet.
+
 <script>
 
 	// Method 2 
@@ -23,5 +30,20 @@ Write a JavaScript program to copy a string to the clipboard.
 		}
 	};
 
+
+	// Method 3
+	HTML code
+
+<textarea name="text" id="text" cols="20" rows="5"></textarea>
+<button id="b">copy</button>
+
+JavaScript code
+
+const copy = async () => {
+let promise = new Promise( (resolve) => resolve(document.getElementById("text").value));
+window.navigator.clipboard.writeText(await promise)
+console.log("copied")
+}
+document.getElementById("b").addEventListener("click", copy)
 
 </script>

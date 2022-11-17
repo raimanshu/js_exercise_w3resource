@@ -3,6 +3,9 @@
 - remember the method<br>
 
 <h3>Write a JavaScript program to removes non-printable ASCII characters from a given string. </h3>
+
+Use String.prototype.replace() with a regular expression to remove non-printable ASCII characters.
+
 <p id="url"></p>
 <script>
 
@@ -11,5 +14,6 @@
 	const remove_non_ASCII = str => str.replace(/[^\x20-\x7E]/g, '');
 	console.log(remove_non_ASCII('äÄçÇéÉêw3resouröceÖÐþúÚ'));
 
-
+// Method 3
+const remove_non_ASCII = (str) => str.replace(/\W/gi, "");
 </script>
