@@ -7,6 +7,11 @@
     properties of an object.
 </h3>
 
+Use Object.keys(obj) to iterate over the object's own properties.
+If inherited is true, use Object.getPrototypeOf(obj) to also get the object's inherited properties.
+Use Array.prototype.filter() to keep only those properties that are functions.
+Omit the second argument, inherited, to not include inherited properties by default.
+
 <script>
 
     // Method 2 
@@ -23,6 +28,10 @@
     Foo.prototype.c = () => 3;
     console.log(functions(new Foo()));
     console.log(functions(new Foo(), true));
+
+
+    // Method 3
+    
 
 
 </script>

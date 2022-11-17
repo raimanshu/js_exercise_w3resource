@@ -7,6 +7,9 @@
     from the provided argument validation function.
 </h3>
 
+Use Array.prototype.find() to return the first argument that returns true from the provided argument validation function, valid.
+
+
 <script>
 
     // Method 2 
@@ -14,6 +17,13 @@
     const coalesceFactory = valid => (...args) => args.find(valid);
     const customCoalesce = coalesceFactory(_ => ![null, undefined, '', NaN].includes(_));
     console.log(customCoalesce(undefined, null, NaN, '', 'Waldo'));
+
+    // Method 3
+    let coalesce = (...x) => x.find(y => !!y)
+console.log(coalesce(null, undefined, '',NaN,'Waldo')) // 'Waldo'
+
+// Method 4
+valid = (...args) => args.find(k=>!["",null,undefined,NaN].includes(k));
 
 
 </script>

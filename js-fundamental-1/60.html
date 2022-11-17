@@ -4,7 +4,10 @@
 
 <h3>
     Write a JavaScript program to create a function that invokes the method at a given key of an object, optionally
-    adding any additional supplied parameters to the beginning of the arguments.
+    adding any additional supplied parameters to the beginning of the arguments.</h3>
+
+    Return a function that uses Function.prototype.apply() to bind context[fn] to context.
+Use the spread operator (...) to prepend any additional supplied parameters to the arguments.
     <script>
 
         // Method 2 
@@ -23,5 +26,20 @@
         const freddyBound = bindKey(freddy, 'greet');
         console.log(freddyBound('hi', '!'));
 
+// Method 3
+const bindKey2 = (context, fn, ...args) => (...args2) =>
+context[fn].apply(context, [...args,...args2])
 
+
+const freddy2 = {
+
+user: 'fred',
+greet: function(greeting, punctuation) {
+return greeting + ' ' + this.user + punctuation
+}
+}
+
+
+const freddyBound2 = bindKey2(freddy2, 'greet');
+console.log(freddyBound2('hi', '!'));
     </script>

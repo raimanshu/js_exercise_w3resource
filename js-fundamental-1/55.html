@@ -5,6 +5,9 @@
 <h3>
     Write a JavaScript program to Join all given URL segments together, then normalizes the resulting URL.</h3>
 
+    Use String.prototype.join('/') to combine URL segments.
+Use a series of String.prototype.replace() calls with various regexps to normalize the resulting URL (remove double slashes, add proper slashes for protocol, remove slashes before parameters, combine parameters with '&' and normalize first parameter delimiter).
+
 <script>
 
     // Method 2 

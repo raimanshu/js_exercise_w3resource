@@ -6,6 +6,11 @@
     Write a JavaScript program to retrieve a set of properties indicated by the given selectors from an object.
 </h3>
 
+Use Array.prototype.map() for each selector, String.prototype.replace() to replace square brackets with dots.
+Use String.prototype.split('.') to split each selector.
+Use Array.prototype.filter() to remove empty values and Array.prototype.reduce() to get the value indicated by each selector.
+
+
 <script>
 
     // Method 2 
@@ -22,5 +27,13 @@
 
     console.log(get(obj, 'selector.to.val', 'target[0]', 'target[2].a'));
 
+// Method 3
+const get2 = (from, ...selectors) =>
+[...selectors].map(s => s
+.match(/\w+[^\.\[\]]?/g)
+.reduce((prev, cur) => prev && prev[cur], from)
+)
+const obj2 = { selector: { to: { val: 'val to select' } }, target: [1, 2, { a: 'test' }] }
 
+console.log(get2(obj2, 'selector.to.val', 'target[0]', 'target[2].a')); // ["val to select", 1, "test"]
 </script>

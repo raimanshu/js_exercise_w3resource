@@ -5,6 +5,9 @@
     Write a JavaScript program to remove the key-value pairs corresponding to the given keys from an object.
 </h3>
 
+Use Object.keys(), Array.prototype.filter() and Array.prototype.includes() to remove the provided keys.
+Use Array.prototype.reduce() to convert the filtered keys back to an object with the corresponding key-value pairs.
+
 <script>
 
     // Method 2 
@@ -16,6 +19,12 @@
 
     console.log(omit({ a: 1, b: '2', c: 3 }, ['b']));
     console.log(omit({ a: 1, b: 2, c: 3 }, ['c']));
+
+    // Method 3
+    const omit2 = (obj, prop) => {
+delete obj[prop.join()]
+return obj
+}
 
 
 </script>

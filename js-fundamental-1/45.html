@@ -11,6 +11,10 @@
 </h3>
 
 
+Use Array.prototype.reduce() and Array.prototype.push() to add elements to groups, based on filter.
+If filter has a truthy value for any element, add it to the first group, otherwise add it to the second group.
+
+
 <script>
 
 	// Method 2 
@@ -20,4 +24,20 @@
 	console.log(bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]));
 
 
+// Method 3
+function splitGroup (array){
+let groupA = []
+let groupB = []
+
+for (let value of array){
+if (Boolean(value)){
+groupA.push(value)
+} else {
+groupB.push(value)
+}
+}
+return [groupA, groupB]
+}
+
+console.log(splitGroup([1,2,0,'', null, 4, 5]));
 </script>

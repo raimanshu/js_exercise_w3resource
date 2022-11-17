@@ -4,6 +4,9 @@
 <h3>
     Write a JavaScript program to create an object from the given key-value pairs.</h3>
 
+
+    Use Array.prototype.reduce() to create and combine key-value pairs.
+
 <script>
 
     // Method 2 
@@ -12,5 +15,9 @@
     console.log(object_From_Pairs([['a', 1], ['b', 2]]));
     console.log(object_From_Pairs([[1, 10], [2, 20], [3, 30]]));
 
+    // Method 3
+    let pairsObj = (arr) => Object.fromEntries(arr)
+
+console.log(pairsObj([['a', 1], ['b', 2]]));// {a: 1, b: 2}
 
 </script>

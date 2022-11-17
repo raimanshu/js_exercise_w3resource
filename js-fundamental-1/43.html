@@ -6,6 +6,12 @@
     Write a JavaScript program to change function that accepts an array into a variadic function.
 </h3>
 
+Note: Given a function, return a closure that collects all inputs into an array-accepting function.
+
+
+Given a function, return a closure that collects all inputs into an array-accepting function.
+
+
 <script>
 
     // Method 2 
@@ -17,5 +23,15 @@
     let p3 = new Promise(resolve => setTimeout(resolve, 2000, 3));
     Pall(p1, p2, p3).then(console.log); // [1, 2, 3] (after about 2 seconds)
 
+    // Method 3
+    const collect = fn => (...args) => {
+fn = Promise.all.bind(Promise)
+return fn(args)
+}
+
+let p1 = Promise.resolve(1);
+let p2 = Promise.resolve(2);
+let p3 = new Promise(resolve => setTimeout(resolve, 2000, 3));
+collect()(p1, p2, p3).then(console.log); // [1, 2, 3] (after about 2 seconds)
 
 </script>

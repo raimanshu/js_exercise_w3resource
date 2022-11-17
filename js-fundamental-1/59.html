@@ -6,6 +6,8 @@
     Write a JavaScript program to create a function that invokes fn with a given context, optionally adding any
     additional supplied parameters to the beginning of the arguments.</h3>
 
+    Return a function that uses Function.prototype.apply() to apply the given context to fn.
+Use the spread operator (...) to prepend any additional supplied parameters to the arguments.
 <script>
 
     // Method 2 
@@ -20,6 +22,21 @@
     const freddy = { user: 'Morning' };
     const freddyBound = bind(greet, freddy);
     console.log(freddyBound('Good', '!'));
+
+
+    // Method 3
+    const bind2 = (fn, context, ...args) => (...args2) =>
+fn.apply(context, [...args, ...args2])
+
+
+function greet(greeting, punctuation) {
+return `${greeting} ${this.user}${punctuation}`
+}
+
+const freddy2 = { user: 'Morning' };
+const freddyBound2 = bind2(greet, freddy2);
+
+console.log(freddyBound2('Good', '!')); // Good Morning!
 
 
 </script>

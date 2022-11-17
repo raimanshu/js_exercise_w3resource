@@ -6,6 +6,8 @@
     Write a JavaScript program to remove falsey values from a given array.
 </h3>
 
+Use Array.prototype.filter() to filter out falsy values (false, null, 0, "", undefined, and NaN).
+
 
 
 <script>
@@ -15,6 +17,12 @@
     const compact = arr => arr.filter(Boolean);
     console.log(compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]));
     console.log(compact([false, NaN, 'e' * 23]));
+
+
+    // Method 3
+    const compact1 = arr => arr.filter(e => !!e);
+console.log(compact1([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]));// [1, 2, 3, "a", "s", 34]
+console.log(compact1([false, NaN, 'e' * 23])); // []
 
 
 </script>

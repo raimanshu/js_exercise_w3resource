@@ -4,6 +4,9 @@
 <h3>
     Write a JavaScript program to get an object containing the parameters of the current URL.</h3>
 
+    Use String.prototype.match() with an appropriate regular expression to get all key-value pairs.
+Use Array.prototype.reduce() to map and combine them into a single object.
+Pass location.search as the argument to apply to the current url.
 <script>
 
     // Method 2 
@@ -18,4 +21,16 @@
     console.log(get_URL_Parameters('https://www.w3resource.com'));
 
 
+// Method 3
+const getUrl = url => {
+let arr = url.includes('?') ?
+url.slice(url.indexOf('?')+1)
+.split('&')
+.map(s => s.split('='))
+: []
+return Object.fromEntries(arr)
+}
+
+console.log(getUrl('http://url.com/page?name=Adam&surname=Smith')) // {name: "Adam", surname: "Smith"}
+console.log(getUrl('google.com')) // {}
 </script>

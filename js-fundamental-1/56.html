@@ -5,6 +5,8 @@
 <h3>
     Write a JavaScript program to check whether all elements in a given array are equal or not.</h3>
 
+    Use Array.prototype.every() to check if all the elements of the array are the same as the first one.
+    Elements in the array are compared using the strict comparison operator, which does not account for NaN self-inequality.
 
 <script>
 
@@ -13,6 +15,10 @@
     const allEqual = arr => arr.every(val => val === arr[0]);
     console.log(allEqual([1, 2, 3, 4, 5, 6]));
     console.log(allEqual([12, 12, 12, 12]));
+
+    // Method 3
+    const all_equal = ([head, ...tail]=[]) => tail.every(x => x == head);
+
 
 
 </script>

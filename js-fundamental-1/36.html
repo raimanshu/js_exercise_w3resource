@@ -6,6 +6,7 @@
     Write a JavaScript program to create a function that invokes each provided function with the arguments it receives
     and returns the results.</h3>
 
+    Use Array.prototype.map() and Function.prototype.apply() to apply each function to the given arguments.
 
 <script>
 
@@ -17,5 +18,10 @@
     console.log(minMax(1, 2, 5, 4, 3));
     console.log(minMax(1, 2, 5, -4, 3));
 
+    // Method 3
+    const Maxmin = (...el) => [Math.min(...el), Math.max(...el)]
+
+console.log(Maxmin(1, 2, 3, 4, 5)) // [1, 5]
+console.log(Maxmin(1, 2, 5, -4, 3)) // [-4, 5]
 
 </script>
