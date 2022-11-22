@@ -3,6 +3,10 @@
     Write a JavaScript program to create a new string with the results of calling a provided function on every character
     in the calling string.</h3>
 
+    Use String.prototype.split('') and Array.prototype.map() to call the provided function, fn, for each character in str.
+Use Array.prototype.join('') to recombine the array of characters into a string.
+The callback function, fn, takes three arguments (the current character, the index of the current character and the string mapString was called upon).
+
 <script>
 
     // Method 2 
@@ -14,5 +18,12 @@
             .join('');
 
     console.log(mapString('Javascript exercises', c => c.toUpperCase()));
+
+    // Method 3
+    const mapString2 = ([...str], fn) => str.reduce((prev, cur) => prev + fn(cur), "");
+
+    // Method 4
+    const mapStr = (str, fn) => fn(str)
+console.log(mapStr('Javascript exercises', c => c.toUpperCase())) // JAVASCRIPT EXERCISES
 
 </script>

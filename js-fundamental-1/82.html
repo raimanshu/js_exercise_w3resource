@@ -4,6 +4,11 @@
     consist of the original value as the key and the mapped value.
 </h3>
 
+Note: Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new Array to store the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).
+
+Use Array.prototype.reduce() to apply fn to each element in arr and combine the results into an object.
+Use el as the key for each property and the result of fn as the value.
+
 <script>
 
     // Method 2 

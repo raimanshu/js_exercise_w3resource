@@ -4,6 +4,10 @@
     longest one.
 </h3>
 
+Use Array.prototype.reduce(), comparing the length of objects to find the longest one.
+If multiple objects have the same length, the first one will be returned.
+Returns undefined if no arguments are provided.
+
 <script>
 
     // Method 2 
@@ -15,4 +19,12 @@
     console.log(longestItem([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]));
     console.log(longestItem([1, 2, 3], 'foobar'));
 
+// Method 3
+const longestItem2 = (...vals) => {
+let maxL = vals.map(s => s.length)
+return vals.find(p => p.length == Math.max(...maxL))
+}
+
+
+console.log(longestItem2('this', 'is', 'a', 'testcase')) // testcase
 </script>

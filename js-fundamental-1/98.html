@@ -4,6 +4,10 @@
     keys.
 </h3>
 
+Use Array.prototype.filter() to filter the array based on the predicate fn so that it returns the objects for which the condition returned a truthy value.
+On the filtered array, use Array.prototype.map() to return the new object.
+Use Array.prototype.reduce() to filter out the keys which were not supplied as the keys argument.
+
 <script>
 
     // Method 2 
@@ -29,5 +33,17 @@
     ];
 
     console.log(reducedFilter(data, ['id', 'name'], item => item.age > 24));
+
+
+    // Method 3
+    const reducedFilter2 = (data, keys, fn) =>
+  data.reduce((acc, cur) => {
+    if (fn(cur)) {
+      const tempObj = {};
+      keys.forEach((key) => (tempObj[key] = cur[key]));
+      Object.keys(tempObj).length > 0 && acc.push(tempObj);
+    }
+    return acc;
+  }, []);
 
 </script>
