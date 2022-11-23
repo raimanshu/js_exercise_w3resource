@@ -3,6 +3,10 @@
     Write a JavaScript program to get every element that exists in any of the two arrays once
 </h3>
 
+Note: Create a Set with all values of a and b and convert to an array.
+
+Create a new Set() with all values of a and b and convert it to an array.
+
 <script>
 
     // Method 2 
@@ -10,5 +14,8 @@
     const union = (a, b) => Array.from(new Set([...a, ...b]));
     console.log(union([1, 2, 3], [4, 3, 2]));
     console.log(union([1, 2, 3], [1, 2, 3]));
+
+    // Method 3
+    const union2 = (...arr) => Array.from(new Set(arr.flat()));
 
 </script>

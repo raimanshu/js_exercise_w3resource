@@ -2,6 +2,11 @@
 <h3>
     Write a JavaScript program to truncate a string up to a specified length.
   </h3>
+
+  Note: Determine if the string's length is greater than num. Return the string truncated to the desired length, with '...' appended to the end or the original string.
+
+Determine if String.prototype.length is greater than num.
+Return the string truncated to the desired length, with '...' appended to the end or the original string.
   
   <script>
   
@@ -11,5 +16,9 @@
       str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
   
     console.log(truncateString('boomerang', 7));
+
+
+    // Method 3
+    truncateString  = (str, n) => str.length < n ? str : `${str.slice(0, n > 3 ? n - 3 : n)}...`;
   
   </script>

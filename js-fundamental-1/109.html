@@ -2,6 +2,10 @@
 <h3>
     Write a JavaScript program to get the nth element of a given array.</h3>
   
+    Use Array.prototype.slice() to get an array containing the nth element at the first place.
+If the index is out of bounds, return undefined.
+Omit the second argument, n, to get the first element of the array.
+
   <script>
   
     // Method 2 
@@ -10,4 +14,6 @@
     console.log(nthElement(['a', 'b', 'c'], 1));
     console.log(nthElement(['a', 'b', 'b'], -3));
   
+    // Method 3
+    const nthElement2 = (arr, n = 0) => (n > 0 ? arr[n] : arr[arr.length + n])
   </script>
