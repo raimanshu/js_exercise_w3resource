@@ -1,5 +1,7 @@
 Write a JavaScript program to get the last element from an given array.
 
+Check if arr is truthy and has a length property.
+Use Array.prototype.length - 1 to compute the index of the last element of the given array and return it, otherwise return undefined.
 
 <script>
 
@@ -9,5 +11,7 @@ Write a JavaScript program to get the last element from an given array.
 	console.log(last([1, 2, 3]));
 	console.log(last([1, 2, 3, 4, 5, 7]));
 
+	// Method 3
+	const last2 = (arr) => arr.pop();
 
 </script>

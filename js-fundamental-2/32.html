@@ -2,6 +2,12 @@
 Write a JavaScript program to join all elements of an array into a string and returns this string. Uses a separator and
 an end separator.
 
+Uses a separator and an end separator.
+
+Use Array.prototype.reduce() to combine elements into a string.
+Omit the second argument, separator, to use a default separator of ','.
+Omit the third argument, end, to use the same value as separator by default.
+
 <script>
 
     // Method 2 
@@ -19,6 +25,15 @@ an end separator.
     console.log(join(['pen', 'pineapple', 'apple', 'pen'], ',', '&'));
     console.log(join(['pen', 'pineapple', 'apple', 'pen'], ','));
     console.log(join(['pen', 'pineapple', 'apple', 'pen']));
+
+    // Method 3
+    const join2 = (arr, sep = ",", extraSep) => {
+    const end = extraSep || sep;
+    return arr.reduce((acc, cur, index) => {
+        if (!index) return acc + cur;
+        return acc + `${index < arr.length - 1 ? sep : end}${cur}`;
+    });
+};
 
 
 </script>

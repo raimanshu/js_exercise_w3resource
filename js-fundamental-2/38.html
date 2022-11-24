@@ -1,6 +1,12 @@
 
 Write a JavaScript program that will return 1 if the array is sorted in ascending order, -1 if it is sorted in
 descending order or 0 if it is not sorted
+
+
+Calculate the ordering direction for the first pair of adjacent array elements.
+Return 0 if the given array is empty, only has one element or the direction changes for any pair of adjacent array elements.
+Use Math.sign() to covert the final value of direction to -1 (descending order) or 1 (ascending order).
+
 <script>
 
 	// Method 2 
@@ -16,6 +22,16 @@ descending order or 0 if it is not sorted
 	console.log(isSorted([0, 1, 2, 2]));
 	console.log(isSorted([4, 3, 2]));
 	console.log(isSorted([4, 3, 5]));
+
+
+	// Method 3
+	const isSorted2 = (arr) => {
+    if ([...arr].sort().every((val, index) => val === arr[index])) {
+        return 1;
+    } else if ([...arr].sort((a, b) => b - a).every((val, index) => val === arr[index])) {
+        return -1;
+    } else return 0;
+};
 
 
 </script>
