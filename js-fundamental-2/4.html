@@ -2,6 +2,10 @@
 Write a JavaScript program to create an object composed of the properties the given function returns falsey for. The
 function is invoked with two arguments: (value, key).
 
+Use Object.keys() and Array.prototype.filter() to remove the keys for which fn returns a truthy value.
+Use Array.prototype.reduce() to convert the filtered keys back to an object with the corresponding key-value pairs.
+The callback function is invoked with two arguments: (value, key).
+
 <script>
 
 	// Method 2 
@@ -12,6 +16,14 @@ function is invoked with two arguments: (value, key).
 			.reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
 
 	console.log(omitBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'));
+
+	// Method 3
+	const omitBy2 = (obj, fn) => Object.keys(obj).reduce((acc, cur) => {
+    if (!fn(obj[cur])) {
+        acc[cur] = obj[cur];
+    }
+    return acc;
+}, {});
 
 
 </script>

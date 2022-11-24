@@ -1,7 +1,13 @@
 Write a JavaScript program to run a function in a separate thread by using a Web Worker, allowing long running functions
 to not block the UI.
 
+Note: Create a new Worker using a Blob object URL, the contents of which should be the stringified version of the supplied function. Immediately post the return value of calling the function back. Return a promise, listening for onmessage and onerror events and resolving the data posted back from the worker, or throwing an error.
 
+NOTE: Since the function is running in a different context, closures are not supported. The function supplied to `runAsync` gets stringified, so everything becomes literal. All variables and functions must be defined inside.
+
+Create a new Worker() using a Blob object URL, the contents of which should be the stringified version of the supplied function.
+Immediately post the return value of calling the function back.
+Return a new Promise(), listening for onmessage and onerror events and resolving the data posted back from the worker, or throwing an error.
 <script>
 
 	// Method 2 

@@ -1,6 +1,11 @@
 Write a JavaScript program to mutate the original array to filter out the values specified. Returns the removed
 elements.
 
+Use Array.prototype.filter() and Array.prototype.includes() to pull out the values that are not needed.
+Set Array.prototype.length to mutate the passed in an array by resetting its length to 0.
+Use Array.prototype.push() to re-populate it with only the pulled values.
+Use Array.prototype.push() to keep track of pulled values.
+
 <script>
 
 	// Method 2 
@@ -17,6 +22,21 @@ elements.
 	let pulled = pullAtValue(myArray, ['b', 'd']);
 	console.log('Original data', myArray);
 	console.log('Pulled data', pulled);
+
+
+	// Method 3
+	const pullAtValue2 = (arr, toPull) => {
+    const newArr = [];
+    const result = arr.reduce((acc, cur) => {
+        toPull.includes(cur) ? acc.push(cur) : newArr.push(cur);
+        return acc;
+    }, []);
+
+    arr.length = 0;
+    newArr.forEach((item) => arr.push(item));
+
+    return result;
+};
 
 
 </script>

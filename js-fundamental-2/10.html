@@ -2,6 +2,11 @@
 Write a JavaScript program to mutate the original array to filter out the values specified, based on a given iterator
 function.
 
+Check if the last argument provided is a function.
+Use Array.prototype.map() to apply the iterator function fn to all array elements.
+Use Array.prototype.filter() and Array.prototype.includes() to pull out the values that are not needed.
+Set Array.prototype.length to mutate the passed in an array by resetting its length to 0.
+Use Array.prototype.push() to re-populate it with only the pulled values.
 <script>
 
 	// Method 2 
@@ -21,6 +26,19 @@ function.
 	pullBy(myArray, [{ x: 1 }, { x: 3 }], o => o.x);
 
 	console.log(myArray);
+
+
+	// Method 3
+	const pullBy2 = (arr, toFilter, fn) => {
+    const values = toFilter.map((item) => fn(item));
+    const arrCopy = [...arr];
+    arr.length = 0;
+    arrCopy.forEach((cur) => !values.includes(fn(cur)) && arr.push(cur));
+};
+
+const myArray = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 1 }];
+pullBy(myArray, [{ x: 1 }, { x: 3 }], (o) => o.x);
+console.log(myArray); // [{ x: 2 }]
 
 
 </script>
