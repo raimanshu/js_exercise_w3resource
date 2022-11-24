@@ -1,6 +1,7 @@
 
 Write a JavaScript program to convert a NodeList to an array.
 
+Use spread operator (...) inside new array to convert a NodeList to an array.
 <script>
 
 	// Method 2 
@@ -9,4 +10,7 @@ Write a JavaScript program to convert a NodeList to an array.
 	console.log(nodeListToArray(document.childNodes));
 
 
+// Method 3
+const nodeListToArray2 = (nodeList) => Array.from(nodeList);
+console.log(nodeListToArray2(document.childNodes));
 </script>

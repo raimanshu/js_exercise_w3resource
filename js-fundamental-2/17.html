@@ -2,6 +2,8 @@
 Write a JavaScript program to calculate how many numbers in the given array are less or equal to the given value using
 the percentile formula.
 
+Use Array.prototype.reduce() to calculate how many numbers are below the value and how many are the same value and apply the percentile formula.
+
 <script>
 
 	// Method 2 
@@ -10,6 +12,11 @@ the percentile formula.
 	console.log(percentile([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10)) // 100;
 	console.log(percentile([1, 2, 3, 4, 5, 6], 3)) // 50;
 	console.log(percentile([1, 2, 3, 4, 5, 6], 4)) // 66.66;
+
+	// Method 3
+	const percentile2 = (arr, num) => (arr.filter((item) => item <= num).length / arr.length) * 100;
+
+console.log(percentile2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6)) // 60;
 
 
 </script>
