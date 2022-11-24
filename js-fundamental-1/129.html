@@ -3,6 +3,11 @@
     Write a JavaScript program to get removed elements from the end of a given array until the passed function returns
     true.</h3>
 
+    Create a reversed copy of the array, using the spread operator (...) and Array.prototype.reverse().
+Loop through the reversed copy, using a for...of loop over Array.prototype.entries() until the returned value from the function is falsy.
+Return the removed elements, using Array.prototype.slice().
+The callback function, fn, accepts a single argument which is the value of the element.
+
 <script>
 
     // Method 2 
@@ -14,5 +19,14 @@
     };
 
     console.log(takeRightWhile([1, 2, 3, 4], n => n < 3));
+
+    // Method 3
+    const removeFromRight = (arr, fn) => {
+for (let i = arr.length - 1; i >= 0; i--) {
+if (fn(arr[i])) return arr.slice(i + 1);
+}
+return arr;
+};
+console.log(removeFromRight([1, 2, 3, 4, 5, 6], x => x <= 3));
 
 </script>

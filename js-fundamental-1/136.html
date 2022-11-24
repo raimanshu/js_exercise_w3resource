@@ -5,6 +5,13 @@
 <h3>
     Write a JavaScript program to generate all permutations of a string (contains duplicates)</h3>
 
+    Use recursion.
+For each letter in the given string, create all the partial permutations for the rest of its letters.
+Use Array.prototype.map() to combine the letter with each partial permutation.
+Use Array.prototype.reduce() to combine all permutations in one array.
+Base cases are for String.prototype.length equal to 2 or 1.
+WARNING: The execution time increases exponentially with each character. Anything more than 8 to 10 characters will cause your environment to hang as it tries to solve all the different combinations.
+
 <script>
 
     // Method 2 
@@ -22,5 +29,23 @@
 
     console.log(stringPermutations('abc'));
     console.log(stringPermutations('*$*'));
+
+    // Method 3
+    const stringPermutations2 = (str) => {
+    if (str.length === 0) return "";
+    if (str.length === 1) return str;
+
+    let result = [];
+
+    for (let i = 0; i < str.length; i++) {
+        const currentChar = str[i];
+        const remainingChars = str.slice(0, i) + str.slice(i + 1);
+        for (let j = 0; j < remainingChars.length; j++) {
+            result.push(currentChar + stringPermutations(remainingChars)[j]);
+        }
+    }
+
+    return result;
+};
 
 </script>

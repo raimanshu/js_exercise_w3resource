@@ -5,6 +5,7 @@
 <h3>
   Write a JavaScript program to create a shallow clone of an object.</h3>
 
+  Use Object.assign() and an empty object ({}) to create a shallow clone of the original.
 <script>
 
   // Method 2 
@@ -14,5 +15,8 @@
   const b = shallowClone(a);
 
   console.log(b);
+
+  // Method 3
+  const shallowClone2 = (obj) => ({ ...obj });
 
 </script>

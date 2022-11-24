@@ -3,6 +3,10 @@
     Write a JavaScript program to add an ordinal suffix to a number
 </h3>
 
+Use the modulo operator (%) to find values of single and tens digits.
+Find which ordinal pattern digits match.
+If digit is found in teens pattern, use teens ordinal.
+
 <script>
 
     // Method 2 
@@ -22,6 +26,25 @@
     console.log(toOrdinalSuffix('4'));
     console.log(toOrdinalSuffix('50'));
     console.log(toOrdinalSuffix('123'));
+
+    // Method 3
+    const toOrdinalSuffix2 = (num) => {
+    const suffixException = [11, 12, 13, 14, 15, 16, 17, 18, 19];
+    const suffixNum = num.slice(-1);
+
+    if (suffixException.includes(num.slice(-2))) return `${num}th`;
+
+    switch (suffixNum) {
+        case "1":
+            return `${num}st`;
+        case "2":
+            return `${num}nd`;
+        case "3":
+            return `${num}rd`;
+        default:
+            return `${num}th`;
+    }
+};
 
 
 </script>

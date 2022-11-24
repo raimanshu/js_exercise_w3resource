@@ -5,6 +5,11 @@
 <h3>
   Write a JavaScript program to get the sum of the powers of all the numbers from start to end (both inclusive).</h3>
 
+  Use Array.prototype.fill() to create an array of all the numbers in the target range.
+Use Array.prototype.map() and the exponent operator (**) to raise them to power and Array.prototype.reduce() to add them together.
+Omit the second argument, power, to use a default power of 2.
+Omit the third argument, start, to use a default starting value of 1.
+
 <script>
 
   // Method 2 
@@ -18,5 +23,15 @@
   console.log(sumPower(10));
   console.log(sumPower(10, 3));
   console.log(sumPower(10, 3, 5));
+
+  // Method 3
+  const sumPower2 = (end, power = 2, start = 1) => {
+    let result = 0;
+    while (start <= end) {
+        result += Math.pow(start, power);
+        start++;
+    }
+    return result;
+};
 
 </script>
