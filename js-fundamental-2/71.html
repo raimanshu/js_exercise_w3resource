@@ -1,11 +1,17 @@
 Write a JavaScript program to get a string of the form HH:MM:SS from a Date object.
 
+Use Date.prototype.toTimeString() and String.prototype.slice() to get the HH:MM:SS part of a given Date object.
+
 <script>
 
 	// Method 2 
 	//#Source https://bit.ly/2neWfJ2 
 	const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
 	console.log(getColonTimeFromDate(new Date()));
+
+	// Method 3
+	const getColonTimeFromDate1 = date => date.toLocaleTimeString();
+console.log(getColonTimeFromDate1(new Date()));
 
 
 </script>
