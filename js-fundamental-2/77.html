@@ -1,6 +1,9 @@
 
 Write a JavaScript program to remove elements from an array for which the given function returns false.
 
+Use Array.prototype.filter() to find array elements that return truthy values.
+Use Array.prototype.reduce() to remove elements using Array.prototype.splice().
+The callback function is invoked with three arguments (value, index, array).
 <script>
 
     // Method 2 
@@ -14,6 +17,11 @@ Write a JavaScript program to remove elements from an array for which the given 
             : [];
 
     console.log(remove([1, 2, 3, 4], n => n % 2 === 0));
+
+
+    // Method 3
+    const remove2 = (arr, func) =>
+arr.filter(func);
 
 
 </script>

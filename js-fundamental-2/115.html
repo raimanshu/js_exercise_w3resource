@@ -1,6 +1,11 @@
 
 Write a JavaScript program to chunk an array into smaller arrays of a specified size.
 
+
+Use Array.from() to create a new array, that fits the number of chunks that will be produced.
+Use Array.prototype.slice() to map each element of the new array to a chunk the length of size.
+If the original array can't be split evenly, the final chunk will contain the remaining elements.
+
 <script>
 
 	// Method 2 
@@ -10,5 +15,16 @@ Write a JavaScript program to chunk an array into smaller arrays of a specified 
 			arr.slice(i * size, i * size + size)
 		);
 	console.log(chunk([1, 2, 3, 4, 5], 2));
+
+	// Method 3
+	const chunk2 = (arr, n) => {
+  const result = [];
+
+  while (arr.length > 0) {
+    result.push(arr.splice(0, n));
+  }
+
+  return result;
+};
 
 </script>

@@ -1,6 +1,11 @@
 
 Write a JavaScript program to calculate the factorial of a number.
 
+Use recursion.
+If n is less than or equal to 1, return 1.
+Otherwise, return the product of n and the factorial of n - 1.
+Throw a TypeError if n is a negative number.
+
 <script>
 
 	// Method 2 
@@ -18,5 +23,15 @@ Write a JavaScript program to calculate the factorial of a number.
 	console.log(factorial(5));
 	console.log(factorial(7));
 
+	// Method 3
+	const factorial2 = (n) => {
+  if (n < 0) throw new Error("Negative numbers are not allowed!");
+  let result = n;
+  while (n > 1) {
+    result = result * (n - 1);
+    --n;
+  }
+  return result;
+};
 
 </script>
